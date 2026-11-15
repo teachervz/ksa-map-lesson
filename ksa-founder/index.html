@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="التأسيس">
+<title>التأسيس — الملك عبدالعزيز</title>
+
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║  عرض تفاعلي — الدراسات الاجتماعية — الوحدة الخامسة                  ║
+║  الدرس التاسع والعشرون: المملكة العربية السعودية: التأسيس           ║
+║                                                                      ║
+║   • Space أو → = التالي | ← = السابق | حرف (ت) = تصفيق 👏             ║
+║   • الصور داخل مجلد images بجانب هذا الملف.                          ║
+║  🎙️ الصوت (داخل مجلد audio أو بجانب الملف، mp3 أو m4a):              ║
+║     robot-1  robot-2  robot-3   ← صوت الروبوت (الشريحة ٤)            ║
+║     anthem                       ← النشيد الوطني                    ║
+║   إن لم توجد ملفات الروبوت يقرأ النص بصوت المتصفح تلقائيًا.           ║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   1) الهوية البصرية: أخضر وطني + رملي ذهبي + أزرق البحار
+   ===================================================================== */
+:root{
+  --p900:#0b3d26; --p800:#0f5132; --p700:#13704a; --p600:#1b8a5a; --p500:#3aa676;
+  --p300:#9fd3b6; --p200:#cfe9da; --p100:#eef7f1;
+  --y500:#d4a62a; --y300:#f1d98a; --y200:#f7ead0; --y100:#fdf8ec;
+  --frame:#efe2c4;
+  --ink:#1d2b23;
+  --sea:#bfe0ea; --sea2:#7fbfd3; --land:#f3e9d3; --ksa:#1b8a5a;
+  --ok:#1f8f57;  --okbg:#e2f6ea;
+  --bad:#c8443a; --badbg:#fdeceb;
+  --root:#b5452c;
+  --f-text:'Noto Naskh Arabic','Traditional Arabic','Geeza Pro','Times New Roman',serif;
+  --f-ui:'Tajawal','Segoe UI','Geeza Pro',Tahoma,sans-serif;
+  --f-head:'Tajawal','Geeza Pro',sans-serif;
+  --shadow:0 12px 30px rgba(15,81,50,.13);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--frame)}
+body{font-family:var(--f-ui);color:var(--ink);-webkit-font-smoothing:antialiased;
+     user-select:none;-webkit-user-select:none;touch-action:manipulation}
+button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+mark{background:var(--y300);color:inherit;border-radius:10px;padding:0 8px}
+
+/* =====================================================================
+   2) المسرح 16:9 (1920×1080)
+   ===================================================================== */
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;overflow:hidden;
+  background:radial-gradient(ellipse at 20% 0%, #f7eed8, transparent 60%), var(--frame)}
+#wave{position:absolute;inset:0;width:100%;height:100%}
+#paper{position:absolute;left:82px;right:82px;top:66px;bottom:66px;border-radius:38px;
+  border:7px solid #fff;box-shadow:0 18px 40px rgba(110,80,20,.18);
+  background-color:#fffcf3;
+  background-image:
+    radial-gradient(ellipse at center, transparent 55%, rgba(212,166,42,.10) 100%),
+    linear-gradient(rgba(27,138,90,.075) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(27,138,90,.075) 2px, transparent 2px);
+  background-size:100% 100%, 120px 120px, 120px 120px}
+#paper::after{content:'';position:absolute;inset:10px;border:3px dashed rgba(212,166,42,.45);border-radius:30px;pointer-events:none}
+#slides{position:absolute;left:89px;right:89px;top:73px;bottom:73px;border-radius:32px;overflow:hidden}
+
+.deco{position:absolute;pointer-events:none;z-index:5}
+.deco-compass{top:14px;left:30px;width:136px;animation:spin 40s linear infinite}
+.deco-palm{bottom:6px;right:22px;width:150px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* شريط الرحلة (التقدم) */
+#progress{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:700px;height:14px;z-index:6;
+  background:repeating-linear-gradient(90deg, rgba(15,81,50,.25) 0 14px, transparent 14px 24px);border-radius:99px}
+#progress i{position:absolute;right:0;top:0;height:100%;width:0;border-radius:99px;
+  background:linear-gradient(270deg,var(--p600),var(--y500));transition:width .6s ease}
+#progress b{position:absolute;top:50%;right:0;transform:translate(50%,-50%);font-size:34px;line-height:1;transition:right .6s ease;
+  filter:drop-shadow(0 3px 2px rgba(0,0,0,.2))}
+
+#counter{position:absolute;left:110px;bottom:18px;z-index:20;font:800 30px var(--f-ui);
+  color:var(--p800);background:#fff;padding:8px 26px;border-radius:99px;box-shadow:0 6px 0 var(--p300)}
+
+/* =====================================================================
+   3) شريط التحكم
+   ===================================================================== */
+#controls{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:30;
+  display:flex;align-items:center;gap:12px;direction:ltr;
+  background:rgba(11,61,38,.93);padding:10px 14px;border-radius:99px;
+  box-shadow:0 14px 34px rgba(11,61,38,.35);transition:opacity .45s ease, transform .45s ease}
+#controls button{border:0;border-radius:99px;font:800 30px var(--f-ui);color:#fff;background:rgba(255,255,255,.12);
+  padding:12px 30px;transition:transform .15s, background .2s;direction:rtl}
+#controls button:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}
+#controls button:active{transform:scale(.93)}
+#controls #cNum{background:transparent;cursor:default;min-width:150px;font-weight:900;direction:ltr}
+#controls #cClap{background:var(--y500);color:var(--p900);font-size:40px;padding:6px 26px}
+#controls #cClap.pulse{animation:clapPulse .5s ease}
+#controls #cFull{font-size:30px;padding:12px 22px}
+#hint{position:absolute;right:190px;bottom:22px;z-index:30;font:700 22px var(--f-ui);color:var(--p800);
+  background:rgba(255,255,255,.9);padding:10px 22px;border-radius:99px;transition:opacity .45s ease}
+#hint span{unicode-bidi:isolate;white-space:nowrap}
+#hint b{font-weight:900}
+body.idle #controls{opacity:0;transform:translate(-50%,40px);pointer-events:none}
+body.idle #hint{opacity:0}
+@media (hover:none){#hint{display:none}}
+body.idle{cursor:none}
+
+/* =====================================================================
+   4) الشرائح والانتقالات
+   ===================================================================== */
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;padding:38px 64px 104px;
+  visibility:hidden;opacity:0;pointer-events:none}
+.slide.active{visibility:visible;opacity:1;pointer-events:auto;z-index:2}
+.slide.leaving{visibility:visible;animation:outFade .38s ease forwards;z-index:1}
+.slide.active.a-fade{animation:inFade .7s ease both}
+.slide.active.a-zoom{animation:inZoom .75s cubic-bezier(.2,.8,.2,1) both}
+.slide.active.a-slide.d-next{animation:inFromLeft .7s cubic-bezier(.2,.8,.2,1) both}
+.slide.active.a-slide.d-prev{animation:inFromRight .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes inFade{from{opacity:0}to{opacity:1}}
+@keyframes outFade{to{opacity:0}}
+@keyframes inZoom{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:none}}
+@keyframes inFromLeft{from{opacity:0;transform:translateX(-140px)}to{opacity:1;transform:none}}
+@keyframes inFromRight{from{opacity:0;transform:translateX(140px)}to{opacity:1;transform:none}}
+.slide.active .rv{animation:rvIn .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.18s + var(--i,0) * .1s)}
+@keyframes rvIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes popIn{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.06);opacity:1}100%{transform:scale(1)}}
+@keyframes shake{20%,60%{transform:translateX(-12px)}40%,80%{transform:translateX(12px)}}
+@keyframes clapPulse{50%{transform:scale(1.25) rotate(-8deg)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(212,166,42,0)}50%{box-shadow:0 0 0 12px rgba(212,166,42,.45)}}
+.pop{animation:popIn .5s cubic-bezier(.3,1.4,.5,1) both}
+.shake{animation:shake .45s ease}
+
+/* =====================================================================
+   5) عناصر مشتركة
+   ===================================================================== */
+.s-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px;min-height:104px}
+.s-title{margin:0;font:900 58px/1.5 var(--f-head);color:var(--p800);padding:0 14px;
+  background:linear-gradient(transparent 62%, var(--y300) 62%, var(--y300) 90%, transparent 90%)}
+.head-tools{display:flex;align-items:center;gap:16px}
+.badge{font:800 30px var(--f-ui);color:#fff;background:var(--p600);padding:12px 28px;border-radius:99px;
+  box-shadow:0 6px 0 var(--p800);white-space:nowrap}
+.badge.gold{background:var(--y500);color:var(--p900);box-shadow:0 6px 0 #a8821c}
+.badge.red{background:var(--root);box-shadow:0 6px 0 #7d2d1b}
+.icon-btn{border:3px solid var(--p300);background:#fff;color:var(--p700);width:62px;height:62px;border-radius:50%;
+  font:900 30px var(--f-ui);display:inline-grid;place-items:center;transition:transform .15s, background .2s;flex:none}
+.icon-btn:hover{background:var(--p100);transform:rotate(-20deg)}
+.icon-btn:active{transform:scale(.9)}
+.reset{opacity:.55}.reset:hover{opacity:1}
+
+.card{background:rgba(255,255,255,.96);border-radius:34px;box-shadow:var(--shadow);border:3px solid var(--p200)}
+.intro{margin:0 0 16px;text-align:center;font:700 38px/1.6 var(--f-text);color:var(--p700)}
+
+.btn{border:0;border-radius:99px;background:var(--p700);color:#fff;font:800 34px var(--f-ui);padding:16px 40px;
+  box-shadow:0 7px 0 var(--p900);transition:transform .15s, box-shadow .15s, background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-3px);background:var(--p600)}
+.btn:active{transform:translateY(5px);box-shadow:0 2px 0 var(--p900)}
+.btn.soft{background:#fff;color:var(--p700);box-shadow:0 7px 0 var(--p300);border:3px solid var(--p300)}
+.btn.soft:hover{background:var(--p100)}
+.btn.yellow{background:var(--y500);color:var(--p900);box-shadow:0 7px 0 #a8821c}
+.btn.big{font-size:46px;padding:22px 64px}
+.btn.sm{font-size:28px;padding:10px 26px}
+.btn-row{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
+.msg{font:800 42px var(--f-ui);padding:12px 40px;border-radius:99px;display:inline-block}
+.msg.ok{background:var(--okbg);color:var(--ok);border:3px solid #9bd9b8}
+.msg.bad{background:var(--badbg);color:var(--bad);border:3px solid #f2b6b0}
+.feedback{min-height:84px;display:flex;justify-content:center;align-items:center;text-align:center}
+
+/* المؤقت */
+.timer{display:flex;align-items:center;gap:14px;justify-content:center}
+.t-ring{position:relative;width:140px;height:140px}
+.t-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.t-track{fill:#fff;stroke:var(--p200);stroke-width:12}
+.t-bar{fill:none;stroke:var(--p600);stroke-width:12;stroke-linecap:round;transition:stroke-dashoffset 1s linear, stroke .3s}
+.t-num{position:absolute;inset:0;display:grid;place-items:center;font:900 38px var(--f-ui);color:var(--p800);direction:ltr}
+.t-btns{display:flex;flex-direction:column;gap:10px}
+.timer.low .t-bar{stroke:var(--bad)} .timer.low .t-num{color:var(--bad)}
+.timer.done .t-ring{animation:shake .5s ease 2}
+.timer.mini .t-ring{width:96px;height:96px}.timer.mini .t-num{font-size:28px}
+.timer.mini .t-btns{flex-direction:row}.timer.mini .icon-btn{width:52px;height:52px;font-size:24px}
+
+/* =====================================================================
+   6) الخرائط (SVG)
+   ===================================================================== */
+.map{position:relative;border-radius:30px;overflow:hidden;background:var(--sea);border:5px solid #fff;
+  box-shadow:0 0 0 3px var(--p200), var(--shadow)}
+.map svg{display:block;width:100%;height:100%}
+.map .seaR{fill:url(#seaGrad)}
+.map .c{fill:var(--land);stroke:#fff;stroke-width:1.6;transition:fill .4s}
+.map .c.ksa{fill:var(--ksa);stroke:#fff;stroke-width:2.4}
+.map .c.hi{fill:var(--y500);animation:hiPulse 1.6s ease-in-out infinite}
+.map .c.done{fill:#f1d98a}
+.map .c.click{cursor:pointer}
+.map .c.click:hover{fill:#ead9ad}
+.map .c.ksa.click:hover{fill:#23a36b}
+@keyframes hiPulse{50%{fill:#f1d98a}}
+.map text{font-family:var(--f-ui);font-weight:800;paint-order:stroke;stroke:#fff;stroke-width:6px;stroke-linejoin:round;fill:#5c5040;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+.map text.ksaL{fill:#fff;stroke:var(--p800);stroke-width:7px;font-size:40px}
+.map text.nb{font-size:30px;fill:#6b5a3a}
+.map text.ctx{font-size:24px;fill:#a2967e;font-weight:700}
+.map text.wt{font-size:30px;fill:#1d6f8c;font-style:normal;font-weight:800;stroke:#e3f2f7}
+.map text.lbl-hi{fill:var(--p900);font-size:34px}
+.map .lbls text{transition:opacity .4s}
+.map.hide-lbl .lbls text.nb, .map.hide-lbl .lbls text.wt{opacity:0}
+.map .lbls text.show{opacity:1 !important;animation:lblPop .5s ease both}
+@keyframes lblPop{from{opacity:0}to{opacity:1}}
+.map .pin{cursor:pointer}
+.map .pin-in{transform-box:fill-box;transform-origin:center}
+.map .pin .pr{fill:none;stroke:var(--root);stroke-width:4;transform-box:fill-box;transform-origin:center;animation:ripple 1.8s ease-out infinite}
+@keyframes ripple{from{transform:scale(.5);opacity:1}to{transform:scale(2.2);opacity:0}}
+.map .q{cursor:pointer}
+.map .q circle{fill:#fff;stroke:var(--y500);stroke-width:5}
+.map .q text{fill:var(--root);font-size:34px;stroke:none;font-weight:900}
+.map .q .ring{fill:none;stroke:var(--y500);stroke-width:4;transform-box:fill-box;transform-origin:center;animation:ripple 2s ease-out infinite}
+.map .q.open circle{fill:var(--ok);stroke:#fff}
+.map .q.open text{fill:#fff}
+.map .q.open .ring{display:none}
+.map .arrow{stroke:var(--root);stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:14 12;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-26}}
+.map .ah{fill:var(--root)}
+.map .compass-mini text{font-size:28px;fill:var(--p800);stroke-width:5}
+.map .tap-mark{fill:var(--bad);opacity:.85}
+
+/* =====================================================================
+   7) أنماط الشرائح
+   ===================================================================== */
+
+/* — الغلاف — */
+.cover{flex:1;display:flex;align-items:center;gap:40px}
+.cv-text{flex:1.15;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.cover-pill{font:800 32px var(--f-ui);color:var(--p700);background:var(--p100);border:3px solid var(--p300);padding:10px 34px;border-radius:99px}
+.cover-greet{margin:0;font:700 44px/1.7 var(--f-text);color:var(--p600)}
+.cover-kicker{font:800 44px var(--f-head);color:#fff;background:var(--p700);padding:6px 46px;border-radius:24px 24px 24px 0;box-shadow:0 7px 0 var(--p900)}
+.cover-title{margin:0;font:900 134px/1.3 var(--f-head);white-space:nowrap;color:var(--p800);text-shadow:7px 7px 0 var(--y300)}
+.cover-sub{margin:0;font:700 46px/1.6 var(--f-text);color:var(--p700);background:#fff;padding:4px 44px;border-radius:99px;box-shadow:var(--shadow)}
+.cover-meta{font:700 27px var(--f-ui);color:var(--p500);margin-top:6px}
+.cv-map{flex:1;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+.cv-map svg{width:100%;max-height:760px;overflow:visible}
+.cv-ksa{fill:rgba(27,138,90,.12);stroke:var(--p700);stroke-width:5;stroke-linejoin:round;
+  stroke-dasharray:4000;stroke-dashoffset:4000}
+.slide.active .cv-ksa{animation:draw 3.2s .4s ease forwards, fillIn 1.2s 3.1s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fillIn{to{fill:rgba(27,138,90,.9)}}
+.cv-pin{opacity:0;transform-box:fill-box;transform-origin:center}
+.slide.active .cv-pin{animation:popIn .5s cubic-bezier(.3,1.4,.5,1) forwards;animation-delay:calc(3.6s + var(--d) * .25s)}
+.cv-pin text{font:800 30px var(--f-ui);fill:#fff;paint-order:stroke;stroke:var(--p900);stroke-width:6px;text-anchor:middle}
+.floaty{position:absolute;font-size:70px;opacity:.9;animation:bob 5s ease-in-out infinite;pointer-events:none}
+
+/* — النشيد الوطني — */
+.anthem{flex:1;display:flex;gap:44px;min-height:0;align-items:stretch}
+.an-side{width:470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center}
+.an-ico{font-size:130px;animation:bob 4s ease-in-out infinite}
+.an-note{font:700 36px/1.7 var(--f-text);color:var(--p800)}
+.an-card{flex:1;position:relative;padding:24px 60px;display:flex;flex-direction:column;justify-content:center;gap:4px;text-align:center;
+  background:linear-gradient(160deg,#fff,#f4fbf6);border:4px solid var(--p300);overflow:hidden}
+.an-card::before{content:'';position:absolute;inset:14px;border:3px solid var(--y300);border-radius:24px;pointer-events:none}
+.an-line{font:700 42px/1.62 var(--f-text);color:var(--p900);border-radius:20px;padding:0 20px;cursor:pointer;transition:background .3s, color .3s, transform .3s}
+.an-line:hover{background:var(--p100)}
+.an-line.on{background:var(--p700);color:#fff;transform:scale(1.04)}
+.an-line.big{font-size:48px;color:var(--p700)}
+.eq{display:flex;gap:6px;height:46px;align-items:flex-end}
+.eq i{width:10px;background:var(--p600);border-radius:6px;height:20%}
+.eq.on i{animation:eqb .8s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.1s}.eq i:nth-child(5){animation-delay:.3s}
+@keyframes eqb{from{height:15%}to{height:100%}}
+
+/* — صح أم خطأ (التشخيصي) — */
+.tf-list{flex:1;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.tf-row{display:flex;align-items:center;gap:24px;padding:14px 30px;transition:border-color .3s, background .3s}
+.tf-row.solved{border-color:var(--ok);background:#f6fcf8}
+.tf-n{width:62px;height:62px;flex:none;border-radius:50%;background:var(--y300);display:grid;place-items:center;font:900 32px var(--f-ui);color:var(--p800)}
+.tf-main{flex:1}
+.tf-txt{font:700 44px/1.6 var(--f-text)}
+.tf-exp{font:700 30px var(--f-ui);color:var(--p600);display:none;margin-top:4px}
+.tf-row.solved .tf-exp{display:block;animation:popIn .45s both}
+.tf-btn{border:3px solid;border-radius:22px;font:800 34px var(--f-ui);padding:12px 30px;transition:transform .15s}
+.tf-btn:hover{transform:translateY(-3px)}
+.tf-btn.yes{background:var(--okbg);color:var(--ok);border-color:#9bd9b8}
+.tf-btn.no{background:var(--badbg);color:var(--bad);border-color:#f2b6b0}
+.tf-btn.picked{outline:5px solid var(--y500)}
+.tf-score{text-align:center;min-height:70px}
+
+/* — الروبوت والواقع المعزز — */
+.ar{flex:1;min-height:0;position:relative;border-radius:36px;overflow:hidden;
+  background:radial-gradient(ellipse at 30% 40%, #11523a 0%, #072a1d 70%);box-shadow:0 18px 40px rgba(7,42,29,.4);border:5px solid #0f5132}
+.ar video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.ar.cam video{opacity:1}
+.ar-floor{position:absolute;left:-30%;right:-30%;bottom:-10%;height:62%;transform:perspective(600px) rotateX(62deg);transform-origin:bottom;
+  background-image:linear-gradient(rgba(111,245,192,.35) 2px, transparent 2px), linear-gradient(90deg, rgba(111,245,192,.35) 2px, transparent 2px);
+  background-size:70px 70px;animation:floorMove 3s linear infinite;
+  -webkit-mask-image:linear-gradient(to top, #000 30%, transparent);mask-image:linear-gradient(to top, #000 30%, transparent)}
+@keyframes floorMove{to{background-position:0 70px}}
+.ar.cam .ar-floor{opacity:.35}
+.ar-scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 2px, transparent 2px 5px)}
+.ar-sweep{position:absolute;left:0;right:0;height:140px;top:-140px;pointer-events:none;
+  background:linear-gradient(to bottom, transparent, rgba(111,245,192,.25), transparent);animation:sweep 4.5s linear infinite}
+@keyframes sweep{to{top:100%}}
+.ar-corner{position:absolute;width:70px;height:70px;border:6px solid #6ff5c0;pointer-events:none;filter:drop-shadow(0 0 6px #6ff5c0)}
+.ar-corner.tl{top:22px;left:22px;border-right:0;border-bottom:0;border-radius:18px 0 0 0}
+.ar-corner.tr{top:22px;right:22px;border-left:0;border-bottom:0;border-radius:0 18px 0 0}
+.ar-corner.bl{bottom:22px;left:22px;border-right:0;border-top:0;border-radius:0 0 0 18px}
+.ar-corner.br{bottom:22px;right:22px;border-left:0;border-top:0;border-radius:0 0 18px 0}
+.ar-tag{position:absolute;top:30px;left:110px;font:800 24px var(--f-ui);color:#072a1d;background:#6ff5c0;padding:6px 18px;border-radius:99px;direction:ltr;
+  display:flex;align-items:center;gap:8px}
+.ar-tag::before{content:'';width:12px;height:12px;border-radius:50%;background:#e8403a;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.ar-coord{position:absolute;bottom:34px;left:110px;font:700 22px/1.5 ui-monospace,Menlo,monospace;color:#6ff5c0;direction:ltr;text-shadow:0 0 6px #072a1d}
+.rb-wrap{position:absolute;left:150px;top:30px;width:420px;height:560px;cursor:grab;touch-action:none;z-index:3}
+.rb-wrap:active{cursor:grabbing}
+.slide.active .rb-wrap{animation:materialize 1.6s .35s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes materialize{
+  0%{opacity:0;transform:scaleY(.05) scaleX(.6);filter:brightness(4) blur(10px) hue-rotate(60deg)}
+  40%{opacity:1;transform:scaleY(1.08) scaleX(.95);filter:brightness(2) blur(3px)}
+  55%{transform:translateX(-8px) skewX(6deg)} 62%{transform:translateX(6px) skewX(-4deg)}
+  100%{opacity:1;transform:none;filter:none}}
+.rb-beam{position:absolute;left:30px;right:30px;bottom:-10px;height:640px;pointer-events:none;opacity:0;
+  background:linear-gradient(to top, rgba(111,245,192,.75), rgba(111,245,192,0));clip-path:polygon(25% 100%, 75% 100%, 100% 0, 0 0)}
+.slide.active .rb-beam{animation:beam 1.9s .2s ease both}
+@keyframes beam{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+.rb-rings{position:absolute;left:50%;bottom:6px;width:330px;height:80px;transform:translateX(-50%);pointer-events:none}
+.rb-rings i{position:absolute;inset:0;border:4px solid #6ff5c0;border-radius:50%;opacity:.0;animation:ringOut 2.4s ease-out infinite}
+.rb-rings i:nth-child(2){animation-delay:.8s}.rb-rings i:nth-child(3){animation-delay:1.6s}
+@keyframes ringOut{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1.2);opacity:0}}
+.robot{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 18px rgba(111,245,192,.45))}
+.rb-float{animation:float 3.2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-16px)}}
+.rb-shadow{animation:shadowS 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes shadowS{50%{transform:scale(.8);opacity:.6}}
+.rb-eyes{transform-box:fill-box;transform-origin:center;animation:blinkE 4.2s infinite}
+@keyframes blinkE{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.rb-mouth rect{transform-box:fill-box;transform-origin:center;transition:transform .1s}
+.talking .rb-mouth rect{animation:talk .28s ease-in-out infinite alternate}
+.talking .rb-mouth rect:nth-child(2){animation-delay:.08s}.talking .rb-mouth rect:nth-child(3){animation-delay:.16s}
+.talking .rb-mouth rect:nth-child(4){animation-delay:.04s}.talking .rb-mouth rect:nth-child(5){animation-delay:.12s}
+@keyframes talk{from{transform:scaleY(1)}to{transform:scaleY(4.2)}}
+.rb-wave{transform-box:view-box;transform-origin:118px 300px}
+.talking .rb-wave{animation:wave .9s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-6deg)}to{transform:rotate(16deg)}}
+.rb-tip{animation:tipGlow 1.4s ease-in-out infinite}
+@keyframes tipGlow{50%{fill:#fff6c8}}
+.talking .rb-tip{animation-duration:.4s}
+.rb-chest-dot{animation:ripple 1.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.say{position:absolute;right:40px;top:40px;bottom:40px;width:930px;z-index:4;display:flex;flex-direction:column;gap:18px}
+.say-box{flex:1;min-height:0;position:relative;background:rgba(255,255,255,.95);border-radius:36px;padding:30px 40px;
+  border:4px solid #6ff5c0;box-shadow:0 0 0 8px rgba(111,245,192,.2), 0 18px 34px rgba(0,0,0,.3);display:flex;flex-direction:column;gap:12px}
+.say-box::after{content:'';position:absolute;left:-34px;top:120px;border:20px solid transparent;border-right:20px solid #6ff5c0;border-left:0;width:0;height:0;
+  border-top-width:22px;border-bottom-width:22px;transform:scaleX(1.5)}
+.say-name{display:flex;align-items:center;gap:14px;font:800 32px var(--f-ui);color:var(--p800)}
+.say-name small{font:700 24px var(--f-ui);color:var(--p500)}
+.say-txt{flex:1;min-height:0;font:700 44px/1.75 var(--f-text);color:var(--ink);overflow:hidden}
+.say-txt .wd{opacity:.18;transition:opacity .25s, color .25s}
+.say-txt .wd.on{opacity:1}
+.say-txt .wd.now{color:var(--p600)}
+.say-txt mark{background:var(--y300)}
+.say-ctrl{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.seg{width:62px;height:62px;border-radius:50%;border:3px solid var(--p300);background:#fff;font:900 28px var(--f-ui);color:var(--p700)}
+.seg.on{background:var(--p700);color:#fff;border-color:var(--p700)}
+.seg.done{background:var(--p100)}
+.ar-tools{display:flex;gap:14px;justify-content:flex-start}
+.ar-tools .btn{font-size:28px;padding:12px 28px}
+.ar-tools .btn.cam{background:#072a1d;color:#6ff5c0;box-shadow:0 6px 0 #000;border:3px solid #6ff5c0}
+
+.slide.s-robot{padding:22px 26px 22px}
+.ar-full{border-radius:30px}
+.ar-full .rb-wrap{left:90px;top:auto;bottom:40px;width:440px;height:590px}
+.globe-wrap{position:absolute;right:150px;top:50%;width:780px;height:780px;margin-top:-390px;z-index:2}
+.globe{width:100%;height:100%;display:block;cursor:grab;touch-action:none;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+.globe:active{cursor:grabbing}
+.slide.active .globe-wrap{animation:globeIn 1.4s .9s cubic-bezier(.2,.9,.3,1.2) backwards}
+@keyframes globeIn{from{opacity:0;transform:scale(.2) rotate(-40deg);filter:brightness(3)}to{opacity:1;transform:none}}
+.globe-hand{position:absolute;left:50%;top:62%;font-size:96px;pointer-events:none;animation:swipe 2.2s ease-in-out infinite;filter:drop-shadow(0 6px 8px rgba(0,0,0,.4))}
+@keyframes swipe{0%,100%{transform:translateX(-120px) rotate(-10deg)}50%{transform:translateX(80px) rotate(10deg)}}
+.ar-tools-ico{position:absolute;top:30px;right:110px;display:flex;gap:14px;z-index:5}
+.ar-ico{width:76px;height:76px;border-radius:50%;border:3px solid #6ff5c0;background:rgba(7,42,29,.8);font-size:36px;display:grid;place-items:center;
+  box-shadow:0 0 14px rgba(111,245,192,.4);transition:transform .15s}
+.ar-ico:hover{transform:scale(1.08)} .ar-ico.on{background:#6ff5c0}
+.rb-wrap.happy .robot{animation:hop .5s ease 3}
+@keyframes hop{50%{transform:translateY(-50px) rotate(-6deg)}}
+.rb-wrap.no .robot{animation:headNo .5s ease}
+@keyframes headNo{20%,60%{transform:rotate(-6deg)}40%,80%{transform:rotate(6deg)}}
+.rb-wrap.happy .rb-eyes ellipse{fill:#f1c84b}
+
+/* — محطات الرحلة (الأهداف) — */
+.mission{text-align:center;font:700 42px/1.6 var(--f-text);color:var(--p900);padding:18px 40px;margin-bottom:26px;
+  background:var(--y100);border-color:var(--y300)}
+.stations{flex:1;display:flex;gap:30px;align-items:stretch;position:relative}
+.stations::before{content:'';position:absolute;left:60px;right:60px;top:50%;border-top:8px dashed var(--y300);z-index:0}
+.st{flex:1;position:relative;z-index:1;padding:64px 26px 30px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:transform .2s, border-color .3s, background .3s}
+.st:hover{transform:translateY(-6px)}
+.st-n{position:absolute;top:-34px;left:50%;margin-left:-38px;width:76px;height:76px;border-radius:50%;background:var(--p700);color:#fff;
+  font:900 40px var(--f-ui);display:grid;place-items:center;box-shadow:0 6px 0 var(--p900)}
+.st-ico{font-size:96px;animation:bob 4.5s ease-in-out infinite}
+.st-txt{font:700 42px/1.6 var(--f-text)}
+.st.done{border-color:var(--ok);background:var(--okbg)}
+.st.done::after{content:'✓ أُنجزت';position:absolute;bottom:16px;left:50%;transform:translateX(-50%) rotate(-6deg);font:900 30px var(--f-ui);color:var(--ok);
+  border:4px solid var(--ok);border-radius:14px;padding:0 14px;background:#fff}
+.st.final .st-n{background:var(--y500);color:var(--p900);box-shadow:0 6px 0 #a8821c}
+
+/* — تخطيط خريطة + لوحة — */
+.mapwrap{flex:1;min-height:0;display:flex;gap:34px}
+.mapwrap .map{height:100%;aspect-ratio:var(--ar);flex:none;max-width:62%}
+.panel{flex:1;min-width:0;display:flex;flex-direction:column;gap:18px}
+.p-box{padding:22px 32px;font:700 38px/1.7 var(--f-text)}
+.p-box.q{background:var(--y100);border-color:var(--y300);color:var(--p900)}
+.p-hint{font:700 28px var(--f-ui);color:var(--p500);text-align:center}
+.reveal{display:none}
+.reveal.show{display:block;animation:popIn .55s both}
+.hl{color:#1572a1;font-weight:700}
+.cont{position:absolute;font:800 44px var(--f-head);color:var(--p900);background:#fff;border:4px solid var(--y500);border-radius:20px;padding:2px 26px;
+  opacity:0;transform:scale(.4);transition:all .6s cubic-bezier(.3,1.4,.5,1);pointer-events:none;white-space:nowrap}
+.cont.show{opacity:1;transform:none}
+
+/* — أهمية الموقع: بطاقات مقلوبة — */
+.flip-grid{flex:1;min-height:0;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:30px}
+.flip{width:calc((100% - (var(--cols) - 1) * 30px) / var(--cols));height:min(calc((100% - (var(--rows) - 1) * 30px) / var(--rows)), 520px);perspective:1600px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .75s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d}
+.flip.flipped .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:34px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px 30px;text-align:center}
+.front{background:#fff;border:4px solid var(--p200);box-shadow:var(--shadow)}
+.flip:hover .front{border-color:var(--p500)}
+.back{background:linear-gradient(155deg,var(--p600),var(--p800));color:#fff;transform:rotateY(180deg);box-shadow:var(--shadow)}
+.f-ico{font-size:120px;line-height:1.1}
+.f-txt{font:700 50px/1.55 var(--f-head);color:var(--p800)}
+.tap{font:700 26px var(--f-ui);color:var(--p500)}
+.b-ico{font-size:72px;line-height:1}
+.b-txt{font:700 40px/1.7 var(--f-text)}
+.back mark{background:var(--y300);color:var(--p900)}
+
+/* — البوصلة (الدول المجاورة) — */
+.compass{position:relative;width:420px;height:420px;margin:0 auto;flex:none}
+.compass .ring{position:absolute;inset:60px;border-radius:50%;border:6px solid var(--p200);
+  background:radial-gradient(circle,#fff 0 60%, var(--p100) 61%)}
+.compass .star{position:absolute;inset:0;margin:auto;width:150px;height:150px}
+.dir{position:absolute;width:150px;height:96px;border-radius:28px;border:0;font:800 34px var(--f-ui);color:#fff;background:var(--p700);
+  box-shadow:0 7px 0 var(--p900);transition:transform .15s, background .2s}
+.dir:hover{transform:translateY(-3px)}
+.dir.on{background:var(--y500);color:var(--p900);box-shadow:0 7px 0 #a8821c;animation:glow 1.6s infinite}
+.dir.seen:not(.on){background:var(--p500)}
+.dir.n{top:0;left:50%;margin-left:-75px}.dir.s{bottom:0;left:50%;margin-left:-75px}
+.dir.e{right:0;top:50%;margin-top:-48px}.dir.w{left:0;top:50%;margin-top:-48px}
+.nb-out{flex:1;min-height:0;padding:20px 30px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.nb-dir{font:800 40px var(--f-head);color:var(--root)}
+.nb-list{display:flex;flex-wrap:wrap;gap:12px}
+.nb-chip{font:700 38px var(--f-text);background:var(--y200);border:3px solid var(--y300);border-radius:99px;padding:2px 26px;animation:popIn .45s both}
+.nb-chip.water{background:#dff0f6;border-color:var(--sea2);color:#1572a1}
+.nb-empty{font:700 34px/1.6 var(--f-text);color:var(--p500);text-align:center}
+
+/* — بطاقات المعلومات (المسطحات) — */
+.info-list{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.info{padding:16px 28px;display:flex;gap:20px;align-items:center;opacity:.45;transition:opacity .4s, border-color .4s}
+.info.open{opacity:1;border-color:var(--sea2);background:#f3fafc}
+.info .i-ico{font-size:64px}
+.info .i-name{font:800 40px var(--f-head);color:#1572a1}
+.info .i-txt{font:700 32px/1.6 var(--f-text);display:none}
+.info.open .i-txt{display:block;animation:popIn .45s both}
+.info .i-q{font:700 30px var(--f-ui);color:var(--p500)}
+.info.open .i-q{display:none}
+
+.pl .info-list{gap:12px}
+.pl .info{padding:10px 22px;gap:16px}
+.pl .info .i-ico{font-size:50px}
+.pl .info .i-name{font-size:34px}
+.pl .info .i-txt{font-size:27px;line-height:1.55}
+.pl .info .i-q{font-size:26px}
+
+/* — نشاط ١ (أكملي) — */
+.fill-list{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.fr-ans.many .blank{min-width:112px;height:52px;font-size:28px;padding:0 12px}
+.fill-row{padding:10px 24px}
+.a1 .map{max-width:44%}
+.a1 .panel{gap:12px}
+.fr-txt{font:700 32px/1.55 var(--f-text)}
+.fr-ans{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.blank{min-width:220px;height:58px;border:4px dashed var(--p300);border-radius:20px;font:700 32px var(--f-text);
+  color:var(--p500);background:var(--p100);transition:transform .15s;padding:0 18px}
+.blank:hover{transform:scale(1.04)}
+.blank.open{border-style:solid;border-color:var(--ok);color:var(--ok);background:var(--okbg);animation:popIn .45s}
+.fact{padding:10px 26px;font:700 31px/1.65 var(--f-text);text-align:center;background:var(--p100);border-color:var(--p300);color:var(--p900);cursor:pointer}
+.fact b{color:var(--root)}
+.fact .fx-h{display:inline-block;background:var(--p300);border-radius:14px;padding:0 14px;color:transparent;transition:all .4s}
+.fact.open .fx-h{background:var(--y300);color:var(--root)}
+
+/* — نشاط ٢ (حدّدي الموقع) — */
+.loc-list{flex:1;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.loc{display:flex;align-items:center;gap:20px;padding:16px 26px;font:700 42px var(--f-text);text-align:start;transition:all .25s}
+.loc .l-ico{font-size:56px}
+.loc .l-st{margin-inline-start:auto;font:800 28px var(--f-ui);color:var(--p500)}
+.loc.on{border-color:var(--y500);background:var(--y100);transform:scale(1.03);box-shadow:0 0 0 6px rgba(212,166,42,.25)}
+.loc.ok{border-color:var(--ok);background:var(--okbg)}
+.loc.ok .l-st{color:var(--ok)}
+
+/* — السؤال الفردي — */
+.single{flex:1;display:flex;gap:36px;min-height:0}
+.picker{width:420px;padding:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center}
+.pk-t{font:800 36px var(--f-ui);color:var(--p800)}
+.pk-num{width:230px;height:230px;border-radius:50%;display:grid;place-items:center;font:900 110px var(--f-ui);color:var(--p800);
+  background:radial-gradient(circle at 35% 30%, #fff, var(--y200));border:8px solid var(--y500);box-shadow:var(--shadow)}
+.pk-num.spin{animation:pulse .12s ease infinite alternate}
+@keyframes pulse{to{transform:scale(1.05)}}
+.pk-num.got{border-color:var(--p600);animation:popIn .5s}
+.pk-set{display:flex;align-items:center;gap:12px;font:700 26px var(--f-ui);color:var(--p500)}
+.sq{flex:1;min-width:0;display:flex;flex-direction:column;gap:20px}
+.sq-q{padding:22px 38px;font:700 46px/1.7 var(--f-text);text-align:center}
+.opts{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-content:center}
+.opt{display:flex;align-items:center;gap:22px;font:700 46px/1.45 var(--f-text);background:#fff;color:var(--ink);
+  border:4px solid var(--p200);border-radius:28px;padding:14px 26px;box-shadow:0 8px 0 var(--p200), var(--shadow);
+  transition:transform .15s, border-color .2s, background .2s;text-align:start}
+.opt:hover{transform:translateY(-4px);border-color:var(--p500)}
+.opt .o-k{font:900 34px var(--f-ui);width:70px;height:70px;flex:none;display:grid;place-items:center;background:var(--p100);border-radius:20px;color:var(--p700)}
+.opt.correct{background:var(--okbg);border-color:var(--ok);box-shadow:0 8px 0 #9bd9b8}
+.opt.wrong{background:var(--badbg);border-color:var(--bad);opacity:.75;box-shadow:0 8px 0 #f2b6b0}
+
+/* — مهارات التفكير العليا — */
+.hots{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:24px}
+.hc{padding:22px 30px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.hc-tag{align-self:flex-start;font:800 26px var(--f-ui);color:#fff;background:var(--root);border-radius:99px;padding:4px 20px}
+.hc-q{font:700 36px/1.6 var(--f-text);color:var(--p900);flex:1}
+.hc-a{display:none;font:700 30px/1.6 var(--f-text);color:var(--p800);background:var(--y100);border:3px solid var(--y300);border-radius:20px;padding:10px 20px}
+.hc.open .hc-a{display:block;animation:popIn .5s both}
+.hc.open .hc-btn{display:none}
+.hc-btn{align-self:flex-end}
+
+/* — المادة ٣٤ — */
+.art{flex:1;display:flex;gap:40px;min-height:0}
+.doc{flex:1.15;position:relative;padding:0;overflow:hidden;display:flex;flex-direction:column;background:#fffdf6;border:4px solid var(--y300)}
+.doc-h{background:var(--p800);color:#fff;padding:22px 40px;display:flex;align-items:center;gap:22px}
+.doc-h .seal{width:96px;height:96px;flex:none}
+.doc-h b{display:block;font:700 44px var(--f-head)}
+.doc-h small{font:700 28px var(--f-ui);color:var(--y300)}
+.doc-b{flex:1;padding:34px 50px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.doc-num{align-self:center;font:800 40px var(--f-head);color:var(--root);border-bottom:5px double var(--y500);padding:0 24px 6px}
+.doc-txt{font:700 50px/1.95 var(--f-text);text-align:center;color:var(--p900)}
+.doc-txt .k{cursor:pointer;border-radius:12px;padding:0 6px;transition:background .3s}
+.doc-txt .k.on{background:var(--y300)}
+.art-side{flex:1;display:flex;flex-direction:column;gap:18px;min-width:0}
+.ideas{display:flex;flex-direction:column;gap:12px}
+.idea{font:700 34px/1.5 var(--f-text);background:#fff;border:3px solid var(--p200);border-radius:22px;padding:8px 22px;animation:popIn .45s both}
+
+/* — تحدي الدقيقة — */
+.ch{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:30px}
+.ch-ico{font-size:120px;animation:bob 3s ease-in-out infinite}
+.ch-desc{margin:0;font:700 44px/1.7 var(--f-text);text-align:center;color:var(--p800)}
+.ch-top{display:flex;gap:26px}
+.stat{font:800 40px var(--f-ui);background:var(--p100);color:var(--p800);border-radius:99px;padding:10px 34px;border:3px solid var(--p200)}
+.stat.low{background:var(--badbg);color:var(--bad);border-color:#f2b6b0}
+.ch-word{font:700 110px/1.5 var(--f-head);color:var(--p800);background:#fff;border:5px solid var(--p200);border-radius:40px;
+  padding:6px 90px;min-width:680px;text-align:center;box-shadow:var(--shadow)}
+.ch-word small{display:block;font:700 34px var(--f-ui);color:var(--bad)}
+.ch-word.ok{border-color:var(--ok);background:var(--okbg)}
+.ch-word.bad{border-color:var(--bad);background:var(--badbg);animation:shake .45s}
+.ch-cats{display:flex;gap:24px}
+.cat{border:0;font:800 46px/1.5 var(--f-ui);padding:16px 40px;border-radius:30px;transition:transform .15s;color:#fff}
+.cat:hover{transform:translateY(-4px)} .cat:active{transform:scale(.94)}
+.cat-0{background:var(--p700);box-shadow:0 8px 0 var(--p900)}
+.cat-1{background:var(--y500);color:var(--p900);box-shadow:0 8px 0 #a8821c}
+.cat-2{background:var(--root);box-shadow:0 8px 0 #7d2d1b}
+.cat-3{background:#1572a1;box-shadow:0 8px 0 #0c4a6a}
+.ch-result{font:700 70px/1.6 var(--f-text);color:var(--p800);text-align:center}
+.ch-result b{color:var(--root)}
+
+/* — الاختبار الختامي — */
+.quiz{flex:1;display:flex;flex-direction:column;gap:20px;min-height:0}
+.qz-top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.qz-dots{display:flex;gap:10px}
+.qz-dots i{width:28px;height:28px;border-radius:50%;background:var(--p200);border:3px solid #fff;box-shadow:0 0 0 2px var(--p200)}
+.qz-dots i.cur{background:var(--y500)}
+.qz-dots i.ok{background:var(--ok)}
+.qz-dots i.no{background:var(--bad)}
+.qz-q{padding:24px 44px;font:700 52px/1.7 var(--f-text);text-align:center}
+.qz-next{display:flex;justify-content:center;min-height:90px;align-items:center}
+.qz-end{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center}
+
+/* — التقييم الذاتي + الواجب — */
+.exit{flex:1;display:flex;gap:40px;min-height:0}
+.self{flex:1.1;padding:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.self-q{margin:0;font:700 46px/1.6 var(--f-text);text-align:center;color:var(--p800)}
+.emos{display:flex;gap:24px}
+.emo{width:230px;padding:18px 10px;border-radius:30px;background:#fff;border:4px solid var(--p200);display:flex;flex-direction:column;
+  align-items:center;gap:6px;transition:transform .15s;box-shadow:0 7px 0 var(--p200)}
+.emo:hover{transform:translateY(-5px)} .emo:active{transform:scale(.94)}
+.emo .e{font-size:92px;line-height:1.2}
+.emo .l{font:700 30px var(--f-text);color:var(--ink)}
+.emo .c{font:900 40px var(--f-ui);color:var(--p700)}
+.hw{flex:1;padding:30px 40px;display:flex;flex-direction:column;gap:18px;background:var(--y100);border-color:var(--y300)}
+.hw h3{margin:0;font:700 48px/1.6 var(--f-head);color:var(--p800)}
+.hw ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px}
+.hw li{font:700 38px/1.7 var(--f-text);display:flex;gap:16px}
+.hw li .n{width:52px;height:52px;flex:none;border-radius:50%;background:var(--p600);color:#fff;display:grid;place-items:center;font:900 28px var(--f-ui);margin-top:10px}
+
+/* — الختام — */
+.closing{flex:1;display:flex;align-items:center;justify-content:center;gap:60px}
+.medal{width:430px;flex:none;animation:bob 4s ease-in-out infinite}
+.slide.active .medal{animation:medalIn 1.2s .3s cubic-bezier(.3,1.4,.5,1) both, bob 4s 1.5s ease-in-out infinite}
+@keyframes medalIn{from{transform:scale(0) rotate(-200deg)}to{transform:none}}
+.cl-txt{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;max-width:1000px}
+.cl-title{margin:0;font:900 96px/1.4 var(--f-head);color:var(--p800);text-shadow:6px 6px 0 var(--y300)}
+.cl-msg{margin:0;font:700 46px/1.8 var(--f-text);color:var(--p700)}
+.cl-quote{font:800 36px var(--f-ui);background:var(--y200);color:var(--p900);padding:14px 44px;border-radius:99px;border:3px solid var(--y300)}
+
+/* =====================================================================
+   8) المؤثرات + الجوال
+   ===================================================================== */
+#fx{position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden}
+.fly{position:absolute;line-height:1;will-change:transform,opacity}
+.conf{position:absolute;will-change:transform,opacity}
+:root{--sat:env(safe-area-inset-top,0px);--sar:env(safe-area-inset-right,0px);--sab:env(safe-area-inset-bottom,0px);--sal:env(safe-area-inset-left,0px)}
+html,body{height:100dvh}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+#stage{will-change:transform}
+body.phone #controls button{white-space:nowrap;font-size:36px;padding:10px 30px}
+body.phone #controls #cClap{font-size:44px;padding:4px 28px}
+body.phone #controls #cFull{font-size:44px;padding:4px 24px}
+body.side #controls{position:fixed;top:50%;bottom:auto;transform:translate(-50%,-50%);flex-direction:column;gap:8px;padding:8px 6px;border-radius:30px}
+body.side.idle #controls{opacity:1;transform:translate(-50%,-50%);pointer-events:auto}
+body.side #controls button{font-size:0;padding:0;width:var(--cw,52px);height:var(--cw,52px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+body.side #controls button::before{font-size:24px;font-weight:900}
+body.side #cNext{order:1;background:var(--y500)!important;color:var(--p900)} body.side #cNext::before{content:'→'}
+body.side #cNum{order:2;min-width:0!important;height:auto!important} body.side #cNum::before{content:attr(data-n);font-size:13px!important}
+body.side #cPrev{order:3} body.side #cPrev::before{content:'←'}
+body.side #cClap{order:4;font-size:0!important} body.side #cClap::before{content:'👏'}
+body.side #controls #cFull{order:5;font-size:0} body.side #cFull::before{content:"⛶"}
+#rotate{display:none}
+@media (orientation:portrait) and (pointer:coarse) and (max-width:820px){
+  #rotate{display:flex;position:fixed;inset:0;z-index:1000;background:var(--frame);flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;
+    padding:24px;font:800 24px/1.6 var(--f-ui);color:var(--p800)}
+  #rotate .r-ico{font-size:84px;animation:rot 2.2s ease-in-out infinite}
+  #rotate small{font-weight:600;font-size:17px;opacity:.85}
+}
+@keyframes rot{0%,25%{transform:rotate(0)}55%,100%{transform:rotate(-90deg)}}
+#toast{position:fixed;left:50%;bottom:calc(14px + var(--sab));transform:translate(-50%,20px);z-index:1001;max-width:min(92vw,620px);
+  background:rgba(11,40,28,.95);color:#fff;font:700 15px/1.6 var(--f-ui);padding:12px 18px;border-radius:16px;text-align:center;opacity:0;pointer-events:none;transition:all .35s ease}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important}}
+
+/* =====================================================================
+   9) أنماط درس التأسيس
+   ===================================================================== */
+/* الغلاف */
+.fcover .cv-text{flex:1;min-width:0}
+.fc-t1{font-size:80px !important;line-height:1.35 !important}
+.fc-t2{font:900 120px/1.2 var(--f-head);color:#fff;background:linear-gradient(180deg,var(--p600),var(--p800));padding:0 60px 14px;border-radius:30px;
+  box-shadow:0 10px 0 var(--p900);text-shadow:4px 4px 0 rgba(0,0,0,.2)}
+.fc-art{flex:none;width:620px;height:100%;position:relative;display:flex;align-items:flex-end;justify-content:center}
+.arch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:420px;height:600px;border-radius:215px 215px 24px 24px;overflow:hidden;
+  border:10px solid var(--y500);box-shadow:0 0 0 6px #fff, 0 22px 40px rgba(90,60,20,.3);background:#fff}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:62% 20%}
+.fc-masmak{position:relative;width:520px;margin-bottom:-20px;z-index:2;filter:drop-shadow(0 10px 14px rgba(90,60,20,.25))}
+
+/* صورة بإطار بولارويد */
+.polaroid{background:#fff;padding:16px 16px 54px;border-radius:10px;box-shadow:0 18px 34px rgba(0,0,0,.22);rotate:var(--r,0deg);position:relative;
+  display:flex;flex-direction:column;align-items:center;gap:8px}
+.polaroid img{width:100%;height:100%;object-fit:cover;border-radius:4px;display:block}
+.polaroid span{position:absolute;bottom:12px;font:800 28px var(--f-ui);color:var(--p800)}
+
+/* الخط الزمني */
+.tl{flex:1;min-height:0;display:flex;gap:44px}
+.tl-main{flex:1;display:flex;flex-direction:column;gap:30px;min-width:0}
+.tl-line{position:relative;display:flex;justify-content:space-between;padding:0 30px}
+.tl-line::before{content:'';position:absolute;left:90px;right:90px;top:62px;border-top:8px dashed var(--y500)}
+.tl-node{position:relative;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:6px;width:240px;transition:transform .2s}
+.tl-node:hover{transform:translateY(-5px)}
+.tl-dot{width:124px;height:124px;border-radius:50%;background:#fff;border:6px solid var(--p300);display:grid;place-items:center;font-size:62px;box-shadow:var(--shadow);transition:all .3s}
+.tl-node.seen .tl-dot{border-color:var(--p600)}
+.tl-node.on .tl-dot{background:var(--y200);border-color:var(--y500);transform:scale(1.1);animation:glow 1.6s infinite}
+.tl-year{font:900 32px var(--f-ui);color:var(--root)}
+.tl-name{font:800 30px var(--f-ui);color:var(--p800)}
+.tl-card{flex:1;min-height:0;padding:30px 50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}
+.tl-ico{font-size:90px}
+.tl-title{font:900 50px var(--f-head);color:var(--p800)}
+.tl-txt{font:700 42px/1.75 var(--f-text)}
+.tl .polaroid{width:440px;height:600px;align-self:center}
+
+/* خريطة الرحلة */
+.rt .map{max-width:50%}
+.rmap .c{fill:var(--land)}
+.rmap .c.ksa-r{fill:#f7efdc}
+.rmap text.sand{font-size:32px;fill:#9a6b2c;stroke:#f7ecd2;font-weight:900}
+.rmap text.ctx{font-size:28px}
+.rmap text.wt{font-size:32px}
+.rt-path{fill:none;stroke-width:9;stroke-linecap:round;filter:drop-shadow(0 3px 2px rgba(0,0,0,.25))}
+.rt-path.back{stroke-dasharray:16 14 !important;opacity:.8}
+.rt-path.branch{stroke-width:5;stroke-dasharray:6 10;opacity:.7}
+.map text.rt-num{fill:#fff;stroke:none;font-size:20px;font-weight:900}
+.map text.rt-lbl{font-size:30px;fill:var(--p900);stroke-width:7px}
+.rt-camel-i{text-anchor:middle;stroke:none !important;paint-order:normal !important}
+.rt-chips{display:flex;flex-wrap:wrap;gap:10px}
+.rt-chip{display:flex;align-items:center;gap:10px;font:800 26px var(--f-ui);color:var(--p800);background:#fff;border:3px solid var(--p200);border-radius:99px;padding:6px 18px 6px 10px;transition:all .2s}
+.rt-chip .rt-n{width:38px;height:38px;border-radius:50%;background:var(--p100);display:grid;place-items:center;font-weight:900}
+.rt-chip.on{border-color:var(--y500);background:var(--y100)}
+.rt-chip.on .rt-n{background:var(--y500);color:var(--p900)}
+.rt-info{flex:1;min-height:0;padding:26px 36px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.rt-head{display:flex;align-items:center;gap:16px}
+.rt-head b{font:900 46px var(--f-head);color:var(--p800)}
+.rt-ico{font-size:64px}
+.rt-men{margin-inline-start:auto;font:900 34px var(--f-ui);background:var(--y200);border:3px solid var(--y500);color:var(--p900);border-radius:99px;padding:4px 22px;direction:rtl}
+.rt-txt{font:700 40px/1.75 var(--f-text)}
+
+/* مشهد المصمك */
+.mk{flex:1;min-height:0;display:flex;gap:36px}
+.mk-scene{flex:1.1;position:relative;border-radius:34px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:0 30px 20px;
+  border:5px solid #fff;box-shadow:0 0 0 3px var(--y300), var(--shadow);transition:background 1.4s ease}
+.mk-scene.sky-night{background:linear-gradient(#0b1d3a,#24406b 70%,#c9a874)}
+.mk-scene.sky-dawn{background:linear-gradient(#3a3f7a,#e98a5a 55%,#f6c98a 80%,#c9a874)}
+.mk-scene.sky-day{background:linear-gradient(#7cc4e8,#cde9f4 70%,#e8d3a6)}
+.mk-svg{width:100%;max-height:92%;overflow:visible}
+.mk-moon,.mk-sun{position:absolute;border-radius:50%;transition:all 1.4s ease}
+.mk-moon{width:90px;height:90px;top:50px;right:80px;background:#fff8d6;box-shadow:0 0 40px #fff8d6, inset -18px -6px 0 #e9dca6}
+.mk-sun{width:130px;height:130px;left:70px;top:110%;background:radial-gradient(#fff6c8,#f6b54a);box-shadow:0 0 70px #f6b54a}
+.sky-night .mk-sun{top:110%}
+.sky-dawn .mk-moon,.sky-day .mk-moon{top:-140px;opacity:0}
+.sky-dawn .mk-sun{top:52%}
+.sky-day .mk-sun{top:40px}
+.mm-flag{transition:opacity .4s}
+.mm-cloth{animation:flagWave 1.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:left center}
+@keyframes flagWave{to{transform:skewY(-5deg) scaleX(.94)}}
+.mk-side{flex:1;display:flex;flex-direction:column;gap:20px;min-width:0}
+.mk-txt{flex:1;padding:30px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center}
+.mk-ico{font-size:96px}
+.mk-t{font:700 44px/1.8 var(--f-text)}
+.mk-foot{display:flex;align-items:center;justify-content:space-between}
+
+/* صفات المؤسس */
+.traits{flex:1;min-height:0;display:flex;gap:40px}
+.stackwrap{width:470px;position:relative;cursor:pointer;flex:none}
+.polaroid.stack{position:absolute;inset:20px 20px 30px;transition:transform .45s ease, opacity .45s}
+.polaroid.stack.away{transform:translateX(-140%) rotate(-25deg);opacity:0}
+.tr-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:24px}
+.tr-grid .flip{width:100%;height:100%}
+
+/* أكملي الفراغ */
+.fq{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.fq-row{display:flex;align-items:center;gap:22px;padding:12px 30px}
+.fq-t{font:700 42px/1.9 var(--f-text)}
+.fq-b{min-width:200px;height:66px;margin:0 8px;vertical-align:middle}
+
+/* رتّبي الأحداث */
+.so{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-content:center}
+.so-item{display:flex;align-items:center;gap:20px;text-align:start;font:700 38px/1.5 var(--f-text);color:var(--ink);background:#fff;border:4px solid var(--p200);
+  border-radius:26px;padding:14px 22px;box-shadow:0 7px 0 var(--p200);transition:transform .15s, border-color .2s, background .2s}
+.so-item:hover{transform:translateY(-3px);border-color:var(--p500)}
+.so-n{width:64px;height:64px;flex:none;border-radius:50%;background:var(--p100);display:grid;place-items:center;font:900 32px var(--f-ui);color:var(--p500)}
+.so-item.ok{background:var(--okbg);border-color:var(--ok);box-shadow:0 7px 0 #9bd9b8}
+.so-item.ok .so-n{background:var(--ok);color:#fff;animation:popIn .4s}
+
+/* بطاقات الأرقام */
+.flip.num .f-txt{font:900 92px/1.2 var(--f-ui);color:var(--root)}
+
+/* الختام */
+.fc-frame{width:470px;height:600px;flex:none;border-radius:24px;overflow:hidden;border:12px solid var(--y500);box-shadow:0 0 0 6px #fff, 0 24px 44px rgba(90,60,20,.35)}
+.fc-frame img{width:100%;height:100%;object-fit:cover}
+
+/* آلة الزمن */
+.tw-wrap{position:absolute;right:200px;top:50%;width:640px;height:640px;margin-top:-300px;z-index:2;transition:all 1s ease}
+.slide.active .tw-wrap{animation:globeIn 1.4s .9s cubic-bezier(.2,.9,.3,1.2) backwards}
+.tw{width:100%;height:100%;touch-action:none;cursor:grab;filter:drop-shadow(0 0 30px rgba(111,245,192,.45))}
+.tw:active{cursor:grabbing}
+.tw .tw-lbl{font:800 26px var(--f-ui);fill:#cfeee0;text-anchor:middle}
+.tw .tw-year{font:900 140px var(--f-ui);fill:#fff;text-anchor:middle}
+.tw .tw-h{font:800 44px var(--f-ui);fill:#6ff5c0;text-anchor:middle}
+.tw.near .tw-year{fill:#f1c84b}
+.tw-goal{opacity:0;transition:opacity .4s}
+.tw.hint .tw-goal{opacity:1;animation:blink 1s steps(2) infinite}
+.tw-swirl{transform-origin:center;animation:spin 8s linear infinite}
+.tw-ctrl{position:absolute;left:50%;bottom:-26px;transform:translateX(-50%);display:flex;align-items:center;gap:18px}
+.tw-go{width:120px;height:120px;border-radius:50%;border:6px solid #fff;background:radial-gradient(circle at 35% 30%,#ffe08a,#d4a62a);font-size:58px;
+  box-shadow:0 8px 0 #a8821c, 0 0 30px rgba(241,200,75,.6);transition:transform .15s}
+.tw-go:hover{transform:scale(1.07)} .tw-go:active{transform:scale(.93)}
+.tw-n{font-size:28px !important;color:#6ff5c0}
+.tw-hand{top:30%;left:58%}
+.tb-flash{position:absolute;inset:0;background:radial-gradient(circle,#fff,rgba(111,245,192,.6) 40%,transparent 70%);opacity:0;pointer-events:none;z-index:6}
+.tb-flash.on{animation:flashT 1.6s ease}
+@keyframes flashT{0%{opacity:0;transform:scale(.2)}40%{opacity:1;transform:scale(1.6)}100%{opacity:0;transform:scale(2)}}
+.tb.travel .tw-wrap{transform:scale(.25) rotate(360deg);opacity:0;pointer-events:none}
+.tb.travel .tw-swirl{animation-duration:.6s}
+.tb-past{position:absolute;right:160px;bottom:40px;width:900px;height:640px;z-index:1;opacity:0;transform:scale(.6);transition:all 1.2s cubic-bezier(.2,.9,.3,1.2);pointer-events:none}
+.tb.arrived .tb-past{opacity:1;transform:none}
+.tb-masmak{position:absolute;left:0;bottom:0;width:620px;filter:drop-shadow(0 20px 20px rgba(0,0,0,.4))}
+.tb-photo{position:absolute;right:0;top:0;width:330px;height:430px;border-radius:165px 165px 20px 20px;overflow:hidden;border:9px solid #f1c84b;box-shadow:0 0 40px rgba(241,200,75,.7)}
+.tb-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.tb.arrived .ar-floor{background-image:linear-gradient(rgba(241,200,75,.35) 2px, transparent 2px), linear-gradient(90deg, rgba(241,200,75,.35) 2px, transparent 2px)}
+.tb.arrived{background:radial-gradient(ellipse at 60% 40%, #5a3d1a 0%, #241505 75%)}
+.tb.arrived.cam{background:#000}
+
+</style>
+</head>
+<body>
+<div id="rotate" role="alert"><div class="r-ico">📱</div><div>لُفّي الجوال بالعرض لعرض الدرس</div><small>العرض مصمَّم للشاشة الأفقية</small></div>
+<div id="toast" role="status"></div>
+
+<!-- تعريفات مشتركة للخرائط -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cfe9f1"/><stop offset="1" stop-color="#a9d6e5"/></linearGradient>
+    <pattern id="seaWaves" width="60" height="30" patternUnits="userSpaceOnUse"><path d="M0 15 Q15 5 30 15 T60 15" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/></pattern>
+  </defs>
+</svg>
+
+<div id="stage">
+  <svg id="wave" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><path id="wavePath" fill="#e2c98f"/></svg>
+  <div id="paper"></div>
+
+  <!-- بوصلة زخرفية -->
+  <svg class="deco deco-compass" viewBox="-60 -60 120 120" aria-hidden="true">
+    <circle r="54" fill="#fffcf3" stroke="#fff" stroke-width="6"/>
+    <circle r="54" fill="none" stroke="#1b8a5a" stroke-width="3"/>
+    <circle r="44" fill="none" stroke="#d4a62a" stroke-width="2" stroke-dasharray="3 5"/>
+    <path d="M0 -46 L9 0 L0 46 L-9 0Z" fill="#1b8a5a"/><path d="M-46 0 L0 9 L46 0 L0 -9Z" fill="#d4a62a"/>
+    <path d="M0 -46 L9 0 L0 0Z" fill="#0f5132"/><path d="M46 0 L0 9 L0 0Z" fill="#a8821c"/>
+    <circle r="6" fill="#fff" stroke="#0f5132" stroke-width="2"/>
+  </svg>
+  <!-- نخلة زخرفية -->
+  <svg class="deco deco-palm" viewBox="0 0 150 150" aria-hidden="true">
+    <ellipse cx="75" cy="140" rx="60" ry="9" fill="#d9bd7c"/>
+    <path d="M78 140 C80 110 74 85 82 58" stroke="#8a5a2b" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M78 140 C80 110 74 85 82 58" stroke="#a87442" stroke-width="10" fill="none" stroke-dasharray="4 7"/>
+    <g fill="#1b8a5a" stroke="#fff" stroke-width="3">
+      <path d="M82 58 C60 40 30 44 14 64 C38 52 60 54 82 58Z"/>
+      <path d="M82 58 C70 30 44 18 22 26 C46 30 66 42 82 58Z"/>
+      <path d="M82 58 C92 30 118 20 138 30 C114 32 96 44 82 58Z"/>
+      <path d="M82 58 C106 44 132 50 146 70 C122 58 102 58 82 58Z"/>
+      <path d="M82 58 C84 34 80 14 70 4 C90 16 92 38 82 58Z"/>
+    </g>
+    <circle cx="78" cy="64" r="5" fill="#b5452c"/><circle cx="88" cy="66" r="5" fill="#b5452c"/><circle cx="83" cy="72" r="5" fill="#b5452c"/>
+  </svg>
+
+  <div id="progress"><i></i><b>🧭</b></div>
+  <div id="slides"></div>
+  <div id="counter"></div>
+
+  <div id="hint"><span><b>Space</b> = التالي</span> &nbsp;|&nbsp; <span><b>← →</b> للتنقل</span> &nbsp;|&nbsp; <span><b>ت</b> = تصفيق</span></div>
+
+  <nav id="controls" aria-label="التحكم بالعرض">
+    <button id="cPrev" type="button" title="السابق (←)">← السابق</button>
+    <button id="cNum" type="button" tabindex="-1"></button>
+    <button id="cNext" type="button" title="التالي (→ / Space)">التالي →</button>
+    <button id="cClap" type="button" title="تصفيق (ت)">👏</button>
+    <button id="cFull" type="button" title="ملء الشاشة">⛶</button>
+  </nav>
+</div>
+
+<div id="fx"></div>
+
+<script>
+'use strict';
+
+/* ╔═══════════════════════════════════════════════════════════════════╗
+   ║                      ⚙️ إعدادات الدرس                              ║
+   ║  عدّلي النصوص بين علامات التنصيص فقط.                              ║
+   ║  • ضعي الكلمة بين نجمتين *هكذا* لتظليلها.                          ║
+   ║  • الصور داخل مجلد images بجانب هذا الملف.                         ║
+   ╚═══════════════════════════════════════════════════════════════════╝ */
+
+const LESSON = {
+  title: 'المملكة العربية السعودية: التأسيس',
+  volume: 0.8,
+  correctMsg: 'أحسنتِ يا مؤرّخة! 👏',
+  wrongMsg:   'حاولي مرة أخرى 💚',
+  audioDir: 'audio/',
+};
+
+const SLIDES = [
+
+  /* ① الغلاف */
+  { type:'fcover', anim:'zoom',
+    pill:'الوحدةُ الخامسةُ • الدراساتُ الاجتماعيّة',
+    greeting:'صباحُ المجدِ يا حفيداتِ المؤسِّس 🌴',
+    kicker:'الدرسُ التاسعُ والعشرون',
+    title:'المملكةُ العربيّةُ السعوديّة',
+    title2:'التأسيس',
+    subtitle:'على خُطى الملكِ عبدالعزيز — رحمه الله',
+    meta:'{date}',
+    photo:'images/king-5.jpg' },
+
+  /* ② النشيد الوطني (يقرأ anthem.m4a بجانب الملف أو داخل مجلد audio) */
+  { type:'anthem', anim:'fade', strategy:'🇸🇦 النشيدُ الوطني',
+    title:'نقفُ لنشيدِ وطنِنا',
+    note:'قِفي باعتزازٍ.. ورَدِّدي مع زميلاتِك 💚',
+    audio:'anthem',
+    lines:['سارعي للمجدِ والعلياء','مجّدي لخالقِ السّماء','وارفعي الخفّاقَ أخضر','يحملُ النّورَ المسطّر',
+           'ردّدي: اللهُ أكبر','يا موطني','موطني.. عشتَ فخرَ المسلمين','عاشَ المليك.. للعَلَمِ والوطن'] },
+
+  /* ③ سؤال تشخيصي قبلي */
+  { type:'tf', anim:'slide', strategy:'🩺 سؤالٌ تشخيصيٌّ قبليّ',
+    title:'ماذا أعرفُ عن تأسيسِ وطني؟',
+    items:[
+      { t:'الملكُ عبدالعزيزُ هو مؤسّسُ المملكةِ العربيّةِ السعوديّة.', a:true,  exp:'✔ صحيح، رحمه الله.' },
+      { t:'عاصمةُ المملكةِ العربيّةِ السعوديّةِ هي الرياض.',            a:true,  exp:'✔ صحيح، واستردادُها كان بدايةَ التأسيس.' },
+      { t:'يقعُ قصرُ المصمكِ التاريخيُّ في مدينةِ جدّة.',               a:false, exp:'✘ يقعُ قصرُ المصمكِ في *الرياض*.' },
+      { t:'المملكةُ العربيّةُ السعوديّةُ اليومَ هي الدولةُ السعوديّةُ الأولى.', a:false, exp:'✘ هي *الدولةُ السعوديّةُ الثالثة*.' },
+    ] },
+
+  /* ⑤ الاستراتيجية: على خُطى المؤسِّس (رحلة عبر الزمن) */
+  { type:'stations', anim:'slide', strategy:'⏳ على خُطى المؤسِّس',
+    title:'محطّاتُ رحلتي عبرَ الزمن',
+    mission:'«أنتِ *مؤرّخةٌ صغيرة*، ركبتِ آلةَ الزمنِ لتسيري على خُطى الملكِ عبدالعزيز، وتشهدي يومَ *استردادِ الرياض*»',
+    items:[
+      { icon:'🏠', text:'أتعرّفُ على الأحوالِ قبلَ الاسترداد' },
+      { icon:'🐎', text:'أتتبّعُ المحاولةَ الأولى' },
+      { icon:'🗺️', text:'أتتبّعُ رحلةَ استردادِ الرياض' },
+      { icon:'🏆', text:'أستنتجُ صفاتِ المؤسِّس', final:true },
+    ] },
+
+  /* ⑥ المحطة ١: قبل الاسترداد (خط زمني) */
+  { type:'timeline', anim:'slide', strategy:'🏠 المحطّة ١',
+    title:'كيف بدأت الحكاية؟',
+    photo:'images/king-1.jpg',
+    hint:'اضغطي على كلِّ محطّةٍ في الخطِّ الزمنيّ ⏳',
+    items:[
+      { year:'١٣٠٩هـ', icon:'⚔️', title:'معركةُ حُرَيملاء', text:'انتهت *الدولةُ السعوديّةُ الثانية* بعد معركةِ حريملاء سنةَ ١٣٠٩هـ.' },
+      { year:'١٣٠٩هـ', icon:'🐪', title:'الرحيلُ إلى الكويت', text:'رحلَ *الإمامُ عبدالرحمن بن فيصل* وأسرتُه إلى الكويت، ومعه ابنُه عبدالعزيز.' },
+      { year:'في الكويت', icon:'🌙', title:'حُلمُ التأسيس', text:'كان عبدالعزيزُ يتطلّعُ إلى إعادةِ تأسيسِ الدولةِ السعوديّةِ *للمرّةِ الثالثة*، ويخرجُ ليلًا إلى الصحراءِ ليرسمَ خطّةَ استردادِ الرياض.' },
+    ] },
+
+  /* ⑦ المحطة ٢: المحاولة الأولى (خريطة متحركة) */
+  { type:'route', anim:'slide', strategy:'🐎 المحطّة ٢',
+    title:'المحاولةُ الأولى لاستردادِ الرياض',
+    color:'#d97a1e',
+    steps:[
+      { name:'الكويت', lon:47.98, lat:29.37, icon:'🏠',
+        text:'كان الملكُ عبدالعزيزُ في الكويت *يترقّبُ أخبارَ الرياض*، ويتحدّثُ إلى القادمين منها ليعرفَ أوضاعَها.' },
+      { name:'الشوكي', lon:46.6, lat:26.1, icon:'💧',
+        text:'سارَ مع حملةِ الشيخِ *مباركٍ الصباح* على ابنِ رشيد (معركةُ الصريف ١٣١٨هـ) حتى وصلَ *الشوكي*، فاستأذنَ والدَه وانفصلَ برجالِه نحو الرياض.',
+        branch:{ name:'الصريف', lon:44.15, lat:26.33 } },
+      { name:'الرياض', lon:46.71, lat:24.63, icon:'🏰',
+        text:'تمكّنَ من *دخولِ الرياض* وحاصرَ *قصرَ المصمك*.' },
+      { name:'العودة إلى الكويت', lon:47.98, lat:29.37, icon:'↩️', back:true,
+        text:'عندما علمَ *بهزيمةِ الشيخِ مبارك* في الصريف، فكَّ الحصارَ وعادَ إلى الكويت.' },
+    ] },
+
+  /* ⑧ المحطة ٣: رحلة استرداد الرياض (خريطة متحركة) */
+  { type:'route', anim:'slide', strategy:'🗺️ المحطّة ٣',
+    title:'رحلةُ استردادِ الرياض ١٣١٩هـ',
+    color:'#1b8a5a',
+    steps:[
+      { name:'الكويت', lon:47.98, lat:29.37, icon:'🏠', men:'٤٠',
+        text:'بعد أقلَّ من عام وافقَ والدُه بعد تردّد، فخرجَ مع *٤٠ رجلًا*، منهم أخوه *الأميرُ محمد* وابنُ عمِّه *الأميرُ عبدالله بن جلوي*.' },
+      { name:'الصمّان والدهناء', lon:47.55, lat:26.9, icon:'🏜️', men:'+١٠٠٠',
+        text:'اخترقَ صحراءَ *الصمّان والدهناء*، وانضمَّ إليه أهلُ الباديةِ حتى تجاوزَ عددُ رجالِه *ألفَ رجل*.' },
+      { name:'الأحساء', lon:49.59, lat:25.38, icon:'🚫', men:'↓',
+        text:'منعت *الحاميةُ العثمانيّةُ* في الأحساء التموينَ عن القبائلِ التي انضمّت إليه، *فتفرّقَ الناسُ عنه*.' },
+      { name:'رمال الجافورة', lon:50.0, lat:23.7, icon:'🤫', men:'٦٣',
+        text:'غيّرَ استراتيجيّتَه إلى *الخطّةِ السرّيّة*، واختبأ مع *٦٣ رجلًا* في رمالِ الجافورةِ بأطرافِ الربعِ الخالي قرابةَ *شهرين*.' },
+      { name:'ضلع الشقيب', lon:47.0, lat:24.45, icon:'🐪', men:'٢٣', ly:48,
+        text:'سارَ *ليلًا* نحو الرياضِ حتى *ضلعِ الشقيب*، وتركَ فيه الركائبَ مع *٢٣ رجلًا*.' },
+      { name:'الرياض', lon:46.71, lat:24.63, icon:'🏰', men:'٦',
+        text:'وصلَ مزرعةً داخلَ سورِ الرياض وتركَ فيها أخاه محمدًا مع *٣٣ رجلًا*، ثمّ مضى مع *٦ رجال* إلى بيتِ عجلان قربَ المصمك.' },
+    ] },
+
+  /* ⑨ أرقام في رحلة الاسترداد */
+  { type:'flip', anim:'slide', strategy:'🔢 أرقامٌ لا تُنسى',
+    title:'أرقامٌ في رحلةِ الاسترداد',
+    intro:'ماذا يعني كلُّ رقم؟ اقلبي البطاقةَ لتعرفي 🔄',
+    cols:4, numbers:true,
+    cards:[
+      { front:'١٣٠٩هـ', backIcon:'⚔️', back:'نهايةُ الدولةِ السعوديّةِ الثانية (حريملاء)' },
+      { front:'٤٠',     backIcon:'🐪', back:'رجلًا خرجوا معه من الكويت' },
+      { front:'٦٣',     backIcon:'🤫', back:'رجلًا اختبأ معهم في رمالِ الجافورة' },
+      { front:'٢٣',     backIcon:'🐫', back:'رجلًا تركهم مع الركائب في ضلعِ الشقيب' },
+      { front:'٣٣',     backIcon:'🛡️', back:'رجلًا بقوا مع أخيه الأميرِ محمد' },
+      { front:'٦',      backIcon:'🚪', back:'رجالٍ مضى بهم إلى بيتِ عجلان' },
+      { front:'١٣١٩هـ', backIcon:'🏰', back:'٥ شوّال: استردادُ الرياض' },
+      { front:'١٩٠٢م',  backIcon:'📅', back:'١٥ يناير: الموافقُ بالميلادي' },
+    ] },
+
+  /* ⑩ معركة المصمك (مشهد متتابع) */
+  { type:'masmak', anim:'zoom', strategy:'🏰 فجرُ الرياض',
+    title:'معركةُ المصمكِ المشهورة',
+    steps:[
+      { sky:'night', icon:'🌙', text:'أصبحَ الملكُ عبدالعزيزُ *يراقبُ بابَ المصمك*، واستدعى أخاه الأميرَ محمدًا ورجالَه فانضمّوا إليه.' },
+      { sky:'dawn',  icon:'🌅', text:'بعد *صلاةِ الفجر*، وعند خروجِ عجلانَ من القصر، هجمَ عليه الملكُ عبدالعزيزُ ورجالُه.' },
+      { sky:'dawn',  icon:'⚔️', text:'حاولَ عجلانُ العودةَ إلى القصرِ وإغلاقَه، فصارعَه الملكُ عبدالعزيز، وتمكّنَ *الأميرُ عبدالله بن جلوي* من اللحاقِ به والقضاءِ عليه.' },
+      { sky:'day',   icon:'📢', flag:true, text:'أُعلِنَ من أعلى المصمك: «*الحُكمُ لله ثمّ لعبدالعزيز بن عبدالرحمن بن فيصل آل سعود*» في ٥ شوّال ١٣١٩هـ / ١٥ يناير ١٩٠٢م.' },
+      { sky:'day',   icon:'🤝', text:'قَدِمَ *الإمامُ عبدالرحمن* من الكويت وأعلنَ نزولَه عن الإمارةِ لابنِه، *فبايعَه الناسُ* على سنّةِ اللهِ ورسولِه.' },
+    ] },
+
+  /* ⑪ المحطة ٤: صفات المؤسس */
+  { type:'traits', anim:'slide', strategy:'🏆 المحطّة ٤',
+    title:'صفاتٌ صنعت التأسيس',
+    photos:['images/king-1.jpg','images/king-3.jpg','images/king-2.jpg'],
+    items:[
+      { icon:'🤲', name:'الإيمانُ بالله',  text:'نجحَ بفضلِ اللهِ تعالى ثمّ بحكمتِه.' },
+      { icon:'🦁', name:'الشجاعة',        text:'هجمَ على عجلانَ بنفسِه وصارعَه.' },
+      { icon:'🧠', name:'حُسنُ التخطيط',  text:'غيّرَ استراتيجيّتَه إلى الخطّةِ السرّيّة.' },
+      { icon:'⏳', name:'الصبر',          text:'انتظرَ قرابةَ شهرين في رمالِ الجافورة.' },
+      { icon:'💚', name:'برُّ الوالدين',   text:'استأذنَ والدَه الإمامَ عبدالرحمن قبلَ الخروج.' },
+      { icon:'🔥', name:'العزيمة',        text:'لم يستسلمْ بعد المحاولةِ الأولى.' },
+    ] },
+
+  /* ⑫ تقويم تكويني ١: أكملي الفراغ */
+  { type:'fillq', anim:'slide', strategy:'📝 تقويمٌ تكوينيّ',
+    title:'أُكملُ الفراغَ بما يناسب',
+    hint:'اضغطي على الفراغِ بعد أن تُجيبَ الطالبة ✍️',
+    rows:[
+      'انتهت الدولةُ السعوديّةُ الثانيةُ بعد معركةِ [[حريملاء]] سنةَ [[١٣٠٩هـ]].',
+      'رحلَ الإمامُ عبدالرحمن بن فيصل وأسرتُه إلى [[الكويت]].',
+      'اختبأ الملكُ عبدالعزيزُ مع ٦٣ رجلًا في رمالِ [[الجافورة]].',
+      'دارت المعركةُ عند قصرِ [[المصمك]] بعد صلاةِ [[الفجر]].',
+      'استردَّ الملكُ عبدالعزيزُ الرياضَ في ٥ شوّال سنةَ [[١٣١٩هـ]].',
+    ] },
+
+  /* ⑬ تقويم تكويني ٢: رتّبي الأحداث */
+  { type:'sort', anim:'slide', strategy:'📝 تقويمٌ تكوينيّ',
+    title:'أُرتّبُ أحداثَ استردادِ الرياض',
+    hint:'اضغطي على الأحداثِ بالترتيبِ الصحيح: الأوّلُ ثمّ الذي يليه 👆',
+    items:[
+      'الرحيلُ إلى الكويت بعد معركةِ حريملاء',
+      'المحاولةُ الأولى ومحاصرةُ المصمك',
+      'الخروجُ من الكويت مع ٤٠ رجلًا',
+      'الاختباءُ في رمالِ الجافورة',
+      'الوصولُ إلى ضلعِ الشقيب',
+      'معركةُ المصمك وإعلانُ الحكم',
+      'مبايعةُ الناسِ للملكِ عبدالعزيز',
+    ] },
+
+  /* ⑭ سؤال فردي */
+  { type:'single', anim:'zoom', strategy:'🙋‍♀️ سؤالٌ فرديّ',
+    title:'مَن أنا؟',
+    students:30, seconds:30,
+    question:'أنا *أخو الملكِ عبدالعزيز*، فارسٌ مشهورٌ بشجاعتي، ساندتُه في استردادِ الرياض، وبقيتُ مع ٣٣ رجلًا في المزرعة.. فمَن أنا؟',
+    options:['الأميرُ عبدالله بن جلوي','الأميرُ محمد بن عبدالرحمن','الإمامُ عبدالرحمن بن فيصل','الشيخُ مبارك الصباح'], correct:1 },
+
+  /* ⑮ مهارات التفكير العليا */
+  { type:'hots', anim:'slide', strategy:'🧠 مهاراتُ تفكيرٍ عُليا',
+    title:'أفكّرُ في إستراتيجيّةِ المؤسِّس',
+    seconds:60,
+    items:[
+      { tag:'🔍 تحليل',  q:'لماذا غيّرَ الملكُ عبدالعزيزُ إستراتيجيّتَه إلى «الخطّةِ السرّيّة»؟',
+        a:'لأنّ الحاميةَ العثمانيّةَ منعت التموينَ فتفرّقَ الناس؛ فالسرّيّةُ تضمنُ المفاجأةَ وعدمَ انكشافِ الخطّة.' },
+      { tag:'💭 استنتاج', q:'لماذا وزّعَ رجالَه في مجموعاتٍ (٢٣ ثمّ ٣٣ ثمّ ٦)؟',
+        a:'لحمايةِ الركائبِ وتأمينِ طريقِ العودة، وتوزيعِ المهامّ، وتقليلِ احتمالِ انكشافِهم قبلَ الهجوم.' },
+      { tag:'⚖️ تقييم',  q:'أيُّ صفاتِ الملكِ عبدالعزيزِ كانت الأهمَّ في نجاحِه برأيكِ؟ ولماذا؟',
+        a:'إجابةٌ مفتوحة؛ مثل: حُسنُ التخطيطِ والصبر؛ لأنّه انتظرَ الوقتَ المناسبَ ولم يتعجّل بعد فشلِ المحاولةِ الأولى.' },
+      { tag:'🎨 إبداع',  q:'لو كنتِ صحفيّةً سنةَ ١٣١٩هـ، فما العنوانُ الذي تكتبينَه لخبرِ استردادِ الرياض؟',
+        a:'مثل: «فجرٌ جديد.. الرياضُ تعودُ إلى آلِ سعود» • «من المصمكِ بدأت الحكاية».' },
+    ] },
+
+  /* ⑯ مادة من النظام الأساسي للحكم (مرتبطة بالبيعة في الدرس) */
+  { type:'article', anim:'zoom', strategy:'⚖️ المادّة ٦',
+    title:'البيعةُ.. عهدٌ ووفاء',
+    seal:'٦',
+    source:'النظامُ الأساسيُّ للحكم', num:'المادّةُ السادسة',
+    text:'<span class="k">يبايعُ المواطنونَ الملكَ</span> على كتابِ اللهِ تعالى وسنّةِ رسولِه، <span class="k">وعلى السمعِ والطاعة</span> في العُسرِ واليُسر، والمَنشطِ والمَكره.',
+    q:'🤔 ما علاقةُ هذه المادّةِ بدرسِ «التأسيس»؟',
+    a:'بعد استردادِ الرياض *بايعَ الناسُ الملكَ عبدالعزيز* على سنّةِ اللهِ ورسولِه، وما زالَ المواطنونَ يبايعونَ ملوكَ هذه البلادِ على الكتابِ والسنّة.',
+    ideasTitle:'💚 كيف أُعبّرُ عن ولائي لوطني وقيادتي؟',
+    ideas:['🤲 أدعو لوليِّ الأمرِ بالتوفيقِ والسداد','🏛️ أحترمُ الأنظمةَ وألتزمُ بها','📚 أجتهدُ في دراستي لأخدمَ وطني','📵 أحافظُ على وحدةِ وطني ولا أنشرُ الشائعات'] },
+
+  /* ⑰ تحدّي الدقيقة */
+  { type:'challenge', anim:'zoom', strategy:'🏆 التحدّي النهائيّ',
+    title:'تحدّي المؤرّخات',
+    description:'هل هو مكانٌ أم شخصيّةٌ أم تاريخ؟ ⏳<br>صنّفي بسرعةٍ قبل انتهاءِ الوقت!',
+    seconds:60,
+    categories:[ { icon:'📍', label:'مكان' }, { icon:'👤', label:'شخصيّة' }, { icon:'📅', label:'تاريخ' } ],
+    words:[
+      { w:'الكويت', c:0 }, { w:'المصمك', c:0 }, { w:'الجافورة', c:0 }, { w:'ضلع الشقيب', c:0 },
+      { w:'عجلان', c:1 }, { w:'عبدالله بن جلوي', c:1 }, { w:'محمد بن عبدالرحمن', c:1 }, { w:'الإمام عبدالرحمن', c:1 },
+      { w:'١٣١٩هـ', c:2 }, { w:'١٩٠٢م', c:2 }, { w:'١٣٠٩هـ', c:2 }, { w:'١٣١٨هـ', c:2 },
+    ] },
+
+  /* ⑱ التقويم الختامي */
+  { type:'quiz', anim:'slide', strategy:'✅ تقويمٌ ختاميّ',
+    title:'أختبرُ نفسي',
+    items:[
+      { q:'انتهت الدولةُ السعوديّةُ الثانيةُ بعد معركة:', o:['الصريف','حُرَيملاء','المصمك','الشوكي'], c:1 },
+      { q:'رحلَ الإمامُ عبدالرحمن بن فيصل وأسرتُه إلى:', o:['الأحساء','القصيم','الكويت','حائل'], c:2 },
+      { q:'عددُ الرجالِ الذين خرجوا مع الملكِ عبدالعزيزِ من الكويت:', o:['٤٠ رجلًا','٦٣ رجلًا','٢٣ رجلًا','٦ رجال'], c:0 },
+      { q:'اختبأ الملكُ عبدالعزيزُ ورجالُه قرابةَ شهرين في رمال:', o:['الدهناء','النفود','الصمّان','الجافورة'], c:3 },
+      { q:'حاكمُ الرياضِ الذي كان ينامُ في حصنِ المصمك:', o:['عجلان','ابنُ رشيد','مباركُ الصباح','ابنُ جلوي'], c:0 },
+      { q:'استردَّ الملكُ عبدالعزيزُ الرياضَ في الخامسِ من شوّال سنة:', o:['١٣٠٩هـ','١٣١٩هـ','١٣١٨هـ','١٣٦٢هـ'], c:1 },
+      { q:'مَن نزلَ عن الإمارةِ للملكِ عبدالعزيزِ بعد الاسترداد؟', o:['الأميرُ محمد بن عبدالرحمن','الشيخُ مبارك الصباح','الإمامُ عبدالرحمن بن فيصل','الأميرُ عبدالله بن جلوي'], c:2 },
+    ] },
+
+  /* ⑲ تقييم ذاتي + واجب */
+  { type:'exit', anim:'slide', strategy:'🎫 بطاقةُ الخروج',
+    title:'كيف كانت رحلتي عبرَ الزمن؟',
+    question:'قيّمي رحلتَكِ على خُطى المؤسِّس ⏳',
+    options:[ { e:'🤩', l:'أتقنتُ الدرس' }, { e:'🙂', l:'فهمتُ معظمَه' }, { e:'🤔', l:'أحتاجُ مساعدة' } ],
+    homeworkTitle:'📚 مهمّةُ المؤرّخةِ في البيت',
+    homework:[
+      'أرسمُ *خطًّا زمنيًّا* لأهمِّ أحداثِ استردادِ الرياض.',
+      'أكتبُ فقرةً عن *صفةٍ* من صفاتِ الملكِ عبدالعزيزِ أقتدي بها.',
+    ] },
+
+  /* ⑳ الختام */
+  { type:'fclosing', anim:'zoom',
+    photo:'images/king-4.jpg',
+    title:'رحمَ اللهُ المؤسِّس',
+    message:'من فجرِ المصمكِ بدأت حكايةُ وطنٍ عظيم.. وأنتُنَّ اليومَ *حفيداتُ المؤسِّس* اللواتي يُكملنَ المسيرة 💚',
+    quote:'وطنٌ بناهُ الأجداد.. ونحميه نحن 🇸🇦',
+    clapBtn:'👏 صفّقنَ لأنفسِكنّ' },
+];
+/* ═══════════════════ نهاية الإعدادات ═══════════════════ */
+
+
+/* =====================================================================
+   بيانات الخرائط (Natural Earth — ملكية عامة)
+   ===================================================================== */
+const REGION = {"w":1000,"h":871,"k":39.219445188275756,"lon0":33.0,"lat1":33.2,"c":0.9271838545667874,"paths":{"Saudi Arabia":"M141.9 306.6L138.4 303.9L136.9 302.0L135.4 300.7L128.4 298.0L127.4 296.3L128.5 294.6L129.2 296.3L130.5 297.3L136.3 299.7L142.7 304.9L143.9 305.4L141.9 306.6ZM326.9 646.5L329.6 646.7L328.4 645.4L329.5 643.1L333.4 646.8L333.3 651.2L333.0 652.2L332.0 651.2L331.2 650.4L330.9 649.3L329.9 648.2L326.0 648.9L323.6 647.8L320.1 644.0L319.1 641.4L320.6 640.8L322.2 639.5L323.1 637.4L322.2 635.2L324.3 635.6L325.4 637.8L325.6 642.9L326.0 644.0L325.3 645.2L326.9 646.5ZM690.1 557.1L681.5 558.3L673.3 559.5L664.0 560.9L652.7 562.5L643.9 563.7L631.1 565.7L619.6 567.3L608.9 568.9L598.0 570.4L588.8 571.8L583.3 573.3L576.9 576.7L567.0 581.9L556.9 587.2L551.8 590.0L546.3 597.0L543.5 600.6L538.4 607.0L534.6 612.0L530.2 617.7L528.2 623.0L525.2 630.9L522.6 633.0L518.3 635.6L514.3 637.4L508.2 637.2L504.8 632.2L501.0 627.1L499.2 625.0L497.6 624.8L491.4 625.5L484.0 626.3L475.3 625.4L465.2 624.4L455.8 623.5L451.1 622.8L445.0 619.4L443.4 618.8L441.7 618.6L434.5 618.5L427.2 618.4L419.8 619.5L412.9 619.1L405.7 619.7L403.1 621.0L400.3 620.9L398.5 622.1L397.0 622.6L395.1 621.6L392.9 621.9L389.6 621.0L387.4 618.8L385.4 616.9L383.3 615.8L380.9 615.2L378.8 615.1L376.2 616.3L374.7 617.5L370.6 621.3L370.5 622.6L372.3 624.9L371.6 626.0L369.3 627.3L368.6 630.9L368.2 632.9L367.8 637.6L368.9 641.4L370.3 642.7L370.5 644.4L369.7 647.6L367.5 648.5L365.9 651.6L364.8 653.0L363.1 654.6L356.3 660.0L355.9 656.9L353.8 652.3L353.7 648.9L352.7 645.7L350.8 643.1L347.4 640.5L347.0 636.9L344.5 633.4L341.3 630.5L339.3 625.3L338.0 618.3L329.2 609.1L318.2 600.6L314.8 595.8L309.3 586.1L306.6 578.4L299.3 569.5L299.0 566.1L297.8 562.0L296.1 557.3L295.2 553.7L287.7 537.7L285.4 535.2L283.3 531.5L282.8 528.8L282.1 527.3L277.0 524.7L272.0 517.9L257.5 507.2L250.3 506.2L244.7 502.4L240.5 497.4L236.0 488.8L228.2 479.5L221.6 466.3L223.7 461.5L223.6 458.1L221.5 452.4L219.3 448.1L217.7 443.9L219.0 437.9L219.4 431.3L220.7 427.7L221.6 423.8L220.4 416.0L218.2 411.8L218.5 409.1L216.0 407.7L213.9 404.6L216.0 404.7L212.2 400.5L210.8 398.2L209.3 392.4L207.5 388.1L201.6 378.1L198.7 372.1L192.3 364.3L185.4 358.5L181.0 356.0L178.9 353.6L175.3 353.4L171.4 350.0L168.6 350.0L165.2 349.4L161.1 342.8L157.7 336.7L152.0 328.6L153.4 326.5L155.1 323.1L154.3 318.7L153.4 315.7L150.9 310.2L142.6 296.4L140.3 294.5L136.8 292.2L134.7 286.2L133.6 280.9L127.9 278.3L118.2 259.1L112.4 252.3L110.2 247.8L103.7 240.4L100.5 233.0L93.9 226.2L88.1 214.4L79.3 202.6L75.5 200.5L66.5 199.7L62.6 198.8L59.0 201.4L58.8 198.1L61.3 193.6L64.7 184.0L65.4 175.7L70.9 150.9L78.7 152.1L85.1 153.2L94.4 154.8L104.1 156.3L109.7 157.3L111.5 156.9L119.4 150.8L126.4 145.3L130.6 138.6L134.7 132.1L136.5 130.7L142.8 129.6L152.8 127.6L162.6 125.7L163.2 125.1L165.6 119.8L168.5 113.2L169.1 112.5L169.8 111.9L176.9 108.1L181.0 105.9L175.0 99.3L169.3 93.0L162.8 86.0L157.5 80.5L149.2 72.4L144.0 67.0L153.3 64.5L163.4 61.8L173.6 59.0L185.9 55.6L195.4 53.0L209.8 49.2L216.8 47.3L218.1 46.8L223.5 42.1L231.6 43.4L243.7 45.4L255.5 47.3L268.0 49.4L272.0 51.3L283.9 57.8L291.8 62.1L300.8 67.1L312.2 73.3L319.9 77.6L330.0 83.1L337.7 89.4L347.7 97.4L358.4 106.1L367.3 112.9L379.6 122.2L391.8 131.4L403.6 140.5L413.1 147.7L425.1 156.8L426.1 157.1L438.1 158.2L454.5 159.6L470.9 161.0L485.7 162.2L492.1 161.0L499.0 161.8L508.4 162.9L514.1 163.7L524.8 165.1L528.1 171.1L529.3 175.3L530.3 179.3L533.5 183.0L540.8 182.9L547.2 182.9L555.2 182.7L561.6 182.7L563.6 186.4L564.5 190.0L568.3 198.7L573.6 205.6L574.8 208.0L575.7 211.7L574.8 213.2L574.4 214.7L578.4 218.5L585.0 221.6L587.5 222.4L590.4 223.9L588.2 226.0L592.1 231.0L596.5 236.1L601.4 237.2L607.9 244.9L617.6 249.9L623.6 256.4L621.3 255.9L619.2 255.0L618.5 255.8L618.5 258.5L619.2 261.7L622.2 264.5L625.0 266.5L626.0 270.3L623.8 278.5L621.7 277.7L620.1 277.6L619.3 278.1L621.2 283.9L622.9 288.4L625.1 292.0L626.9 297.2L628.4 299.4L634.8 305.0L636.6 309.6L638.4 318.2L642.4 323.0L644.6 326.7L647.5 329.9L649.3 334.2L651.9 337.5L653.4 338.3L655.3 338.7L657.9 338.7L661.0 337.8L664.2 337.0L666.8 338.7L669.5 338.5L669.7 340.0L668.0 342.1L665.8 347.4L668.9 348.3L671.8 348.7L674.0 349.6L675.2 350.7L675.4 355.8L676.1 357.7L677.5 359.4L679.4 362.0L681.4 364.6L683.5 367.2L685.4 369.7L687.4 372.3L689.5 374.9L691.5 377.4L693.4 380.0L695.4 382.6L697.5 385.2L699.4 387.7L701.4 390.3L703.5 392.9L705.5 395.4L707.4 398.0L709.4 400.5L711.1 402.7L714.1 403.1L717.9 403.5L722.1 404.2L727.7 404.8L734.3 405.7L741.6 406.7L749.5 407.7L757.6 408.8L765.7 409.9L773.4 410.9L780.7 411.8L787.4 412.7L792.9 413.5L797.2 414.0L800.0 414.4L803.8 414.9L806.8 411.6L809.4 416.1L811.6 419.7L814.6 424.9L817.9 430.2L821.1 435.3L823.3 439.2L822.1 443.2L820.8 447.5L819.5 451.8L818.0 456.2L816.7 460.5L815.4 464.9L814.1 469.2L812.8 473.5L811.4 477.9L810.1 482.2L808.8 486.6L807.4 490.9L806.1 495.3L804.8 499.6L803.4 504.0L802.1 508.3L800.8 512.6L799.2 517.9L795.3 519.2L789.1 521.5L782.8 523.7L776.6 526.0L770.3 528.3L764.0 530.5L757.8 532.8L751.5 535.0L745.3 537.3L739.0 539.5L732.7 541.8L726.5 544.0L720.3 546.2L714.0 548.5L707.7 550.7L701.5 553.0L695.3 555.2L690.1 557.1ZM130.8 293.7L128.8 292.8L128.9 289.8L130.2 288.1L130.1 290.4L130.8 292.8Z"},"kbox":[59,42,823,660]};
+const ROUTE = {"w":1000,"h":1016,"k":120.935,"c":0.898794,"lon0":43.0,"lat1":30.4,"paths":{"United Arab Emirates":"M1445.6 574.4L1452.6 584.1L1453.4 650.9L1455.3 655.5L1451.4 656.3L1447.1 661.3L1442.0 669.1L1435.4 673.1L1429.9 677.7L1424.4 683.4L1420.1 684.7L1413.9 677.5L1410.0 670.2L1410.7 668.5L1413.9 668.1L1415.0 664.3L1413.1 658.6L1409.2 656.7L1404.1 656.5L1399.0 658.8L1393.9 663.9L1390.8 668.9L1390.4 679.4L1392.0 691.4L1391.6 697.0L1388.8 704.2L1388.0 714.7L1390.0 722.9L1391.6 727.7L1392.0 731.7L1386.9 744.7L1391.2 747.0L1405.3 748.1L1409.6 756.7L1412.3 762.8L1411.5 766.3L1401.3 769.0L1389.2 772.0L1380.2 771.1L1363.8 774.9L1355.2 781.0L1357.9 785.0L1360.6 787.7L1362.2 795.9L1359.5 807.3L1355.2 818.4L1349.3 832.2L1342.6 848.0L1333.6 871.9L1326.2 890.8L1325.4 904.3L1325.4 913.1L1324.6 930.7L1317.2 940.4L1315.6 940.8L1307.0 939.5L1304.3 939.1L1296.1 938.1L1283.2 936.4L1266.7 934.1L1246.8 931.3L1224.9 928.4L1201.8 925.2L1177.5 921.9L1153.3 918.5L1129.8 915.4L1107.9 912.4L1088.3 909.7L1071.5 907.6L1058.9 905.7L1050.7 904.7L1047.6 904.3L1038.6 903.0L1033.5 896.5L1027.6 888.5L1021.8 880.7L1015.9 872.8L1009.6 864.8L1003.8 856.8L997.9 849.0L991.6 841.1L985.8 833.1L979.9 825.1L974.0 817.3L967.8 809.4L961.9 801.4L956.0 793.6L949.8 785.6L943.9 777.7L938.0 769.7L934.1 764.4L931.8 758.6L931.4 742.8L931.4 739.4L935.3 733.1L937.3 737.6L941.9 743.6L949.4 742.2L952.9 743.2L955.6 764.9L961.1 772.6L968.2 775.8L991.3 777.4L1005.3 774.5L1033.9 760.4L1048.8 755.2L1089.9 756.2L1122.7 762.1L1174.0 765.5L1184.2 764.6L1211.6 753.3L1228.8 743.2L1239.0 740.3L1245.6 730.6L1249.9 718.0L1253.8 709.8L1258.9 705.9L1263.6 698.9L1267.1 687.4L1276.9 676.0L1314.9 648.1L1337.2 624.4L1339.1 616.8L1351.6 605.3L1361.0 592.9L1406.8 557.0L1415.8 542.3L1421.3 525.7L1421.7 524.5L1425.6 523.8L1431.1 526.4L1431.9 538.7L1429.9 550.5L1429.5 562.9L1428.7 569.6L1433.0 575.1L1440.1 577.4L1443.2 577.2L1445.6 574.4ZM1443.6 624.6L1444.4 619.4L1443.2 616.6L1438.5 616.2L1436.6 620.8L1435.8 627.3L1439.3 627.8L1443.6 624.6ZM1123.1 742.8L1114.9 743.4L1107.9 738.8L1123.1 732.7L1127.4 730.0L1131.7 724.3L1135.3 729.2L1131.3 736.7L1128.6 740.1L1123.1 742.8ZM1045.3 739.0L1043.3 739.9L1041.7 733.4L1041.7 731.5L1046.8 728.3L1049.6 733.8L1045.3 739.0Z","Saudi Arabia":"M976.0 1379.1L950.2 1382.9L925.5 1386.7L897.7 1390.9L864.1 1395.9L837.9 1399.7L799.5 1405.6L765.1 1410.6L733.0 1415.5L700.5 1420.3L673.1 1424.5L656.7 1429.3L637.5 1439.6L607.8 1455.8L577.6 1472.2L562.4 1480.5L545.9 1502.4L537.7 1513.3L522.5 1533.2L511.1 1548.4L497.8 1566.2L491.9 1582.4L482.9 1606.9L475.1 1613.2L462.2 1621.2L450.5 1626.9L432.1 1626.2L421.9 1610.9L410.6 1595.0L405.1 1588.5L400.4 1588.0L382.0 1590.1L359.7 1592.7L333.9 1589.9L303.7 1586.8L275.5 1584.1L261.5 1582.0L243.1 1571.5L238.4 1569.4L233.3 1568.9L211.8 1568.5L189.9 1568.3L167.9 1571.7L147.2 1570.4L125.7 1572.3L117.9 1576.3L109.6 1576.1L104.2 1579.6L99.9 1581.3L94.0 1578.2L87.3 1579.0L77.5 1576.3L70.9 1569.6L65.0 1563.5L58.8 1560.1L51.7 1558.2L45.5 1558.0L37.6 1561.8L32.9 1565.4L20.8 1577.1L20.4 1581.3L25.9 1588.2L23.9 1591.6L16.9 1595.8L14.9 1606.9L13.8 1613.0L12.6 1627.5L15.7 1639.1L20.0 1643.3L20.4 1648.3L18.1 1658.2L11.4 1661.1L6.7 1670.5L3.6 1675.0L-1.5 1680.0L-21.8 1696.6L-23.0 1686.9L-29.3 1672.6L-29.7 1662.4L-32.8 1652.3L-38.3 1644.5L-48.5 1636.5L-49.6 1625.4L-57.1 1614.5L-66.8 1605.7L-72.7 1589.5L-76.6 1567.9L-102.8 1539.5L-135.7 1513.5L-145.9 1498.6L-162.3 1468.6L-170.5 1444.9L-192.5 1417.6L-193.2 1407.1L-196.8 1394.3L-201.8 1380.0L-204.6 1368.6L-226.9 1319.3L-233.9 1311.5L-240.2 1300.4L-241.8 1292.0L-243.7 1287.4L-259.0 1279.2L-273.8 1258.4L-317.3 1225.5L-338.8 1222.3L-355.6 1210.6L-368.2 1195.0L-381.5 1168.6L-404.9 1140.0L-424.5 1099.3L-418.2 1084.4L-418.6 1074.1L-424.9 1056.5L-431.5 1043.0L-436.2 1030.2L-432.3 1011.7L-431.2 991.2L-427.2 980.3L-424.5 968.3L-428.0 944.1L-434.7 931.3L-433.9 922.7L-441.3 918.5L-447.6 909.1L-441.3 909.3L-452.7 896.3L-457.0 889.1L-461.3 871.5L-466.8 858.1L-484.4 827.4L-493.0 808.7L-512.2 784.8L-532.9 767.0L-545.8 759.0L-552.1 751.6L-563.0 751.2L-574.8 740.7L-583.0 740.5L-593.2 738.8L-605.3 718.5L-615.5 699.6L-632.7 674.8L-628.4 668.3L-623.3 657.8L-625.6 644.1L-628.4 634.9L-635.8 617.9L-660.9 575.5L-667.5 569.4L-678.1 562.3L-684.3 543.8L-687.5 527.4L-704.7 519.4L-733.6 460.2L-750.9 439.4L-757.5 425.6L-777.1 402.7L-786.5 379.8L-806.4 358.8L-823.6 322.5L-849.9 286.0L-861.2 279.7L-888.2 277.2L-899.9 274.4L-910.5 282.4L-911.3 272.3L-903.9 258.3L-893.7 228.9L-891.3 203.0L-874.9 126.6L-851.8 130.4L-832.6 133.8L-804.9 138.6L-775.9 143.4L-759.1 146.4L-753.6 145.1L-730.1 126.4L-709.0 109.4L-696.5 88.8L-684.3 68.7L-678.9 64.5L-660.1 60.9L-630.3 54.8L-601.0 48.9L-599.0 47.1L-592.0 30.9L-583.4 10.5L-581.4 8.4L-579.5 6.3L-558.3 -5.2L-545.8 -12.2L-563.8 -32.5L-581.0 -51.8L-600.2 -73.5L-616.2 -90.2L-640.9 -115.4L-656.5 -132.0L-628.8 -139.8L-598.6 -148.2L-568.1 -156.8L-531.3 -167.1L-502.8 -175.1L-459.7 -187.0L-439.0 -192.9L-435.1 -194.4L-419.0 -208.7L-394.8 -204.7L-358.4 -198.6L-323.2 -192.9L-286.0 -186.2L-273.8 -180.5L-238.2 -160.4L-214.8 -147.1L-187.8 -131.6L-153.7 -112.5L-130.6 -99.3L-100.5 -82.3L-77.4 -63.0L-47.7 -38.4L-15.6 -11.5L11.0 9.5L47.8 38.2L84.2 66.6L119.4 94.5L148.0 116.8L183.6 144.9L186.7 145.9L222.7 149.1L271.6 153.5L320.5 157.7L364.8 161.7L383.9 157.7L404.7 160.2L432.9 163.8L449.7 166.1L481.8 170.5L491.6 189.0L495.1 201.8L498.2 214.4L507.6 225.7L529.5 225.5L548.7 225.3L572.6 224.9L591.7 224.7L597.6 236.0L600.3 247.3L611.7 274.2L627.7 295.2L631.2 302.8L634.0 314.3L631.2 318.7L630.1 323.5L641.8 335.1L661.8 344.8L669.2 347.3L677.8 351.7L671.2 358.2L682.9 373.7L696.2 389.3L710.7 392.8L730.2 416.6L759.2 431.9L777.2 452.0L775.6 452.5L770.2 450.4L763.9 447.6L761.9 450.1L761.9 458.5L763.9 468.4L772.9 477.0L781.1 483.1L784.3 494.9L777.6 520.1L775.6 519.8L771.3 517.7L766.6 517.3L764.3 518.8L769.8 536.9L774.9 550.7L781.5 561.6L787.0 577.8L791.3 584.5L810.5 601.7L815.9 616.0L821.4 642.7L833.2 657.4L839.8 668.9L848.4 678.6L853.9 691.8L861.7 702.1L866.0 704.6L871.9 705.6L879.7 705.6L888.7 703.1L898.5 700.6L906.3 705.6L914.2 705.0L914.9 709.8L909.9 716.4L903.2 732.7L912.6 735.5L921.2 736.7L927.9 739.4L931.4 739.4L931.4 742.8L931.8 758.6L934.1 764.4L938.0 769.7L943.9 777.7L949.8 785.6L956.0 793.6L961.9 801.4L967.8 809.4L974.0 817.3L979.9 825.1L985.8 833.1L991.6 841.1L997.9 849.0L1003.8 856.8L1009.6 864.8L1015.9 872.8L1021.8 880.7L1027.6 888.5L1033.5 896.5L1038.6 903.0L1047.6 904.3L1050.7 904.7L1058.9 905.7L1071.5 907.6L1088.3 909.7L1107.9 912.4L1129.8 915.4L1153.3 918.5L1177.5 921.9L1201.8 925.2L1224.9 928.4L1246.8 931.3L1266.7 934.1L1283.2 936.4L1296.1 938.1L1304.3 939.1L1307.0 939.5L1315.6 940.8L1317.2 940.4L1324.6 930.7L1332.5 944.4L1339.1 955.7L1348.1 971.4L1357.9 988.0L1367.3 1003.8L1374.0 1015.7L1370.4 1027.9L1366.5 1041.3L1362.6 1054.6L1358.3 1068.0L1354.4 1081.4L1350.5 1094.9L1346.6 1108.3L1342.6 1121.5L1338.3 1135.0L1334.4 1148.4L1330.5 1161.9L1326.6 1175.1L1322.7 1188.5L1318.8 1202.0L1314.5 1215.4L1310.6 1228.6L1306.6 1242.1L1302.0 1258.2L1290.2 1262.4L1271.8 1269.3L1253.0 1276.3L1234.3 1283.2L1215.5 1290.3L1196.7 1297.3L1178.3 1304.2L1159.5 1311.1L1140.7 1318.1L1121.9 1325.0L1103.2 1331.9L1084.8 1338.8L1066.0 1345.8L1047.2 1352.7L1028.4 1359.6L1010.0 1366.5L991.3 1373.5L976.0 1379.1Z","Qatar":"M898.5 700.6L888.7 703.1L879.7 705.6L871.9 705.6L866.0 704.6L861.7 702.1L853.9 691.8L848.4 678.6L851.6 671.2L852.7 666.6L845.3 631.5L842.9 604.7L843.7 599.2L848.0 592.9L855.5 579.1L859.0 565.4L869.9 534.3L881.3 522.4L898.1 513.5L911.8 530.8L928.6 544.0L931.8 558.7L926.7 570.7L922.4 589.5L925.1 598.4L925.9 605.9L930.6 618.7L934.9 635.1L935.7 646.7L933.3 657.4L927.5 666.2L916.1 693.3L912.6 696.0L898.5 700.6Z","Oman":"M1096.1 1663.0L1089.9 1647.0L1083.2 1631.1L1076.6 1615.1L1069.9 1599.4L1065.2 1588.0L1057.4 1584.3L1052.7 1572.5L1048.0 1560.3L1043.3 1548.2L1038.2 1536.2L1033.5 1524.0L1028.8 1512.0L1024.1 1499.9L1019.0 1487.9L1014.3 1475.7L1009.6 1463.8L1004.6 1451.6L999.9 1439.6L995.2 1427.4L990.1 1415.5L985.4 1403.3L980.7 1391.1L976.0 1379.1L991.3 1373.5L1010.0 1366.5L1028.4 1359.6L1047.2 1352.7L1066.0 1345.8L1084.8 1338.8L1103.2 1331.9L1121.9 1325.0L1140.7 1318.1L1159.5 1311.1L1178.3 1304.2L1196.7 1297.3L1215.5 1290.3L1234.3 1283.2L1253.0 1276.3L1271.8 1269.3L1290.2 1262.4L1302.0 1258.2L1306.6 1242.1L1310.6 1228.6L1314.5 1215.4L1318.8 1202.0L1322.7 1188.5L1326.6 1175.1L1330.5 1161.9L1334.4 1148.4L1338.3 1135.0L1342.6 1121.5L1346.6 1108.3L1350.5 1094.9L1354.4 1081.4L1358.3 1068.0L1362.6 1054.6L1366.5 1041.3L1370.4 1027.9L1374.0 1015.7L1367.3 1003.8L1357.9 988.0L1348.1 971.4L1339.1 955.7L1332.5 944.4L1324.6 930.7L1325.4 913.1L1325.4 904.3L1326.2 890.8L1333.6 871.9L1342.6 848.0L1349.3 832.2L1355.2 818.4L1359.5 807.3L1362.2 795.9L1360.6 787.7L1357.9 785.0L1355.2 781.0L1363.8 774.9L1380.2 771.1L1389.2 772.0L1401.3 769.0L1411.5 766.3L1412.3 762.8L1409.6 756.7L1405.3 748.1L1391.2 747.0L1386.9 744.7L1392.0 731.7L1391.6 727.7L1390.0 722.9L1388.0 714.7L1388.8 704.2L1391.6 697.0L1392.0 691.4L1390.4 679.4L1390.8 668.9L1393.9 663.9L1399.0 658.8L1404.1 656.5L1409.2 656.7L1413.1 658.6L1415.0 664.3L1413.9 668.1L1410.7 668.5L1410.0 670.2L1413.9 677.5L1420.1 684.7L1424.4 683.4L1429.9 677.7L1435.4 673.1L1442.0 669.1L1447.1 661.3L1451.4 656.3L1455.3 655.5L1466.3 687.4L1482.7 717.2L1497.2 733.6L1512.1 755.8L1535.2 776.4L1545.7 783.3L1588.0 797.8L1611.5 803.1L1643.6 808.3L1665.9 819.4L1673.3 820.1L1684.7 816.9L1693.3 817.1L1714.4 832.5L1720.7 846.9L1729.7 854.5L1737.5 866.5L1742.6 879.1L1760.2 898.4L1773.1 920.0L1786.0 936.0L1797.3 945.8L1814.6 949.8L1828.7 954.2L1830.2 964.9L1828.7 979.0L1825.9 989.3L1813.0 1009.4L1809.9 1021.8L1795.4 1042.2L1779.3 1076.4L1772.3 1084.2L1746.5 1101.8L1727.7 1123.2L1705.4 1160.2L1688.6 1196.7L1681.9 1208.5L1668.2 1211.0L1659.2 1209.9L1653.3 1206.4L1655.7 1196.5L1657.3 1185.2L1649.0 1186.4L1641.6 1188.7L1624.8 1216.2L1615.4 1228.2L1613.4 1243.5L1608.7 1263.3L1602.5 1281.3L1599.3 1296.6L1599.3 1305.2L1604.4 1326.4L1604.8 1348.1L1607.6 1361.1L1609.9 1376.6L1602.1 1381.5L1595.0 1383.8L1568.4 1385.4L1541.0 1390.5L1517.2 1399.5L1502.7 1408.5L1484.3 1428.5L1473.0 1479.5L1454.6 1501.1L1442.4 1505.5L1412.7 1507.4L1371.2 1513.3L1356.3 1518.5L1332.1 1549.6L1330.1 1559.5L1334.8 1566.6L1336.4 1574.4L1334.4 1581.7L1323.1 1601.5L1311.3 1615.8L1279.6 1624.8L1267.9 1619.5L1257.3 1616.8L1236.6 1616.4L1203.0 1620.0L1190.8 1630.4L1171.3 1638.0L1153.3 1649.6L1119.2 1654.0L1096.1 1663.0Z","Kuwait":"M573.3 93.9L567.1 96.6L563.2 95.3L558.9 88.8L552.2 72.7L556.1 66.6L555.7 64.1L556.5 62.2L558.5 60.9L560.8 53.4L563.6 50.8L568.2 56.1L581.2 74.6L581.2 82.3L580.4 85.3L573.3 93.9ZM591.7 224.7L572.6 224.9L548.7 225.3L529.5 225.5L507.6 225.7L498.2 214.4L495.1 201.8L491.6 189.0L481.8 170.5L449.7 166.1L432.9 163.8L404.7 160.2L383.9 157.7L401.6 138.0L409.8 127.3L424.6 104.4L432.1 88.0L439.5 69.7L445.8 55.7L447.3 53.1L450.9 48.3L459.1 43.3L470.8 38.7L490.8 36.8L504.9 36.6L508.0 36.8L516.6 39.1L541.2 50.4L540.5 54.8L544.0 68.3L551.8 82.7L558.5 94.5L559.2 100.2L553.4 99.3L548.7 97.0L540.1 94.7L523.6 110.5L513.5 118.9L513.5 121.8L526.8 125.2L536.6 124.9L543.2 122.6L549.1 126.4L553.0 136.1L554.6 143.8L563.6 171.8L571.0 181.2L580.4 198.0L583.9 206.6L585.9 214.0L591.7 224.7Z","Iraq":"M-69.6 -811.4L-59.0 -813.7L-39.5 -828.4L-28.1 -841.8L-24.6 -843.1L-14.4 -838.7L-7.0 -837.4L10.2 -842.7L20.0 -840.0L28.6 -836.4L33.3 -836.2L56.0 -827.8L61.9 -826.7L73.6 -825.7L90.9 -825.3L102.2 -830.7L110.0 -836.2L115.9 -836.0L121.0 -834.7L125.7 -832.4L129.6 -828.4L131.2 -822.7L130.8 -804.5L132.3 -799.6L135.5 -796.1L139.4 -795.4L144.1 -799.4L152.3 -805.3L162.5 -811.6L170.3 -817.3L174.6 -819.4L181.6 -819.2L188.3 -818.1L191.8 -815.4L195.3 -805.9L204.3 -773.8L209.4 -769.8L215.3 -766.5L219.6 -761.6L221.2 -756.8L220.8 -749.5L220.8 -740.9L223.1 -734.4L226.6 -729.3L229.8 -726.8L234.5 -726.6L239.9 -725.3L243.5 -720.3L255.6 -683.8L256.8 -679.1L261.9 -677.7L270.1 -678.3L278.3 -674.5L287.7 -668.6L295.9 -657.5L301.8 -655.6L319.8 -657.3L344.4 -655.6L355.8 -649.7L354.6 -646.4L345.6 -642.4L330.3 -637.8L325.6 -629.8L322.9 -619.7L323.3 -614.1L327.2 -607.8L338.2 -595.2L338.9 -590.8L340.9 -584.5L342.9 -580.0L340.5 -571.7L330.7 -566.0L317.4 -559.7L291.2 -532.0L289.2 -525.9L289.2 -509.5L286.5 -504.7L278.3 -504.9L271.6 -505.7L271.6 -499.8L267.3 -492.3L265.0 -485.6L274.8 -469.8L276.3 -461.4L274.8 -453.9L265.8 -440.6L260.7 -431.8L261.9 -429.9L268.9 -426.4L290.8 -397.4L297.5 -387.3L306.9 -390.0L310.4 -389.8L313.1 -388.2L314.7 -384.8L314.7 -380.4L312.3 -373.9L324.1 -371.4L328.4 -364.6L342.1 -342.2L341.3 -335.5L335.0 -325.0L335.0 -317.8L336.2 -311.5L338.2 -309.2L358.5 -308.4L367.1 -305.9L387.9 -294.3L411.7 -276.7L431.3 -262.2L448.1 -250.0L465.7 -250.9L470.8 -248.5L475.1 -244.8L480.2 -234.7L490.4 -211.8L499.0 -204.0L512.3 -185.8L524.8 -168.6L516.6 -145.3L508.8 -120.9L508.8 -89.6L508.8 -72.8L525.6 -72.2L544.8 -71.4L544.8 -51.2L544.8 -31.0L545.2 -8.0L550.6 -6.9L559.6 -2.1L563.2 5.5L568.2 9.5L573.7 10.1L579.6 13.9L585.1 20.6L587.0 25.6L585.5 29.0L586.6 35.1L590.6 43.9L595.6 47.9L602.7 52.9L592.9 55.9L581.9 53.6L558.9 43.5L551.4 43.1L541.6 47.1L541.2 50.4L516.6 39.1L508.0 36.8L504.9 36.6L490.8 36.8L470.8 38.7L459.1 43.3L450.9 48.3L447.3 53.1L445.8 55.7L439.5 69.7L432.1 88.0L424.6 104.4L409.8 127.3L401.6 138.0L383.9 157.7L364.8 161.7L320.5 157.7L271.6 153.5L222.7 149.1L186.7 145.9L183.6 144.9L148.0 116.8L119.4 94.5L84.2 66.6L47.8 38.2L11.0 9.5L-15.6 -11.5L-47.7 -38.4L-77.4 -63.0L-100.5 -82.3L-130.6 -99.3L-153.7 -112.5L-187.8 -131.6L-214.8 -147.1L-238.2 -160.4L-273.8 -180.5L-286.0 -186.2L-323.2 -192.9L-358.4 -198.6L-394.8 -204.7L-419.0 -208.7L-403.0 -222.9L-408.1 -236.0L-419.4 -233.6L-430.4 -230.5L-436.6 -250.6L-428.4 -253.2L-436.2 -279.4L-444.1 -306.5L-451.5 -332.7L-459.3 -359.4L-428.8 -376.6L-405.7 -389.4L-373.2 -407.3L-342.3 -424.7L-313.0 -441.1L-280.1 -459.3L-251.2 -475.5L-224.5 -482.2L-218.7 -487.3L-206.5 -509.5L-196.4 -528.4L-195.6 -532.8L-195.6 -559.7L-194.0 -591.2L-190.5 -608.0L-184.2 -622.9L-178.8 -633.8L-178.4 -643.9L-179.2 -654.2L-184.6 -669.9L-190.9 -686.1L-190.1 -701.8L-188.9 -710.2L-185.4 -723.6L-178.8 -733.3L-172.1 -739.4L-146.7 -745.7L-131.8 -749.5L-111.5 -766.9L-99.7 -777.2L-82.9 -793.6L-70.8 -805.5L-69.6 -809.7L-69.6 -811.4Z","Iran":"M1186.5 -839.7L1216.6 -838.3L1228.4 -841.0L1245.6 -847.5L1258.5 -851.5L1265.2 -851.9L1271.8 -855.1L1276.5 -858.9L1287.9 -885.5L1293.3 -892.2L1312.5 -907.3L1329.0 -916.8L1345.8 -925.2L1367.3 -931.1L1395.9 -930.7L1418.6 -928.6L1431.5 -928.6L1437.7 -927.9L1442.4 -928.8L1445.2 -930.7L1448.3 -942.2L1453.0 -946.0L1460.8 -949.3L1472.2 -949.3L1485.9 -950.2L1497.2 -949.3L1511.7 -944.9L1530.5 -944.5L1542.6 -945.3L1550.0 -940.7L1555.1 -934.9L1557.9 -929.8L1558.3 -923.1L1558.3 -917.8L1560.2 -916.0L1567.6 -912.8L1578.2 -910.5L1599.0 -907.6L1618.1 -902.3L1628.3 -898.5L1642.4 -892.9L1658.8 -878.6L1665.1 -876.5L1672.5 -875.0L1677.6 -875.4L1690.1 -881.3L1701.1 -876.9L1706.6 -877.5L1719.1 -880.9L1732.4 -876.7L1765.3 -861.2L1768.8 -861.6L1771.9 -859.9L1774.7 -856.3L1776.6 -851.9L1779.0 -838.5L1788.7 -828.8L1800.1 -819.8L1813.8 -815.0L1842.3 -803.2L1854.5 -793.8L1867.4 -777.6L1882.7 -756.2L1885.0 -754.3L1924.9 -754.9L1969.5 -754.9L1975.0 -746.5L1973.8 -729.5L1975.4 -712.3L1979.7 -700.3L1979.7 -689.2L1976.6 -683.6L1973.8 -677.3L1973.0 -674.5L1978.9 -670.3L1984.0 -661.3L1984.8 -648.5L1982.0 -641.6L1982.4 -636.1L1985.2 -631.3L1987.1 -623.3L1986.7 -618.5L1983.2 -613.6L1980.9 -607.6L1978.1 -600.0L1977.0 -594.1L1971.9 -591.2L1967.6 -589.3L1968.0 -581.7L1970.3 -575.2L1972.7 -567.7L1969.9 -562.4L1968.0 -556.5L1964.0 -546.9L1965.2 -538.9L1960.9 -532.0L1955.4 -526.1L1951.9 -521.3L1951.1 -514.3L1947.2 -512.0L1939.8 -506.4L1935.1 -502.4L1928.0 -501.3L1926.9 -498.0L1927.7 -494.8L1930.8 -492.9L1935.1 -486.0L1944.5 -474.0L1917.9 -472.6L1909.7 -461.8L1900.7 -446.7L1905.0 -416.3L1900.7 -400.5L1903.4 -391.7L1910.0 -385.6L1919.0 -382.3L1935.5 -382.1L1946.4 -379.6L1947.6 -375.6L1941.3 -369.7L1931.2 -358.3L1925.7 -353.5L1908.9 -331.1L1908.9 -321.6L1910.4 -313.8L1917.9 -289.5L1924.9 -266.0L1937.8 -223.6L1937.8 -213.9L1933.5 -191.9L1933.5 -178.6L1935.1 -161.4L1933.9 -152.4L1937.0 -132.4L1940.6 -131.0L1968.7 -127.2L1994.2 -123.6L2028.2 -118.8L2038.8 -107.0L2045.0 -81.4L2044.7 -62.1L2041.9 -52.2L2017.3 -24.1L1992.6 4.4L1968.0 32.8L1939.4 65.5L1960.1 89.0L1973.0 103.7L1991.0 124.3L1993.4 129.1L1993.4 137.3L2011.8 168.6L2018.4 185.0L2024.3 194.4L2038.8 209.5L2053.3 224.2L2068.9 231.0L2079.5 232.4L2103.7 240.0L2112.4 246.3L2126.4 261.8L2143.3 259.7L2146.8 259.7L2147.6 260.8L2148.0 265.8L2145.6 290.0L2150.3 314.3L2153.4 351.1L2152.3 357.4L2148.4 368.1L2148.0 374.8L2147.2 379.0L2148.0 380.9L2153.4 383.4L2164.8 384.9L2192.2 380.7L2195.3 381.7L2202.0 386.1L2206.7 392.8L2207.0 396.2L2200.4 401.9L2199.2 411.3L2201.2 425.8L2200.0 427.5L2194.1 430.8L2192.2 451.6L2191.0 453.5L2184.0 455.6L2150.7 454.3L2146.8 454.8L2134.3 460.2L2113.1 464.2L2107.3 466.5L2099.0 472.8L2093.6 480.4L2092.4 487.5L2091.2 489.0L2079.1 487.5L2074.8 493.6L2050.9 502.8L2048.2 504.7L2044.7 512.1L2041.5 532.7L2038.4 551.1L2036.8 553.6L2029.4 560.2L2028.6 562.3L2029.4 569.4L2026.3 582.4L2023.5 618.5L2020.4 628.6L2014.5 629.4L2009.8 634.5L2001.2 640.8L1982.8 635.9L1968.3 630.9L1919.8 618.9L1914.7 613.1L1911.6 603.0L1903.4 600.3L1891.3 615.4L1850.6 606.6L1836.5 609.3L1828.3 604.7L1806.0 604.2L1788.7 594.8L1763.7 601.3L1744.1 602.6L1717.1 586.0L1688.2 581.4L1664.7 582.8L1652.6 581.6L1633.0 575.5L1623.6 569.4L1608.3 574.0L1601.3 565.4L1558.3 557.4L1550.0 541.9L1544.2 527.6L1543.8 512.9L1533.2 487.1L1529.7 449.9L1525.8 435.2L1519.9 422.6L1512.1 411.9L1501.5 400.4L1492.1 395.8L1451.8 387.0L1444.0 388.2L1426.0 393.9L1406.8 406.7L1375.1 413.8L1368.5 419.3L1360.6 431.7L1350.5 439.0L1336.4 437.1L1321.1 444.5L1293.0 464.8L1278.1 470.9L1265.6 470.5L1252.3 460.9L1222.5 447.8L1203.3 443.6L1176.3 446.6L1163.8 444.3L1141.9 429.2L1136.4 418.0L1123.9 410.7L1085.2 394.1L1053.5 372.0L1047.6 363.9L1043.7 351.5L1030.0 336.6L999.1 324.4L981.5 311.6L961.1 308.6L941.9 309.1L933.7 306.8L925.9 301.1L899.7 274.4L899.7 263.7L883.6 237.7L879.7 228.2L876.2 202.4L871.9 195.7L855.1 185.0L852.3 178.1L856.3 168.8L856.3 161.7L847.3 155.2L834.3 151.6L831.2 143.6L833.6 128.3L831.6 118.4L819.9 103.1L803.0 87.2L785.8 63.8L779.2 58.0L774.9 42.6L768.6 24.4L759.2 23.1L712.6 45.0L698.9 32.6L658.2 11.2L655.1 8.0L652.4 3.2L657.5 0.2L662.6 -0.8L672.7 3.0L679.0 -1.4L676.6 -8.8L666.5 -13.2L652.4 -12.8L656.3 -6.1L643.0 0.2L640.2 8.8L642.2 19.1L643.4 33.8L637.9 40.8L634.0 44.1L616.4 45.0L608.2 51.5L602.7 52.9L595.6 47.9L590.6 43.9L586.6 35.1L585.5 29.0L587.0 25.6L585.1 20.6L579.6 13.9L573.7 10.1L568.2 9.5L563.2 5.5L559.6 -2.1L550.6 -6.9L545.2 -8.0L544.8 -31.0L544.8 -51.2L544.8 -71.4L525.6 -72.2L508.8 -72.8L508.8 -89.6L508.8 -120.9L516.6 -145.3L524.8 -168.6L512.3 -185.8L499.0 -204.0L490.4 -211.8L480.2 -234.7L475.1 -244.8L470.8 -248.5L465.7 -250.9L448.1 -250.0L431.3 -262.2L411.7 -276.7L387.9 -294.3L367.1 -305.9L358.5 -308.4L338.2 -309.2L336.2 -311.5L335.0 -317.8L335.0 -325.0L341.3 -335.5L342.1 -342.2L328.4 -364.6L324.1 -371.4L312.3 -373.9L314.7 -380.4L314.7 -384.8L313.1 -388.2L310.4 -389.8L306.9 -390.0L297.5 -387.3L290.8 -397.4L268.9 -426.4L261.9 -429.9L260.7 -431.8L265.8 -440.6L274.8 -453.9L276.3 -461.4L274.8 -469.8L265.0 -485.6L267.3 -492.3L271.6 -499.8L271.6 -505.7L278.3 -504.9L286.5 -504.7L289.2 -509.5L289.2 -525.9L291.2 -532.0L317.4 -559.7L330.7 -566.0L340.5 -571.7L342.9 -580.0L340.9 -584.5L338.9 -590.8L338.2 -595.2L327.2 -607.8L323.3 -614.1L322.9 -619.7L325.6 -629.8L330.3 -637.8L345.6 -642.4L354.6 -646.4L355.8 -649.7L344.4 -655.6L319.8 -657.3L301.8 -655.6L295.9 -657.5L287.7 -668.6L278.3 -674.5L270.1 -678.3L261.9 -677.7L256.8 -679.1L255.6 -683.8L243.5 -720.3L239.9 -725.3L234.5 -726.6L229.8 -726.8L226.6 -729.3L223.1 -734.4L220.8 -740.9L220.8 -749.5L221.2 -756.8L219.6 -761.6L215.3 -766.5L209.4 -769.8L204.3 -773.8L195.3 -805.9L191.8 -814.6L192.2 -817.1L191.0 -824.4L195.3 -830.7L194.9 -833.2L186.3 -841.4L174.2 -849.4L171.1 -850.9L171.1 -859.5L171.5 -866.0L170.3 -871.9L167.9 -875.2L167.9 -877.7L172.6 -884.0L169.5 -888.2L151.9 -898.5L145.2 -903.6L133.1 -904.6L131.5 -908.0L133.5 -915.1L137.8 -923.7L144.5 -932.3L146.8 -936.7L149.2 -944.5L149.9 -950.0L157.4 -957.5L157.8 -959.6L155.4 -962.4L149.5 -963.8L143.3 -964.5L141.3 -965.9L140.2 -969.9L140.9 -986.5L139.0 -996.6L136.6 -1003.9L138.2 -1020.3L133.9 -1023.4L127.2 -1032.1L124.5 -1039.4L126.1 -1042.1L127.2 -1046.8L128.4 -1053.1L128.0 -1057.5L121.8 -1061.9L117.5 -1066.5L116.7 -1071.5L115.1 -1077.6L112.4 -1082.4L111.2 -1085.6L113.5 -1087.5L122.2 -1089.0L134.7 -1088.1L145.2 -1087.9L151.1 -1091.1L158.2 -1120.7L164.8 -1128.4L172.6 -1133.0L187.5 -1122.5L193.8 -1118.8L197.7 -1118.8L199.6 -1116.0L217.2 -1091.3L225.1 -1083.9L229.8 -1077.8L232.9 -1070.9L238.0 -1066.1L245.0 -1063.5L254.0 -1056.8L259.9 -1051.6L269.7 -1040.9L279.9 -1036.7L317.4 -1028.9L338.6 -1025.3L344.4 -1024.3L360.5 -1029.5L379.2 -1028.7L386.3 -1028.5L411.3 -1050.5L418.8 -1058.1L433.6 -1061.9L441.9 -1070.7L455.2 -1081.2L471.6 -1091.3L486.5 -1100.3L498.2 -1105.7L518.9 -1118.6L531.9 -1123.0L543.2 -1122.8L560.0 -1107.8L574.1 -1094.2L578.4 -1088.3L571.4 -1083.1L558.1 -1077.8L555.7 -1074.0L554.9 -1069.2L555.3 -1064.6L557.3 -1060.8L573.3 -1052.0L575.3 -1047.2L575.3 -1042.3L573.3 -1039.2L569.8 -1037.5L558.5 -1035.0L549.1 -1032.3L545.6 -1029.3L542.8 -1026.0L543.2 -1022.4L545.9 -1018.2L565.9 -1006.7L567.9 -1002.5L571.8 -996.8L576.9 -993.2L585.1 -992.4L589.0 -990.1L607.8 -968.9L612.5 -967.4L634.8 -972.0L637.9 -971.8L638.3 -966.6L641.4 -936.5L644.2 -921.0L647.7 -905.9L653.9 -892.0L661.0 -879.0L670.8 -870.8L692.7 -861.0L703.2 -858.2L731.0 -856.3L758.8 -851.9L774.9 -847.3L779.9 -844.2L784.3 -839.3L797.6 -816.2L818.7 -799.9L861.7 -775.3L882.5 -767.1L952.5 -751.6L999.1 -752.4L1127.4 -782.2L1170.5 -789.8L1186.5 -789.8L1176.7 -783.9L1160.7 -780.3L1170.5 -776.1L1185.3 -775.5L1192.4 -776.1L1197.5 -779.9L1198.3 -786.2L1197.5 -792.5L1190.4 -820.2L1186.5 -839.7Z","Bahrain":"M826.9 546.3L823.4 555.5L819.9 552.2L811.6 536.2L814.0 525.1L810.1 509.1L812.0 504.5L822.2 502.2L824.6 503.1L821.4 508.1L827.3 517.1L828.1 531.8L826.9 546.3Z"}};
+const RP = (lon, lat) => [(lon - ROUTE.lon0) * ROUTE.c * ROUTE.k, (ROUTE.lat1 - lat) * ROUTE.k];
+
+/* =====================================================================
+   أدوات مساعدة
+   ===================================================================== */
+document.title = LESSON.title;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v;
+    else if (k === 'style') el.style.cssText = v;
+    else if (k === 'html') el.innerHTML = v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat(Infinity)) { if (c == null || c === false) continue; el.append(c instanceof Node ? c : String(c)); }
+  return el;
+}
+const fmtRich = s => String(s ?? '').replace(/\*(.+?)\*/g, '<mark>$1</mark>');
+const rich = (s, tag = 'span', cls) => h(tag, { class: cls, html: fmtRich(s) });
+const ar = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+const fmtTime = sec => ar(Math.floor(sec / 60)) + ':' + ar(String(sec % 60).padStart(2, '0'));
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const center = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
+const svgEl = html => { const d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstChild; };
+const P = (lon, lat) => [(lon - REGION.lon0) * REGION.c * REGION.k, (REGION.lat1 - lat) * REGION.k];
+const KEYS = ['أ', 'ب', 'ج', 'د'];
+const KB = REGION.kbox;   // حدود شكل المملكة [x0,y0,x1,y1]
+// وضع شكل المملكة داخل مستطيل (x,y,w,h)
+const fitS = (w, hh) => Math.min(w / (KB[2] - KB[0]), hh / (KB[3] - KB[1]));
+const fitKSA = (x, y, w, hh, attrs) => { const s = fitS(w, hh), ox = x + (w - (KB[2] - KB[0]) * s) / 2, oy = y + (hh - (KB[3] - KB[1]) * s) / 2;
+  return `<g transform="translate(${ox.toFixed(1)} ${oy.toFixed(1)}) scale(${s.toFixed(4)}) translate(${-KB[0]} ${-KB[1]})"><path d="${REGION.paths['Saudi Arabia']}" ${attrs}/></g>`; };
+const fitPt = (x, y, w, hh, lon, lat) => { const s = fitS(w, hh), ox = x + (w - (KB[2] - KB[0]) * s) / 2, oy = y + (hh - (KB[3] - KB[1]) * s) / 2, [px, py] = P(lon, lat);
+  return [(ox + (px - KB[0]) * s).toFixed(1), (oy + (py - KB[1]) * s).toFixed(1)]; };
+
+
+/* =====================================================================
+   الأصوات (مؤثرات بدون ملفات)
+   ===================================================================== */
+const sfx = (() => {
+  let ctx = null, master = null, noiseBuf = null;
+  const ac = () => {
+    if (!ctx) { ctx = new (window.AudioContext || window.webkitAudioContext)(); master = ctx.createGain(); master.gain.value = LESSON.volume; master.connect(ctx.destination); }
+    if (ctx.state === 'suspended') ctx.resume();
+    return ctx;
+  };
+  const noise = () => {
+    if (!noiseBuf) { const c = ac(); noiseBuf = c.createBuffer(1, c.sampleRate * 0.4, c.sampleRate); const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; }
+    return noiseBuf;
+  };
+  const tone = (f, t, dur, type = 'sine', vol = .3, f2) => {
+    const c = ac(), o = c.createOscillator(), g = c.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t);
+    if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + dur * .8);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + .015); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(master); o.start(t); o.stop(t + dur + .05);
+  };
+  const clapOnce = (t, vol) => {
+    const c = ac(), src = c.createBufferSource(), bp = c.createBiquadFilter(), hp = c.createBiquadFilter(), g = c.createGain();
+    src.buffer = noise(); bp.type = 'bandpass'; bp.frequency.value = 900 + Math.random() * 1500; bp.Q.value = .9; hp.type = 'highpass'; hp.frequency.value = 450;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + .004); g.gain.exponentialRampToValueAtTime(0.0001, t + .08 + Math.random() * .06);
+    src.connect(bp).connect(hp).connect(g).connect(master); src.start(t, Math.random() * .2, .18);
+  };
+  return {
+    unlock: ac,
+    applause(dur = 2) {
+      const now = ac().currentTime + .02;
+      for (let p = 0; p < 8; p++) { let t = now + Math.random() * .15; const rate = .11 + Math.random() * .07;
+        while (t < now + dur) { const fade = Math.max(.08, 1 - Math.pow((t - now) / dur, 2)); clapOnce(t, (.25 + Math.random() * .45) * fade); t += rate * (.85 + Math.random() * .3); } }
+    },
+    success() { const n = ac().currentTime; [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, n + i * .09, .45, 'triangle', .3)); tone(2093, n + .38, .6, 'sine', .08); },
+    ding()    { const n = ac().currentTime; tone(880, n, .25, 'triangle', .25); tone(1318.5, n + .08, .35, 'triangle', .22); },
+    wrong()   { const n = ac().currentTime; tone(392, n, .2, 'sine', .25); tone(311, n + .17, .35, 'sine', .25); },
+    pop()     { tone(520, ac().currentTime, .12, 'sine', .18, 900); },
+    flip()    { tone(380, ac().currentTime, .16, 'triangle', .1, 760); },
+    tick()    { tone(1200, ac().currentTime, .06, 'square', .05); },
+    bell()    { const n = ac().currentTime; [0, .45].forEach(d => { tone(880, n + d, 1.1, 'sine', .3); tone(1760, n + d, .7, 'sine', .08); }); },
+    teleport(){ const n = ac().currentTime; tone(180, n, .9, 'sawtooth', .06, 1400); tone(600, n + .3, .7, 'sine', .12, 2400); },
+    beep()    { const n = ac().currentTime; tone(1500, n, .08, 'sine', .1); tone(1900, n + .1, .08, 'sine', .1); },
+  };
+})();
+
+
+/* =====================================================================
+   مشغّل الملفات الصوتية (الروبوت + النشيد)
+   يجرّب: audio/<file>.mp3 ثم .m4a ثم .wav — وإن لم توجد يستخدم صوت المتصفح
+   ===================================================================== */
+const voice = (() => {
+  const a = new Audio(); a.preload = 'auto';
+  let token = 0;
+  const exts = ['mp3', 'm4a', 'wav'];
+  const srcs = file => [LESSON.audioDir, ''].flatMap(d => exts.map(x => d + file + '.' + x));   // مجلد audio ثم بجانب الملف
+  function tryLoad(file, my) {
+    return new Promise(res => {
+      let k = 0; const list = srcs(file);
+      const next = () => {
+        if (my !== token) return res(false);
+        if (k >= list.length) return res(false);
+        a.src = list[k++];
+        a.oncanplay = () => { a.oncanplay = a.onerror = null; res(true); };
+        a.onerror = () => next();
+        a.load();
+      };
+      next();
+    });
+  }
+  function stop() {
+    token++; a.pause(); a.onended = a.ontimeupdate = null;
+    try { speechSynthesis.cancel(); } catch (e) {}
+  }
+  /** تشغيل مقطع: يعيد وعدًا يُحَلّ عند الانتهاء. onProgress(0..1) لمزامنة النص */
+  async function play(file, text, onProgress, allowTTS = true) {
+    stop(); const my = token;
+    const ok = await tryLoad(file, my);
+    if (my !== token) return false;
+    if (ok) {
+      return new Promise(res => {
+        a.ontimeupdate = () => a.duration && onProgress?.(a.currentTime / a.duration);
+        a.onended = () => { onProgress?.(1); res(true); };
+        a.currentTime = 0;
+        a.play().catch(() => { toast('اضغطي ▶ لتشغيل الصوت'); res(false); });
+      });
+    }
+    if (!allowTTS) return null;
+    return speakTTS(text, onProgress, my);
+  }
+  function speakTTS(text, onProgress, my) {
+    const plain = String(text).replace(/<[^>]+>/g, '').replace(/\*/g, '');
+    return new Promise(res => {
+      const words = plain.split(/\s+/).length;
+      const fallbackTimer = (dur) => {           // بدون أي صوت: تقدّم النص بالتوقيت فقط
+        const t0 = performance.now();
+        const iv = setInterval(() => { if (my !== token) { clearInterval(iv); return res(false); } const p = (performance.now() - t0) / dur; onProgress?.(Math.min(p, 1)); if (p >= 1) { clearInterval(iv); res(true); } }, 100);
+      };
+      if (!('speechSynthesis' in window)) { fallbackTimer(words * 420); return; }
+      const u = new SpeechSynthesisUtterance(plain);
+      u.lang = 'ar-SA'; u.rate = .92; u.pitch = 1.25;
+      const v = speechSynthesis.getVoices().find(v => /^ar/i.test(v.lang));
+      if (v) u.voice = v; else { fallbackTimer(words * 420); return; }
+      let started = performance.now(); const est = words * 430;
+      let raf, began = false; const step = () => { if (my !== token) return clearInterval(raf); onProgress?.(Math.min((performance.now() - started) / est, .98)); };
+      // إن لم يبدأ صوت المتصفح خلال ثانيتين: نكمل بالنص فقط
+      const wd = setTimeout(() => { if (!began && my === token) { try { speechSynthesis.cancel(); } catch (e) {} fallbackTimer(words * 420); } }, 2000);
+      u.onstart = () => { began = true; clearTimeout(wd); started = performance.now(); clearInterval(raf); raf = setInterval(step, 100); };
+      u.onboundary = e => { if (e.charIndex != null) onProgress?.(e.charIndex / plain.length); };
+      u.onend = () => { clearInterval(raf); if (!began) return; onProgress?.(1); res(true); };
+      u.onerror = () => { clearInterval(raf); if (!began) return; res(false); };
+      speechSynthesis.speak(u);
+    });
+  }
+  return { play, stop, el: a };
+})();
+try { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => {}; } catch (e) {}
+
+
+/* =====================================================================
+   المؤثرات البصرية
+   ===================================================================== */
+const fx = $('#fx');
+let scale = 1;
+function clapBurst() {
+  const W = innerWidth, H = innerHeight;
+  for (let i = 0; i < 18; i++) {
+    const e = h('div', { class: 'fly' }, '👏'); const size = (42 + Math.random() * 46) * scale;
+    e.style.fontSize = size + 'px'; e.style.left = (W * (.12 + Math.random() * .76) - size / 2) + 'px'; e.style.top = (H - 40 * scale) + 'px'; fx.append(e);
+    const dx = (Math.random() - .5) * 220 * scale, dy = -H * (.45 + Math.random() * .4), rot = (Math.random() - .5) * 50;
+    e.animate([{ transform: 'translate(0,0) scale(.4)', opacity: 0 }, { transform: `translate(${dx * .3}px,${dy * .25}px) scale(1)`, opacity: 1, offset: .2 },
+      { transform: `translate(${dx}px,${dy}px) scale(.85) rotate(${rot}deg)`, opacity: 0 }],
+      { duration: 1700 + Math.random() * 900, delay: Math.random() * 450, easing: 'cubic-bezier(.2,.6,.3,1)', fill: 'both' }).onfinish = () => e.remove();
+  }
+  const big = h('div', { class: 'fly' }, '👏');
+  big.style.cssText = `font-size:${220 * scale}px;left:${W / 2 - 110 * scale}px;top:${H / 2 - 130 * scale}px`; fx.append(big);
+  big.animate([{ transform: 'scale(.3)', opacity: 0 }, { transform: 'scale(1.1)', opacity: .95, offset: .35 }, { transform: 'scale(1.3)', opacity: 0 }], { duration: 1200, easing: 'ease-out' }).onfinish = () => big.remove();
+}
+function confetti(x = innerWidth / 2, y = innerHeight / 2, n = 90) {
+  const colors = ['#1b8a5a', '#0f5132', '#d4a62a', '#f1d98a', '#ffffff', '#7fbfd3', '#b5452c'];
+  for (let i = 0; i < n; i++) {
+    const p = h('div', { class: 'conf' }), w = (8 + Math.random() * 10) * scale;
+    p.style.cssText = `width:${w}px;height:${w * (.4 + Math.random() * .9)}px;left:${x}px;top:${y}px;background:${colors[i % colors.length]};border-radius:${Math.random() < .4 ? '50%' : '2px'};box-shadow:0 0 0 1px rgba(0,0,0,.05)`;
+    fx.append(p);
+    const a = Math.random() * Math.PI * 2, v = (220 + Math.random() * 480) * scale;
+    const dx = Math.cos(a) * v, dy = Math.sin(a) * v - 260 * scale, fall = (450 + Math.random() * 450) * scale, r = Math.random() * 720 - 360;
+    p.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 }, { transform: `translate(${dx}px,${dy}px) rotate(${r}deg)`, opacity: 1, offset: .45 },
+      { transform: `translate(${dx * 1.15}px,${dy + fall}px) rotate(${r * 2}deg)`, opacity: 0 }], { duration: 1700 + Math.random() * 900, easing: 'cubic-bezier(.12,.7,.3,1)' }).onfinish = () => p.remove();
+  }
+}
+function celebrate(el, n = 70) { sfx.success(); const [x, y] = el ? center(el) : [innerWidth / 2, innerHeight / 2]; confetti(x, y, n); }
+function clap() { sfx.applause(); clapBurst(); const b = $('#cClap'); b.classList.remove('pulse'); void b.offsetWidth; b.classList.add('pulse'); }
+function say(box, ok, text) { box.replaceChildren(h('span', { class: 'msg pop ' + (ok ? 'ok' : 'bad') }, text ?? (ok ? LESSON.correctMsg : LESSON.wrongMsg))); }
+function shakeEl(el) { el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
+
+
+/* =====================================================================
+   مؤقّت دائري
+   ===================================================================== */
+function Timer(seconds, mini) {
+  let total = seconds, left = seconds, id = null;
+  const C = 2 * Math.PI * 64;
+  const el = h('div', { class: 'timer' + (mini ? ' mini' : '') });
+  el.innerHTML = `<div class="t-ring"><svg viewBox="0 0 150 150"><circle class="t-track" cx="75" cy="75" r="64"/>
+    <circle class="t-bar" cx="75" cy="75" r="64" stroke-dasharray="${C.toFixed(2)}"/></svg><div class="t-num"></div></div>
+    <div class="t-btns"><button type="button" class="icon-btn t-play" title="تشغيل / إيقاف">▶</button>
+    <button type="button" class="icon-btn t-reset" title="إعادة المؤقت">↺</button></div>`;
+  const num = $('.t-num', el), bar = $('.t-bar', el), play = $('.t-play', el);
+  const draw = () => { num.textContent = left > 0 ? fmtTime(left) : '⏰'; bar.style.strokeDashoffset = C * (1 - left / total); el.classList.toggle('low', left > 0 && left <= 10); play.textContent = id ? '⏸' : '▶'; };
+  const stop = () => { clearInterval(id); id = null; draw(); };
+  const reset = () => { clearInterval(id); id = null; left = total; el.classList.remove('done', 'low'); draw(); };
+  const tick = () => { if (!el.isConnected) { clearInterval(id); id = null; return; } left--; if (left <= 0) { left = 0; stop(); el.classList.add('done'); sfx.bell(); } else { if (left <= 5) sfx.tick(); draw(); } };
+  const start = () => { if (id) return; if (left <= 0) reset(); el.classList.remove('done'); id = setInterval(tick, 1000); draw(); };
+  play.onclick = () => (id ? stop() : start());
+  $('.t-reset', el).onclick = reset;
+  draw();
+  return { el, start, stop, reset };
+}
+
+
+/* =====================================================================
+   رأس الشريحة
+   ===================================================================== */
+function head(s, resettable = true, extra) {
+  return h('header', { class: 's-head rv' },
+    rich(s.title, 'h2', 's-title'),
+    h('div', { class: 'head-tools' },
+      extra || null,
+      s.strategy ? h('span', { class: 'badge' + (/تقويم|تشخيص|فرديّ/.test(s.strategy) ? ' gold' : /التحدّي|المادّة/.test(s.strategy) ? ' red' : '') }, s.strategy) : null,
+      resettable ? h('button', { type: 'button', class: 'icon-btn reset', title: 'إعادة الشريحة لحالتها الأولى',
+        onclick: e => buildSlide(+e.currentTarget.closest('.slide').dataset.i) }, '↺') : null));
+}
+
+
+/* =====================================================================
+   رسم خريطة المنطقة
+   opts: { click:true (الدول قابلة للضغط), labels:'all'|'hidden', waters:true, ctx:true }
+const pinSVG = (x, y, icon, label, cls = '') =>
+  `<g class="pin" transform="translate(${x.toFixed(0)} ${y.toFixed(0)})"><g class="pin-in ${cls}"><circle class="pr" r="16"/><circle r="11" fill="#b5452c" stroke="#fff" stroke-width="4"/>
+   ${icon ? `<text y="-44" style="font-size:44px;stroke:none">${icon}</text>` : ''}${label ? `<text y="44" class="lbl-hi" style="font-size:30px">${label}</text>` : ''}</g></g>`;
+// سهم من نقطة إلى نقطة
+const arrowSVG = (x1, y1, x2, y2) => {
+  const a = Math.atan2(y2 - y1, x2 - x1), L = 26;
+  const p1 = [x2 - L * Math.cos(a - .45), y2 - L * Math.sin(a - .45)], p2 = [x2 - L * Math.cos(a + .45), y2 - L * Math.sin(a + .45)];
+  return `<g><path class="arrow" d="M${x1} ${y1} L${x2 - 14 * Math.cos(a)} ${y2 - 14 * Math.sin(a)}"/><path class="ah" d="M${x2} ${y2} L${p1} L${p2}Z"/></g>`;
+};
+
+
+
+/* =====================================================================
+   رسّامو الشرائح
+   ===================================================================== */
+const R = {};
+const HOOKS = {};   // HOOKS[i] = { enter(), leave() }
+
+function todayAr() {
+  const now = new Date();
+  try {
+    const day = new Intl.DateTimeFormat('ar-SA', { weekday: 'long' }).format(now);
+    const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-arab', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
+    const greg = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-arab', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
+    return `${day} ${hijri.replace(/\s*هـ$/, '')}هـ — ${greg.replace(/\s*م$/, '')}م`;
+  } catch (e) { return now.toLocaleDateString(); }
+}
+
+/* ② النشيد الوطني */
+R.anthem = (s, i) => {
+  const eq = h('div', { class: 'eq' }, [1, 2, 3, 4, 5].map(() => h('i')));
+  const lines = s.lines.map((l, k) => h('div', { class: 'an-line rv' + (k === 0 ? ' big' : ''), onclick: e => {
+    $$('.an-line', card).forEach(x => x.classList.remove('on')); e.currentTarget.classList.add('on'); sfx.pop(); } }, l));
+  const card = h('div', { class: 'an-card card' }, lines);
+  let playing = false;
+  const btn = h('button', { type: 'button', class: 'btn big', onclick: async () => {
+    if (playing) { voice.stop(); playing = false; btn.textContent = '▶ تشغيل النشيد'; eq.classList.remove('on'); return; }
+    playing = true; btn.textContent = '⏸ إيقاف'; eq.classList.add('on');
+    const r = await voice.play(s.audio, '', null, false);
+    if (r === null) toast('ضعي ملفّ النشيد باسم anthem.mp3 داخل مجلّد audio 🎵');
+    playing = false; btn.textContent = '▶ تشغيل النشيد'; eq.classList.remove('on');
+  } }, '▶ تشغيل النشيد');
+  HOOKS[i] = { leave() { voice.stop(); playing = false; btn.textContent = '▶ تشغيل النشيد'; eq.classList.remove('on'); } };
+  return [head(s),
+    h('div', { class: 'anthem' },
+      h('div', { class: 'an-side card rv' }, h('div', { class: 'an-ico' }, '🇸🇦'), rich(s.note, 'div', 'an-note'), btn, eq),
+      card)];
+};
+
+/* ③ صح أم خطأ */
+R.tf = s => {
+  let solved = 0, right = 0;
+  const score = h('div', { class: 'tf-score' });
+  return [head(s),
+    h('div', { class: 'tf-list' }, s.items.map((it, k) => {
+      let done = false;
+      const row = h('div', { class: 'tf-row card rv' });
+      const pick = (val, btn) => {
+        if (done) return;
+        if (val === it.a) {
+          done = true; solved++; right++; row.classList.add('solved'); btn.classList.add('picked'); celebrate(btn, 40);
+          if (solved === s.items.length) setTimeout(() => say(score, true, `🌟 رائع! أنتنّ مستعدّاتٌ للرحلة`), 600);
+        } else { shakeEl(row); sfx.wrong(); btn.classList.add('picked'); setTimeout(() => btn.classList.remove('picked'), 700); }
+      };
+      row.append(h('span', { class: 'tf-n' }, ar(k + 1)),
+        h('div', { class: 'tf-main' }, rich(it.t, 'div', 'tf-txt'), rich(it.exp, 'div', 'tf-exp')),
+        h('button', { type: 'button', class: 'tf-btn yes', onclick: e => pick(true, e.currentTarget) }, '✔ صح'),
+        h('button', { type: 'button', class: 'tf-btn no', onclick: e => pick(false, e.currentTarget) }, '✘ خطأ'));
+      return row;
+    })),
+    score];
+};
+
+const ROBOT_SVG = () => `
+<svg class="robot" viewBox="0 0 400 540" aria-label="روبوت">
+ <defs>
+  <linearGradient id="rbHead" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9ece2"/></linearGradient>
+  <linearGradient id="rbBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#25a86d"/><stop offset="1" stop-color="#0f5132"/></linearGradient>
+  <radialGradient id="rbGlow"><stop offset="0" stop-color="#7cf7c4" stop-opacity=".95"/><stop offset="1" stop-color="#7cf7c4" stop-opacity="0"/></radialGradient>
+  <radialGradient id="rbVisor" cx=".5" cy=".3" r=".9"><stop offset="0" stop-color="#14402e"/><stop offset="1" stop-color="#05170f"/></radialGradient>
+ </defs>
+ <ellipse class="rb-shadow" cx="200" cy="520" rx="96" ry="14" fill="rgba(111,245,192,.45)"/>
+ <g class="rb-float">
+  <ellipse class="rb-jet" cx="200" cy="468" rx="56" ry="30" fill="url(#rbGlow)"/>
+  <line x1="200" y1="80" x2="200" y2="36" stroke="#0f5132" stroke-width="8" stroke-linecap="round"/>
+  <circle class="rb-tip" cx="200" cy="28" r="14" fill="#f1c84b" stroke="#fff" stroke-width="4"/>
+  <rect x="66" y="128" width="36" height="74" rx="15" fill="#1b8a5a" stroke="#fff" stroke-width="4"/>
+  <rect x="298" y="128" width="36" height="74" rx="15" fill="#1b8a5a" stroke="#fff" stroke-width="4"/>
+  <circle cx="84" cy="165" r="8" fill="#f1c84b"/><circle cx="316" cy="165" r="8" fill="#f1c84b"/>
+  <rect x="88" y="74" width="224" height="182" rx="68" fill="url(#rbHead)" stroke="#0f5132" stroke-width="6"/>
+  <path d="M110 96 Q200 60 290 96" stroke="#d4a62a" stroke-width="7" fill="none" stroke-linecap="round" opacity=".9"/>
+  <rect x="114" y="108" width="172" height="106" rx="46" fill="url(#rbVisor)" stroke="#6ff5c0" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M130 124 Q160 112 196 116" stroke="#fff" stroke-opacity=".25" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <g class="rb-eyes">
+   <ellipse cx="164" cy="152" rx="18" ry="22" fill="#6ff5c0"/><ellipse cx="236" cy="152" rx="18" ry="22" fill="#6ff5c0"/>
+   <circle cx="170" cy="144" r="6" fill="#fff"/><circle cx="242" cy="144" r="6" fill="#fff"/>
+  </g>
+  <g class="rb-mouth" fill="#6ff5c0">
+   <rect x="174" y="190" width="7" height="6" rx="3"/><rect x="186" y="190" width="7" height="6" rx="3"/><rect x="198" y="190" width="7" height="6" rx="3"/>
+   <rect x="210" y="190" width="7" height="6" rx="3"/><rect x="222" y="190" width="7" height="6" rx="3"/>
+  </g>
+  <circle cx="132" cy="200" r="10" fill="#ff8fa8" opacity=".55"/><circle cx="268" cy="200" r="10" fill="#ff8fa8" opacity=".55"/>
+  <rect x="176" y="252" width="48" height="22" rx="6" fill="#0f5132"/>
+  <g class="rb-wave">
+   <path d="M120 302 Q72 286 64 222" stroke="#1b8a5a" stroke-width="28" fill="none" stroke-linecap="round"/>
+   <path d="M120 302 Q72 286 64 222" stroke="#fff" stroke-opacity=".25" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="2 18"/>
+   <circle cx="62" cy="208" r="24" fill="#fff" stroke="#0f5132" stroke-width="5"/>
+  </g>
+  <path d="M280 302 Q326 326 330 382" stroke="#1b8a5a" stroke-width="28" fill="none" stroke-linecap="round"/>
+  <circle cx="330" cy="392" r="22" fill="#fff" stroke="#0f5132" stroke-width="5"/>
+  <line x1="342" y1="404" x2="368" y2="436" stroke="#8a5a2b" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="336" cy="372" r="30" fill="rgba(191,224,234,.55)" stroke="#d4a62a" stroke-width="8"/>
+  <rect x="112" y="268" width="176" height="172" rx="58" fill="url(#rbBody)" stroke="#0b3d26" stroke-width="5"/>
+  <rect x="138" y="292" width="124" height="98" rx="24" fill="#eef7f1" stroke="#d4a62a" stroke-width="4"/>
+  ${fitKSA(142, 296, 116, 90, 'fill="#1b8a5a"')}
+  <circle class="rb-chest-dot" cx="${fitPt(142, 296, 116, 90, 46.68, 24.71)[0]}" cy="${fitPt(142, 296, 116, 90, 46.68, 24.71)[1]}" r="6" fill="#d4a62a"/>
+  <circle cx="170" cy="414" r="7" fill="#f1c84b"/><circle cx="200" cy="414" r="7" fill="#f1c84b"/><circle cx="230" cy="414" r="7" fill="#f1c84b"/>
+  <ellipse cx="200" cy="444" rx="70" ry="16" fill="#0b3d26"/>
+ </g>
+</svg>`;
+
+/* ⑤ محطات الرحلة */
+R.stations = s => [head(s),
+  rich(s.mission, 'div', 'mission card rv'),
+  h('div', { class: 'stations' }, s.items.map((it, k) => h('div', { class: 'st card rv' + (it.final ? ' final' : ''),
+    onclick: e => { const el = e.currentTarget; el.classList.toggle('done'); if (el.classList.contains('done')) celebrate(el, 40); else sfx.pop(); } },
+    h('span', { class: 'st-n' }, ar(k + 1)), h('div', { class: 'st-ico' }, it.icon), rich(it.text, 'div', 'st-txt'))))];
+
+/* ⑦ بطاقات مقلوبة */
+R.flip = s => {
+  const n = s.cards.length, cols = s.cols || Math.min(n, 4), rows = Math.ceil(n / cols);
+  return [head(s),
+    s.intro ? rich(s.intro, 'p', 'intro rv') : null,
+    h('div', { class: 'flip-grid', style: `--cols:${cols};--rows:${rows}` },
+      s.cards.map(c => h('div', { class: 'flip rv' + (s.numbers ? ' num' : ''), onclick: e => { e.currentTarget.classList.toggle('flipped'); sfx.flip(); } },
+        h('div', { class: 'flip-in' },
+          h('div', { class: 'face front' }, c.icon ? h('div', { class: 'f-ico' }, c.icon) : null, rich(c.front, 'div', 'f-txt'), h('div', { class: 'tap' }, 'اضغطي للقلب 🔄')),
+          h('div', { class: 'face back' }, c.backIcon ? h('div', { class: 'b-ico' }, c.backIcon) : null, rich(c.back, 'div', 'b-txt')))))),
+  ];
+};
+
+
+/* =====================================================================
+   قصر المصمك (رسم مبسّط بطراز نجدي)
+   ===================================================================== */
+const MASMAK_SVG = (cls = '', flag = false) => {
+  const merlons = (x0, x1, y) => { let d = ''; for (let x = x0; x < x1 - 4; x += 16) d += `M${x} ${y}L${x + 8} ${y - 13}L${x + 16} ${y}Z`; return d; };
+  const wins = (x0, x1, y) => { let d = ''; for (let x = x0; x < x1; x += 26) d += `M${x} ${y}L${x + 7} ${y - 12}L${x + 14} ${y}Z`; return d; };
+  return `<svg class="${cls}" viewBox="0 0 420 260" aria-hidden="true">
+   <defs><linearGradient id="mud" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9b47c"/><stop offset=".55" stop-color="#c99d5f"/><stop offset="1" stop-color="#b0844a"/></linearGradient></defs>
+   <rect x="0" y="246" width="420" height="14" rx="7" fill="#c9a874" opacity=".6"/>
+   <rect x="70" y="104" width="280" height="144" fill="url(#mud)" stroke="#8a6a3a" stroke-width="3"/>
+   <path d="${merlons(72, 350, 104)}" fill="#c99d5f" stroke="#8a6a3a" stroke-width="2"/>
+   <path d="${wins(96, 330, 150)}" fill="#5a4022"/>
+   <path d="M28 248 L42 62 Q58 50 74 62 L88 248Z" fill="url(#mud)" stroke="#8a6a3a" stroke-width="3"/>
+   <path d="${merlons(40, 78, 64)}" fill="#c99d5f" stroke="#8a6a3a" stroke-width="2"/>
+   <path d="M332 248 L346 70 Q362 58 378 70 L392 248Z" fill="url(#mud)" stroke="#8a6a3a" stroke-width="3"/>
+   <path d="${merlons(344, 382, 72)}" fill="#c99d5f" stroke="#8a6a3a" stroke-width="2"/>
+   <path d="M246 104 L254 22 Q270 12 286 22 L294 104Z" fill="url(#mud)" stroke="#8a6a3a" stroke-width="3"/>
+   <path d="${merlons(254, 290, 24)}" fill="#c99d5f" stroke="#8a6a3a" stroke-width="2"/>
+   <path d="M262 60 L266 50 L270 60Z M276 60 L280 50 L284 60Z" fill="#5a4022"/>
+   <path d="M50 120 L56 108 L62 120Z M354 128 L360 116 L366 128Z M50 180 L56 168 L62 180Z M354 188 L360 176 L366 188Z" fill="#5a4022"/>
+   <rect x="186" y="176" width="48" height="72" rx="4" fill="#7a4e24" stroke="#4e3216" stroke-width="3"/>
+   <g fill="#d4a62a">${[188, 200, 212, 224].map(y => `<circle cx="196" cy="${y}" r="2.6"/><circle cx="210" cy="${y}" r="2.6"/><circle cx="224" cy="${y}" r="2.6"/>`).join('')}</g>
+   <g class="mm-flag" style="opacity:${flag ? 1 : 0}"><line x1="270" y1="14" x2="270" y2="-46" stroke="#5a4022" stroke-width="4"/>
+     <path class="mm-cloth" d="M270 -46 Q292 -52 312 -44 Q332 -36 352 -42 L352 -6 Q332 0 312 -8 Q292 -16 270 -10Z" fill="#1b8a5a" stroke="#0f5132" stroke-width="2"/></g>
+  </svg>`;
+};
+
+/* ① الغلاف */
+R.fcover = s => [
+  h('div', { class: 'cover fcover' },
+    h('div', { class: 'cv-text' },
+      h('div', { class: 'cover-pill rv' }, s.pill),
+      rich(s.greeting, 'p', 'cover-greet rv'),
+      h('div', { class: 'cover-kicker rv' }, s.kicker),
+      h('h1', { class: 'cover-title fc-t1 rv' }, s.title),
+      h('div', { class: 'fc-t2 rv' }, s.title2),
+      rich(s.subtitle, 'p', 'cover-sub rv'),
+      h('div', { class: 'cover-meta rv' }, s.meta.replace('{date}', todayAr()))),
+    h('div', { class: 'fc-art rv' },
+      h('div', { class: 'arch' }, h('img', { src: s.photo, alt: 'الملك عبدالعزيز' })),
+      svgEl(MASMAK_SVG('fc-masmak')))),
+];
+
+/* ④ الروبوت + آلة الزمن */
+R.timebot = (s, i) => {
+  const ar_ = h('div', { class: 'ar ar-full tb rv' });
+  const video = h('video', { autoplay: true, muted: true, playsinline: true });
+  let stream = null;
+  const wrap = h('div', { class: 'rb-wrap', html: ROBOT_SVG() });
+  wrap.prepend(h('div', { class: 'rb-rings' }, h('i'), h('i'), h('i')));
+  wrap.prepend(h('div', { class: 'rb-beam' }));
+  let drag = null;
+  wrap.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, l: wrap.offsetLeft, t: wrap.offsetTop }; wrap.setPointerCapture(e.pointerId); });
+  wrap.addEventListener('pointermove', e => { if (!drag) return; wrap.style.left = (drag.l + (e.clientX - drag.x) / scale) + 'px'; wrap.style.top = (drag.t + (e.clientY - drag.y) / scale) + 'px'; });
+  wrap.addEventListener('pointerup', () => { drag = null; });
+  const mood = c => { wrap.classList.remove('happy', 'no'); void wrap.offsetWidth; if (c) wrap.classList.add(c); };
+
+  let talkId = 0;
+  async function speak(key) {
+    const c = s.clips[key]; if (!c) return;
+    const my = ++talkId; wrap.classList.add('talking'); sfx.beep();
+    await voice.play(c.file, c.text, null);
+    if (my === talkId) wrap.classList.remove('talking');
+  }
+  function hush() { talkId++; voice.stop(); wrap.classList.remove('talking'); }
+
+  /* عجلة الزمن: سنتان لكل درجتين، تدور بالسحب */
+  const DEG = 2, maxRot = (s.from - s.min) * DEG;
+  let rot = 0, year = s.from, misses = 0, done = false, lastTick = s.from;
+  const ticks = [];
+  for (let y = s.min; y <= s.from; y++) {
+    const a = -(s.from - y) * DEG, big = y % 10 === 0;
+    ticks.push(`<g transform="rotate(${a})"><line y1="-300" y2="${big ? -270 : -286}" stroke="${big ? '#f1c84b' : '#6ff5c0'}" stroke-width="${big ? 5 : 2}" stroke-linecap="round"/>${big ? `<text y="-236" class="tw-lbl">${ar(y)}</text>` : ''}</g>`);
+  }
+  const dial = svgEl(`<svg class="tw" viewBox="-340 -340 680 680">
+    <defs><radialGradient id="twBg"><stop offset="0" stop-color="#0d3b2a"/><stop offset=".75" stop-color="#072a1d"/><stop offset="1" stop-color="#04150e"/></radialGradient></defs>
+    <circle r="320" fill="url(#twBg)" stroke="#6ff5c0" stroke-width="5"/>
+    <circle r="210" fill="none" stroke="#6ff5c0" stroke-opacity=".35" stroke-width="2" stroke-dasharray="6 10"/>
+    <g class="tw-ring">${ticks.join('')}<g class="tw-goal" transform="rotate(${-(s.from - s.target) * DEG})"><circle cy="-300" r="16" fill="none" stroke="#f1c84b" stroke-width="5"/></g></g>
+    <path d="M0 -334 L-18 -364 L18 -364Z" fill="#f1c84b" stroke="#fff" stroke-width="3"/>
+    <text class="tw-year" y="20">${ar(year)}</text><text class="tw-h" y="88">هـ</text>
+    <g class="tw-swirl"><circle r="150" fill="none" stroke="#6ff5c0" stroke-width="3" stroke-dasharray="40 30" opacity=".5"/></g>
+  </svg>`);
+  const ring = dial.querySelector('.tw-ring'), yTxt = dial.querySelector('.tw-year');
+  const setRot = r => {
+    rot = Math.max(0, Math.min(maxRot, r));
+    year = Math.round(s.from - rot / DEG);
+    ring.setAttribute('transform', `rotate(${rot})`);
+    yTxt.textContent = ar(year);
+    if (year !== lastTick) { lastTick = year; sfx.tick(); }
+    dial.classList.toggle('near', Math.abs(year - s.target) <= 3);
+  };
+  const angleAt = e => { const b = dial.getBoundingClientRect(); return Math.atan2(e.clientY - (b.top + b.height / 2), e.clientX - (b.left + b.width / 2)) * 180 / Math.PI; };
+  let dd = null;
+  dial.addEventListener('pointerdown', e => { if (done) return; dd = { a: angleAt(e) }; dial.setPointerCapture(e.pointerId); hand.remove(); });
+  dial.addEventListener('pointermove', e => {
+    if (!dd) return; const a = angleAt(e); let d = a - dd.a; if (d > 180) d -= 360; if (d < -180) d += 360;
+    dd.a = a; setRot(rot + d);
+  });
+  dial.addEventListener('pointerup', () => { dd = null; });
+  const hand = h('div', { class: 'globe-hand tw-hand' }, '👆');
+
+  const go = h('button', { type: 'button', class: 'tw-go', title: 'انطلقي', onclick: () => {
+    if (done) return;
+    if (year === s.target) win();
+    else { misses++; sfx.wrong(); mood('no'); shakeEl(dial); if (misses === 2) { dial.classList.add('hint'); speak('hint'); } else if (misses > 2) dial.classList.add('hint'); }
+  } }, '🚀');
+  const nudge = d => h('button', { type: 'button', class: 'ar-ico tw-n', onclick: () => { if (!done) setRot(rot - d * DEG); } }, d > 0 ? '▲' : '▼');
+
+  const past = h('div', { class: 'tb-past' },
+    svgEl(MASMAK_SVG('tb-masmak', true)),
+    h('div', { class: 'tb-photo' }, h('img', { src: s.photo, alt: 'الملك عبدالعزيز' })));
+  const flash = h('div', { class: 'tb-flash' });
+  function win() {
+    done = true; dial.classList.remove('hint'); mood('happy'); sfx.teleport();
+    ar_.classList.add('travel'); flash.classList.remove('on'); void flash.offsetWidth; flash.classList.add('on');
+    setTimeout(() => { ar_.classList.add('arrived'); sfx.success(); const [x, y] = center(past); confetti(x, y, 150); }, 1300);
+    setTimeout(() => speak('win'), 1900);
+  }
+
+  async function startCam(silent) {
+    if (stream) return;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+      if (!slideEls[i].classList.contains('active')) return stopCam();
+      video.srcObject = stream; ar_.classList.add('cam'); camBtn.classList.add('on');
+    } catch (e) { if (!silent) toast('تعذّر تشغيل الكاميرا 📷 — اسمحي للمتصفح باستخدام الكاميرا'); }
+  }
+  function stopCam() { if (stream) stream.getTracks().forEach(t => t.stop()); stream = null; video.srcObject = null; ar_.classList.remove('cam'); camBtn.classList.remove('on'); }
+  const camBtn = h('button', { type: 'button', class: 'ar-ico', title: 'الكاميرا', onclick: () => stream ? stopCam() : startCam() }, '📷');
+
+  ar_.append(video, h('div', { class: 'ar-floor' }), h('div', { class: 'ar-scan' }), h('div', { class: 'ar-sweep' }),
+    ...['tl', 'tr', 'bl', 'br'].map(c => h('div', { class: 'ar-corner ' + c })),
+    h('div', { class: 'ar-tag' }, 'AR LIVE'),
+    h('div', { class: 'ar-tools-ico' }, camBtn,
+      h('button', { type: 'button', class: 'ar-ico', title: 'إعادة السؤال', onclick: () => speak(done ? 'win' : 'ask') }, '🔊'),
+      h('button', { type: 'button', class: 'ar-ico', title: 'تلميح', onclick: () => { if (!done) { dial.classList.add('hint'); speak('hint'); } } }, '💡'),
+      h('button', { type: 'button', class: 'ar-ico', title: 'إعادة', onclick: () => buildSlide(i) }, '↺')),
+    past,
+    h('div', { class: 'tw-wrap' }, dial, hand, h('div', { class: 'tw-ctrl' }, nudge(1), go, nudge(-1))),
+    wrap, flash);
+
+  HOOKS[i] = {
+    enter() { sfx.teleport(); startCam(true); setTimeout(() => { if (slideEls[i].classList.contains('active') && !done) speak('ask'); }, 2000); },
+    leave() { hush(); stopCam(); },
+  };
+  return [ar_];
+};
+
+/* ⑥ خط زمني */
+R.timeline = s => {
+  let opened = 0;
+  const card = h('div', { class: 'tl-card card' }, h('div', { class: 'nb-empty' }, s.hint));
+  const nodes = s.items.map((it, k) => h('button', { type: 'button', class: 'tl-node rv', onclick: e => {
+    $$('.tl-node', line).forEach(n => n.classList.remove('on'));
+    const b = e.currentTarget; b.classList.add('on');
+    if (!b.classList.contains('seen')) { b.classList.add('seen'); opened++; }
+    card.replaceChildren(h('div', { class: 'tl-ico pop' }, it.icon), h('div', { class: 'tl-title pop' }, it.title), rich(it.text, 'div', 'tl-txt pop'));
+    sfx.ding(); if (opened === s.items.length && !card.dataset.c) { card.dataset.c = 1; setTimeout(() => celebrate(card, 60), 400); }
+  } }, h('span', { class: 'tl-dot' }, it.icon), h('span', { class: 'tl-year' }, it.year), h('span', { class: 'tl-name' }, it.title)));
+  const line = h('div', { class: 'tl-line' }, nodes);
+  return [head(s),
+    h('div', { class: 'tl' },
+      h('div', { class: 'tl-main' }, line, card),
+      h('div', { class: 'polaroid rv', style: '--r:3deg' }, h('img', { src: s.photo, alt: 'الملك عبدالعزيز' }), h('span', {}, 'الملك عبدالعزيز')))];
+};
+
+/* ⑦ ⑧ خريطة الرحلة المتحركة */
+function routeMap() {
+  const W = ROUTE.w, H = ROUTE.h;
+  const lands = Object.entries(ROUTE.paths).map(([n, d]) => `<path class="c${n === 'Saudi Arabia' ? ' ksa-r' : ''}" d="${d}"/>`).join('');
+  const t = (lon, lat, txt, cls, rot = 0) => { const [x, y] = RP(lon, lat); return `<text class="${cls}" x="${x.toFixed(0)}" y="${y.toFixed(0)}"${rot ? ` transform="rotate(${rot} ${x.toFixed(0)} ${y.toFixed(0)})"` : ''}>${txt}</text>`; };
+  const dahna = [[44.6, 29.2], [45.9, 27.6], [46.9, 26.0], [47.5, 24.4], [47.8, 22.6]].map(p => RP(...p));
+  const dPath = 'M' + dahna.map(p => p.map(v => v.toFixed(0)).join(' ')).join(' L');
+  const [jx, jy] = RP(50.1, 23.6);
+  const svg = svgEl(`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
+    <rect class="seaR" width="${W}" height="${H}"/><rect width="${W}" height="${H}" fill="url(#seaWaves)"/>
+    <g>${lands}</g>
+    <path d="${dPath}" fill="none" stroke="#e8c98a" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    <path d="${dPath}" fill="none" stroke="#d9b06a" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 9" opacity=".7"/>
+    <ellipse cx="${jx.toFixed(0)}" cy="${jy.toFixed(0)}" rx="80" ry="55" fill="#e8c98a" opacity=".9"/>
+    <g class="lbls">
+      ${t(46.3, 27.2, 'الدهناء', 'sand', -58)}${t(48.55, 26.2, 'الصمّان', 'sand')}${t(50.1, 23.15, 'الجافورة', 'sand')}${t(48.6, 22.35, 'الربع الخالي', 'sand')}
+      ${t(44.2, 29.9, 'العراق', 'ctx')}${t(50.6, 29.4, 'الخليج العربي', 'wt', 32)}${t(51.25, 25.2, 'قطر', 'ctx')}${t(50.95, 26.45, 'البحرين', 'ctx')}
+      ${t(44.3, 26.0, 'نجد', 'ctx')}
+    </g>
+    <g class="rt-paths"></g><g class="rt-pins"></g><g class="rt-camel"></g>
+  </svg>`);
+  return h('div', { class: 'map rmap rv', style: `--ar:${W}/${H}` }, svg);
+}
+R.route = s => {
+  const map = routeMap(), svg = map.firstChild;
+  const gPaths = svg.querySelector('.rt-paths'), gPins = svg.querySelector('.rt-pins'), gCamel = svg.querySelector('.rt-camel');
+  const add = (g, html) => { const n = svgEl(`<svg xmlns="http://www.w3.org/2000/svg">${html}</svg>`); const k = n.firstChild; g.append(k); return k; };
+  const info = h('div', { class: 'rt-info card' }, h('div', { class: 'nb-empty' }, '🐪 اضغطي «ابدئي الرحلة» لنتتبّعَ خُطى المؤسِّس'));
+  let cur = -1;
+  const chips = s.steps.map((st, k) => h('button', { type: 'button', class: 'rt-chip', onclick: () => { if (k === cur + 1) step(); else if (k <= cur) show(k); } },
+    h('span', { class: 'rt-n' }, ar(k + 1)), st.name));
+  const nextBtn = h('button', { type: 'button', class: 'btn yellow', onclick: () => step() }, '🐪 ابدئي الرحلة');
+  const show = k => {
+    const st = s.steps[k];
+    chips.forEach((c, j) => c.classList.toggle('on', j === k));
+    info.replaceChildren(
+      h('div', { class: 'rt-head pop' }, h('span', { class: 'rt-ico' }, st.icon), h('b', {}, st.name), st.men ? h('span', { class: 'rt-men' }, '👥 ' + st.men) : null),
+      rich(st.text, 'div', 'rt-txt pop'));
+  };
+  const curve = (a, b, bend = .18) => {
+    const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1];
+    return `M${a[0].toFixed(0)} ${a[1].toFixed(0)} Q${(mx - dy * bend).toFixed(0)} ${(my + dx * bend).toFixed(0)} ${b[0].toFixed(0)} ${b[1].toFixed(0)}`;
+  };
+  const pin = (st, k) => { const [x, y] = RP(st.lon, st.lat);
+    return `<g transform="translate(${x.toFixed(0)} ${y.toFixed(0)})"><g class="pin-in pop"><circle class="pr" r="16" style="stroke:${s.color}"/><circle r="12" fill="${s.color}" stroke="#fff" stroke-width="4"/>
+      <text y="5" class="rt-num">${ar(k + 1)}</text><text y="${st.ly ?? (st.lat > 29 ? 46 : -26)}" class="rt-lbl">${st.name}</text></g></g>`; };
+  function step() {
+    if (cur >= s.steps.length - 1) return;
+    cur++;
+    const st = s.steps[cur], b = RP(st.lon, st.lat);
+    if (cur > 0) {
+      const p = s.steps[cur - 1], a = RP(p.lon, p.lat);
+      const path = add(gPaths, `<path class="rt-path${st.back ? ' back' : ''}" d="${curve(a, b, st.back ? -.22 : .18)}" style="stroke:${s.color}"/>`);
+      const L = path.getTotalLength();
+      if (!st.back) {                        // رسم المسار تدريجيًا
+        path.style.strokeDasharray = L; path.style.strokeDashoffset = L; path.getBoundingClientRect();
+        path.style.transition = 'stroke-dashoffset 1.4s ease-in-out';
+        requestAnimationFrame(() => { path.style.strokeDashoffset = 0; });
+        setTimeout(() => { path.style.strokeDashoffset = 0; }, 60);
+      }
+      // الجمل يتحرك على المسار
+      gCamel.innerHTML = `<text class="rt-camel-i" font-size="46">🐪</text>`;
+      const camel = gCamel.firstChild, t0 = performance.now();
+      const mv = () => { const t = Math.min(1, (performance.now() - t0) / 1400), pt = path.getPointAtLength(L * t);
+        camel.setAttribute('x', pt.x); camel.setAttribute('y', pt.y - 14); if (t < 1 && camel.isConnected) requestAnimationFrame(mv); };
+      mv(); setTimeout(() => { camel.setAttribute('x', b[0]); camel.setAttribute('y', b[1] - 14); }, 1500);
+    }
+    if (st.branch) {
+      const c = RP(st.branch.lon, st.branch.lat);
+      add(gPaths, `<path class="rt-path branch" d="${curve(b, c, .1)}" style="stroke:${s.color}"/>`);
+      add(gPins, `<g transform="translate(${c[0].toFixed(0)} ${c[1].toFixed(0)})"><g class="pin-in pop"><text y="10" style="font-size:40px;stroke:none">⚔️</text><text y="-28" class="rt-lbl">${st.branch.name}</text></g></g>`);
+    }
+    if (!st.back) add(gPins, pin(st, cur));
+    setTimeout(() => { show(cur); sfx.ding(); }, cur > 0 ? 900 : 0);
+    nextBtn.textContent = cur >= s.steps.length - 1 ? '🏁 وصلنا!' : '➡️ المحطّة التالية';
+    if (cur >= s.steps.length - 1) { nextBtn.disabled = true; setTimeout(() => celebrate(info, 90), 1500); }
+  }
+  return [head(s), h('div', { class: 'mapwrap rt' }, map,
+    h('div', { class: 'panel' }, h('div', { class: 'rt-chips rv' }, chips), info, h('div', { class: 'btn-row rv' }, nextBtn)))];
+};
+
+/* ⑩ مشهد معركة المصمك */
+R.masmak = s => {
+  const scene = h('div', { class: 'mk-scene sky-night rv', html: MASMAK_SVG('mk-svg') });
+  scene.append(h('div', { class: 'mk-moon' }), h('div', { class: 'mk-sun' }));
+  const txt = h('div', { class: 'mk-txt card' }, h('div', { class: 'nb-empty' }, '🌙 اضغطي «التالي في القصّة» لنشهدَ فجرَ الرياض'));
+  const dots = s.steps.map(() => h('i'));
+  let k = -1;
+  const btn = h('button', { type: 'button', class: 'btn yellow', onclick: () => {
+    if (k >= s.steps.length - 1) return;
+    const st = s.steps[++k];
+    scene.className = 'mk-scene sky-' + st.sky; dots.forEach((d, j) => d.classList.toggle('on', j <= k));
+    txt.replaceChildren(h('div', { class: 'mk-ico pop' }, st.icon), rich(st.text, 'div', 'mk-t pop'));
+    if (st.flag) { const f = scene.querySelector('.mm-flag'); f.style.opacity = 1; f.animate([{ transform: 'translateY(60px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1200, easing: 'ease-out' }); celebrate(scene, 140); }
+    else sfx.ding();
+    if (k >= s.steps.length - 1) { btn.textContent = '✨ النهاية'; btn.disabled = true; }
+  } }, '▶ التالي في القصّة');
+  return [head(s), h('div', { class: 'mk' }, scene, h('div', { class: 'mk-side' }, txt, h('div', { class: 'mk-foot rv' }, h('div', { class: 'qz-dots' }, dots), btn)))];
+};
+
+/* ⑪ صفات المؤسس */
+R.traits = s => {
+  const order = s.photos.map((_, k) => k);
+  const imgs = s.photos.map((p, k) => h('div', { class: 'polaroid stack', style: `--r:${[-5, 4, -2][k % 3]}deg;z-index:${s.photos.length - k}` }, h('img', { src: p, alt: 'الملك عبدالعزيز' })));
+  const stack = h('div', { class: 'stackwrap rv', title: 'اضغطي لتقليب الصور', onclick: () => {
+    const t = order.shift(); imgs[t].classList.add('away'); sfx.flip(); order.push(t);
+    setTimeout(() => { imgs[t].classList.remove('away'); order.forEach((k, pos) => imgs[k].style.zIndex = imgs.length - pos); }, 450);
+  } }, imgs);
+  return [head(s),
+    h('div', { class: 'traits' }, stack,
+      h('div', { class: 'tr-grid' }, s.items.map(it => h('div', { class: 'flip rv', onclick: e => { e.currentTarget.classList.toggle('flipped'); sfx.flip(); } },
+        h('div', { class: 'flip-in' },
+          h('div', { class: 'face front' }, h('div', { class: 'f-ico', style: 'font-size:80px' }, it.icon), h('div', { class: 'f-txt', style: 'font-size:40px' }, it.name)),
+          h('div', { class: 'face back' }, h('div', { class: 'b-ico', style: 'font-size:54px' }, it.icon), rich(it.text, 'div', 'b-txt')))))))];
+};
+
+/* ⑫ أكملي الفراغ */
+R.fillq = s => {
+  let total = 0, opened = 0;
+  const rows = s.rows.map((r, k) => {
+    const parts = r.split(/\[\[(.+?)\]\]/);
+    return h('div', { class: 'fq-row card rv' }, h('span', { class: 'tf-n' }, ar(k + 1)),
+      h('div', { class: 'fq-t' }, parts.map((p, j) => {
+        if (j % 2 === 0) return p;
+        total++;
+        return h('button', { type: 'button', class: 'blank fq-b', onclick: e => {
+          const b = e.currentTarget; if (b.classList.contains('open')) return;
+          b.classList.add('open'); b.textContent = p; sfx.ding();
+          if (++opened === total) setTimeout(() => celebrate(b, 90), 300);
+        } }, '؟');
+      })));
+  });
+  return [head(s), h('div', { class: 'p-hint rv' }, s.hint), h('div', { class: 'fq' }, rows)];
+};
+
+/* ⑬ رتّبي الأحداث */
+R.sort = s => {
+  let next = 0;
+  const fb = h('div', { class: 'feedback' });
+  const order = shuffle(s.items.map((t, k) => k));
+  const btns = order.map(k => h('button', { type: 'button', class: 'so-item rv', onclick: e => {
+    const b = e.currentTarget; if (b.classList.contains('ok')) return;
+    if (k === next) {
+      b.classList.add('ok'); b.querySelector('.so-n').textContent = ar(++next); sfx.ding();
+      const [x, y] = center(b); confetti(x, y, 20);
+      if (next === s.items.length) { say(fb, true, '🏆 رتّبتِ الأحداثَ كمؤرّخةٍ محترفة!'); celebrate(fb, 120); }
+    } else { shakeEl(b); sfx.wrong(); say(fb, false, 'ليس هذا الحدثَ التالي.. فكّري مرّةً أخرى 💭'); }
+  } }, h('span', { class: 'so-n' }, '؟'), h('span', {}, s.items[k])));
+  return [head(s), h('div', { class: 'p-hint rv' }, s.hint), h('div', { class: 'so' }, btns), fb];
+};
+
+/* ⑳ الختام */
+R.fclosing = s => [
+  h('div', { class: 'closing' },
+    h('div', { class: 'fc-frame rv' }, h('img', { src: s.photo, alt: 'الملك عبدالعزيز' })),
+    h('div', { class: 'cl-txt' },
+      rich(s.title, 'h1', 'cl-title rv'), rich(s.message, 'p', 'cl-msg rv'), h('div', { class: 'cl-quote rv' }, s.quote),
+      s.clapBtn ? h('button', { type: 'button', class: 'btn yellow big rv', onclick: () => { clap(); confetti(innerWidth / 2, innerHeight / 3, 140); } }, s.clapBtn) : null)),
+];
+
+/* ⑫ سؤال فردي + اختيار طالبة عشوائيًا */
+R.single = s => {
+  let N = s.students || 30;
+  const num = h('div', { class: 'pk-num' }, '?');
+  const cnt = h('b', {}, ar(N));
+  let spinning = false;
+  const spin = () => {
+    if (spinning) return; spinning = true; num.classList.remove('got'); num.classList.add('spin');
+    let t = 0; const total = 22;
+    const step = () => {
+      num.textContent = ar(1 + Math.floor(Math.random() * N)); sfx.tick();
+      if (++t < total) setTimeout(step, 40 + t * t * .9);
+      else { spinning = false; num.classList.remove('spin'); num.classList.add('got'); sfx.success(); timer.reset(); timer.start(); }
+    };
+    step();
+  };
+  const timer = Timer(s.seconds || 30, true);
+  const fb = h('div', { class: 'feedback' });
+  let done = false;
+  const opts = s.options.map((o, k) => h('button', { type: 'button', class: 'opt rv', onclick: e => {
+    const b = e.currentTarget; if (done || b.classList.contains('wrong')) return;
+    if (k === s.correct) { done = true; b.classList.add('correct'); celebrate(b, 70); say(fb, true); timer.stop(); }
+    else { b.classList.add('wrong'); shakeEl(b); sfx.wrong(); say(fb, false); }
+  } }, h('span', { class: 'o-k' }, KEYS[k]), o));
+  return [head(s),
+    h('div', { class: 'single' },
+      h('div', { class: 'picker card rv' }, h('div', { class: 'pk-t' }, '🎯 مَن ستُجيب؟'), num,
+        h('button', { type: 'button', class: 'btn yellow', onclick: spin }, '🎲 اختاري طالبة'),
+        h('div', { class: 'pk-set' },
+          h('button', { type: 'button', class: 'icon-btn', onclick: () => { N = Math.max(2, N - 1); cnt.textContent = ar(N); } }, '−'),
+          h('span', {}, 'عدد الطالبات: ', cnt),
+          h('button', { type: 'button', class: 'icon-btn', onclick: () => { N++; cnt.textContent = ar(N); } }, '+')),
+        timer.el),
+      h('div', { class: 'sq' }, rich(s.question, 'div', 'sq-q card rv'), h('div', { class: 'opts' }, opts), fb))];
+};
+
+/* ⑬ مهارات التفكير العليا */
+R.hots = s => {
+  const timer = Timer(s.seconds || 60, true);
+  return [head(s, true, timer.el),
+    h('div', { class: 'hots' }, s.items.map(it => {
+      const card = h('div', { class: 'hc card rv' },
+        h('span', { class: 'hc-tag' }, it.tag), rich(it.q, 'div', 'hc-q'), rich('💡 ' + it.a, 'div', 'hc-a'),
+        h('button', { type: 'button', class: 'btn soft sm hc-btn', onclick: () => { card.classList.add('open'); sfx.success(); } }, '💡 إجابةٌ نموذجيّة'));
+      return card;
+    }))];
+};
+
+/* ⑭ المادة ٣٤ */
+R.article = s => {
+  const ans = rich(s.a, 'div', 'p-box card reveal');
+  const ideas = h('div', { class: 'ideas' });
+  let k = 0;
+  const txt = h('div', { class: 'doc-txt', html: s.text });
+  $$('.k', txt).forEach(x => x.addEventListener('click', () => { x.classList.toggle('on'); sfx.pop(); }));
+  return [head(s),
+    h('div', { class: 'art' },
+      h('div', { class: 'doc card rv' },
+        h('div', { class: 'doc-h' },
+          svgEl(`<svg class="seal" viewBox="-50 -50 100 100"><circle r="46" fill="#d4a62a"/><circle r="38" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="4 4"/><text y="14" text-anchor="middle" font-size="44" fill="#0f5132" font-family="Tajawal" font-weight="900">${s.seal || '٣٤'}</text></svg>`),
+          h('div', {}, h('b', {}, s.source), h('small', {}, '📜 ' + s.num))),
+        h('div', { class: 'doc-b' }, h('div', { class: 'doc-num' }, s.num), txt)),
+      h('div', { class: 'art-side' },
+        h('button', { type: 'button', class: 'p-box q card rv', style: 'text-align:start;cursor:pointer;font-family:var(--f-text)', onclick: () => { ans.classList.add('show'); sfx.success(); } }, s.q),
+        ans,
+        h('button', { type: 'button', class: 'btn yellow rv', onclick: e => { if (k < s.ideas.length) { ideas.append(h('div', { class: 'idea' }, s.ideas[k++])); sfx.ding(); }
+          if (k >= s.ideas.length) { e.currentTarget.disabled = true; e.currentTarget.style.opacity = .6; } } }, s.ideasTitle),
+        ideas))];
+};
+
+/* ⑮ تحدي الدقيقة */
+R.challenge = s => {
+  const box = h('div', { class: 'ch card rv' });
+  let id = null;
+  const intro = () => box.replaceChildren(h('div', { class: 'ch-ico' }, '🏆'), rich(s.description, 'p', 'ch-desc'),
+    h('button', { type: 'button', class: 'btn big', onclick: start }, '🚀 ابدئي التحدّي'));
+  function start() {
+    clearInterval(id);
+    const words = shuffle([...s.words]);
+    let idx = 0, score = 0, left = s.seconds, locked = false;
+    const sc = h('span', { class: 'stat' }), tm = h('span', { class: 'stat' }), pr = h('span', { class: 'stat' });
+    const word = h('div', { class: 'ch-word' });
+    const draw = () => { sc.textContent = '⭐ ' + ar(score); tm.textContent = '⏱ ' + fmtTime(left); pr.textContent = '📝 ' + ar(Math.min(idx + 1, words.length)) + ' / ' + ar(words.length); tm.classList.toggle('low', left <= 10); };
+    const show = () => { word.className = 'ch-word'; word.textContent = words[idx].w; void word.offsetWidth; word.classList.add('pop'); draw(); };
+    const finish = () => {
+      clearInterval(id); id = null;
+      const ratio = score / words.length;
+      box.replaceChildren(h('div', { class: 'ch-ico' }, ratio >= .8 ? '🏅' : ratio >= .5 ? '🎉' : '💪'),
+        h('div', { class: 'ch-result', html: `نتيجتُكُنّ: <b>${ar(score)}</b> من ${ar(words.length)}` }),
+        h('p', { class: 'ch-desc' }, ratio >= .8 ? 'مُذهل! استحققتُنَّ وسامَ المستكشفةِ السعوديّة 🏅' : ratio >= .5 ? 'رائع! أداءٌ جميل 💚' : 'محاولةٌ جميلة.. هيّا نحاولُ مرّةً أخرى 💪'),
+        h('button', { type: 'button', class: 'btn', onclick: start }, '🔁 إعادة التحدّي'));
+      if (ratio >= .5) celebrate(box, 120); else sfx.pop();
+    };
+    const answer = (k, btn) => {
+      if (locked) return; locked = true;
+      const ok = words[idx].c === k;
+      if (ok) { score++; sfx.ding(); const [x, y] = center(btn); confetti(x, y, 25); }
+      else { sfx.wrong(); word.append(h('small', {}, '← ' + s.categories[words[idx].c].label)); }
+      word.classList.add(ok ? 'ok' : 'bad'); draw();
+      setTimeout(() => { idx++; locked = false; if (idx >= words.length) finish(); else show(); }, ok ? 550 : 1300);
+    };
+    box.replaceChildren(h('div', { class: 'ch-top' }, sc, tm, pr), word,
+      h('div', { class: 'ch-cats' }, s.categories.map((c, k) => h('button', { type: 'button', class: 'cat cat-' + k, onclick: e => answer(k, e.currentTarget) }, c.icon + ' ' + c.label))));
+    id = setInterval(() => { if (!box.isConnected) { clearInterval(id); return; } left--; if (left <= 0) { left = 0; draw(); sfx.bell(); finish(); } else { if (left <= 5) sfx.tick(); draw(); } }, 1000);
+    show();
+  }
+  intro();
+  return [head(s), box];
+};
+
+/* ⑯ الاختبار الختامي */
+R.quiz = s => {
+  const box = h('div', { class: 'quiz' });
+  let qi = 0, score = 0;
+  const res = [];
+  const dots = () => h('div', { class: 'qz-dots' }, s.items.map((_, k) => h('i', { class: res[k] === true ? 'ok' : res[k] === false ? 'no' : k === qi ? 'cur' : '' })));
+  const render = () => {
+    if (qi >= s.items.length) {
+      const r = score / s.items.length;
+      box.replaceChildren(h('div', { class: 'qz-end card' },
+        h('div', { class: 'ch-ico' }, r >= .85 ? '🏆' : r >= .5 ? '🌟' : '💪'),
+        h('div', { class: 'ch-result', html: `نتيجتُكِ: <b>${ar(score)}</b> من ${ar(s.items.length)}` }),
+        dots(),
+        h('p', { class: 'ch-desc' }, r >= .85 ? 'ممتاز! أتقنتِ درسَ الموقعِ والحدود 💚' : r >= .5 ? 'جيّدٌ جدًّا! راجعي ما أخطأتِ فيه 📖' : 'لا بأس.. نراجعُ الدرسَ معًا مرّةً أخرى 💪'),
+        h('button', { type: 'button', class: 'btn', onclick: () => { qi = 0; score = 0; res.length = 0; render(); } }, '🔁 إعادة الاختبار')));
+      if (r >= .5) celebrate(box, 130);
+      return;
+    }
+    const it = s.items[qi];
+    let answered = false;
+    const next = h('div', { class: 'qz-next' });
+    const opts = it.o.map((o, k) => h('button', { type: 'button', class: 'opt', onclick: e => {
+      if (answered) return; answered = true;
+      const ok = k === it.c; res[qi] = ok; if (ok) score++;
+      e.currentTarget.classList.add(ok ? 'correct' : 'wrong');
+      if (ok) celebrate(e.currentTarget, 40); else { sfx.wrong(); shakeEl(e.currentTarget); opts[it.c].classList.add('correct'); }
+      $('.qz-dots', box).replaceWith(dots());
+      next.replaceChildren(h('button', { type: 'button', class: 'btn yellow pop', onclick: () => { qi++; render(); } }, qi < s.items.length - 1 ? 'السؤالُ التالي ←' : '🏁 النتيجة'));
+    } }, h('span', { class: 'o-k' }, KEYS[k]), o));
+    box.replaceChildren(
+      h('div', { class: 'qz-top' }, h('span', { class: 'stat' }, `سؤال ${ar(qi + 1)} من ${ar(s.items.length)}`), dots(), h('span', { class: 'stat' }, '⭐ ' + ar(score))),
+      rich(it.q, 'div', 'qz-q card pop'), h('div', { class: 'opts' }, opts), next);
+  };
+  render();
+  return [head(s), box];
+};
+
+/* ⑰ تقييم ذاتي + واجب */
+R.exit = s => [head(s),
+  h('div', { class: 'exit' },
+    h('div', { class: 'self card rv' }, rich(s.question, 'p', 'self-q'),
+      h('div', { class: 'emos' }, s.options.map(o => { let n = 0; const c = h('span', { class: 'c' }, ar(0));
+        return h('button', { type: 'button', class: 'emo', onclick: () => { c.textContent = ar(++n); c.classList.remove('pop'); void c.offsetWidth; c.classList.add('pop'); sfx.pop(); } },
+          h('span', { class: 'e' }, o.e), h('span', { class: 'l' }, o.l), c); }))),
+    h('div', { class: 'hw card rv' }, rich(s.homeworkTitle, 'h3'),
+      h('ol', {}, s.homework.map((t, k) => h('li', {}, h('span', { class: 'n' }, ar(k + 1)), rich(t, 'span')))))),
+];
+
+/* =====================================================================
+   بناء الشرائح والتنقل
+   ===================================================================== */
+const slidesBox = $('#slides');
+const slideEls = SLIDES.map((s, i) => { const el = h('section', { class: 'slide s-' + s.type, 'data-i': i }); slidesBox.append(el); return el; });
+let cur = 0;
+
+function buildSlide(i) {
+  HOOKS[i]?.leave?.(); delete HOOKS[i];
+  const s = SLIDES[i], el = slideEls[i], render = R[s.type];
+  el.replaceChildren(...[].concat(render ? render(s, i) : h('p', {}, 'نوع شريحة غير معروف: ' + s.type)).flat().filter(Boolean));
+  el.querySelectorAll('.rv').forEach((e, k) => e.style.setProperty('--i', k));
+  if (el.classList.contains('active')) { el.classList.remove('active'); void el.offsetWidth; el.classList.add('active'); HOOKS[i]?.enter?.(); }
+}
+
+function show(i, dir = 1) {
+  const to = slideEls[i], from = slideEls[cur];
+  if (from !== to) { HOOKS[cur]?.leave?.(); from.classList.remove('active'); from.classList.add('leaving'); setTimeout(() => from.classList.remove('leaving'), 400); }
+  to.classList.remove('leaving', 'a-fade', 'a-slide', 'a-zoom', 'd-next', 'd-prev', 'active');
+  void to.offsetWidth;
+  to.classList.add('active', 'a-' + (SLIDES[i].anim || 'fade'), dir > 0 ? 'd-next' : 'd-prev');
+  cur = i;
+  HOOKS[i]?.enter?.();
+  const N = SLIDES.length, pct = ((i + 1) / N * 100);
+  $('#counter').textContent = `${ar(i + 1)} / ${ar(N)}`;
+  $('#cNum').textContent = $('#cNum').dataset.n = `${ar(i + 1)} / ${ar(N)}`;
+  $('#progress i').style.width = pct + '%';
+  $('#progress b').style.right = pct + '%';
+  history.replaceState(null, '', '#' + (i + 1));
+}
+const go = i => { if (i >= 0 && i < SLIDES.length && i !== cur) show(i, i > cur ? 1 : -1); };
+const next = () => go(cur + 1);
+const prev = () => go(cur - 1);
+
+
+/* =====================================================================
+   لوحة المفاتيح والفأرة واللمس
+   ===================================================================== */
+window.addEventListener('keydown', e => {
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) { if (e.key === 'Escape') t.blur(); return; }
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  sfx.unlock();
+  if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.code === 'Space' || e.key === ' ') { e.preventDefault(); if (!e.repeat) next(); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); if (!e.repeat) prev(); }
+  else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault();
+  else if (e.key === 'Home') { e.preventDefault(); go(0); }
+  else if (e.key === 'End') { e.preventDefault(); go(SLIDES.length - 1); }
+  else if (e.key === 'ت' || e.code === 'KeyF') { e.preventDefault(); if (!e.repeat) clap(); }
+}, { capture: true });
+
+document.addEventListener('click', e => { const b = e.target.closest('button'); if (b) b.blur(); sfx.unlock(); });
+
+$('#cPrev').onclick = prev;
+$('#cNext').onclick = next;
+$('#cClap').onclick = clap;
+$('#cFull').onclick = () => {
+  const d = document, el = d.documentElement;
+  if (!(d.fullscreenElement || d.webkitFullscreenElement)) {
+    const lock = () => screen.orientation?.lock?.('landscape').catch(() => {});
+    if (el.requestFullscreen) el.requestFullscreen().then(lock).catch(() => {});
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else toast('الآيفون لا يدعم ملء الشاشة من المتصفح 📱 — زر المشاركة ⬆️ ← «إضافة إلى الشاشة الرئيسية»');
+  } else (d.exitFullscreen || d.webkitExitFullscreen)?.call(d);
+};
+
+let tx = null, ty = null;
+addEventListener('touchstart', e => { if (e.touches.length === 1 && !e.target.closest('.rb-wrap')) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; } else tx = null; }, { passive: true });
+addEventListener('touchend', e => {
+  if (tx == null) return;
+  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; tx = null;
+  if (Math.abs(dx) > 110 && Math.abs(dy) < 70) (dx < 0 ? next() : prev());
+}, { passive: true });
+addEventListener('wheel', e => e.preventDefault(), { passive: false });
+addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+
+let idleT;
+const wake = () => {
+  document.body.classList.remove('idle'); clearTimeout(idleT);
+  idleT = setTimeout(() => { if ($('#controls').matches(':hover')) wake(); else document.body.classList.add('idle'); }, 2800);
+};
+['mousemove', 'mousedown', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, wake, { passive: true }));
+
+
+/* =====================================================================
+   تحجيم المسرح + الإطار الرملي المموّج
+   ===================================================================== */
+const stage = $('#stage');
+function fit() {
+  const cs = getComputedStyle(document.documentElement), px = v => parseFloat(cs.getPropertyValue(v)) || 0;
+  const t = px('--sat'), r = px('--sar'), b = px('--sab'), l = px('--sal');
+  const vv = window.visualViewport, VW = vv ? vv.width : innerWidth, VH = vv ? vv.height : innerHeight;
+  const W = VW - l - r, H = VH - t - b;
+  scale = Math.min(W / 1920, H / 1080);
+  stage.style.left = (l + W / 2) + 'px'; stage.style.top = (t + H / 2) + 'px';
+  stage.style.transform = `translate(-50%,-50%) scale(${scale})`;
+  const phone = matchMedia('(pointer:coarse)').matches && Math.min(VW, VH) < 600;
+  const free = (W - 1920 * scale) / 2;
+  const side = phone && free >= 46, ctr = $('#controls');
+  document.body.classList.toggle('phone', phone);
+  document.body.classList.toggle('side', side);
+  if (side) {
+    if (ctr.parentNode !== document.body) document.body.appendChild(ctr);
+    ctr.style.left = (l + free / 2) + 'px'; ctr.style.setProperty('--cw', Math.min(52, Math.floor(free - 18)) + 'px');
+    $('#cNum').dataset.n = $('#cNum').textContent;
+  } else {
+    if (ctr.parentNode !== stage) stage.appendChild(ctr);
+    ctr.style.left = ''; ctr.style.removeProperty('--cw');
+  }
+}
+addEventListener('resize', fit);
+window.visualViewport?.addEventListener('resize', fit);
+addEventListener('orientationchange', () => setTimeout(fit, 350));
+
+let toastT;
+function toast(msg) { const el = $('#toast'); el.textContent = msg; el.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('on'), 6500); }
+
+function wavyRect(x0, y0, x1, y1, amp, wl) {
+  const pts = [];
+  const edge = (xa, ya, xb, yb, nx, ny) => {
+    const len = Math.hypot(xb - xa, yb - ya), n = Math.round(len / 6), waves = Math.round(len / wl);
+    for (let i = 0; i < n; i++) { const t = i / n, off = amp * (1 - Math.cos(t * waves * 2 * Math.PI)) / 2; pts.push([(xa + (xb - xa) * t + nx * off).toFixed(1), (ya + (yb - ya) * t + ny * off).toFixed(1)]); }
+  };
+  edge(x0, y0, x1, y0, 0, 1); edge(x1, y0, x1, y1, -1, 0); edge(x1, y1, x0, y1, 0, -1); edge(x0, y1, x0, y0, 1, 0);
+  return 'M' + pts.map(p => p.join(' ')).join('L') + 'Z';
+}
+$('#wavePath').setAttribute('d', wavyRect(26, 24, 1894, 1056, 18, 220));
+
+
+/* =====================================================================
+   التشغيل
+   ===================================================================== */
+fit();
+SLIDES.forEach((_, i) => buildSlide(i));
+const startAt = Math.min(Math.max((parseInt(location.hash.slice(1), 10) || 1) - 1, 0), SLIDES.length - 1);
+cur = startAt;
+show(startAt, 1);
+wake();
+</script>
+</body>
+</html>
