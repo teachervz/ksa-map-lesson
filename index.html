@@ -393,6 +393,110 @@ body.idle{cursor:none}
 @keyframes headNo{20%,60%{transform:rotate(-6deg)}40%,80%{transform:rotate(6deg)}}
 .rb-wrap.happy .rb-eyes ellipse{fill:#f1c84b}
 
+/* — تمهيد: الرسالة السرّيّة — */
+.sc{flex:1;min-height:0;display:flex;gap:44px}
+.sc-left{width:620px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.env{position:relative;width:520px;height:340px;transition:transform .8s cubic-bezier(.3,1.3,.5,1);animation:bob 4s ease-in-out infinite;perspective:1200px}
+.env.small{transform:scale(.72)}
+.env-back{position:absolute;inset:0;background:#c99d5f;border-radius:16px}
+.env-front{position:absolute;inset:0;border-radius:16px;z-index:3;
+  background:linear-gradient(to top right,#e3c48f 50%,transparent 50.3%) left/50% 100% no-repeat,linear-gradient(to top left,#dcbb82 50%,transparent 50.3%) right/50% 100% no-repeat;
+  box-shadow:0 22px 40px rgba(90,60,20,.3)}
+.env-flap{position:absolute;left:0;right:0;top:0;height:60%;z-index:4;transform-origin:top;transition:transform .7s ease, z-index 0s .35s;
+  background:linear-gradient(to bottom,#d4b27a,#c99d5f);clip-path:polygon(0 0,100% 0,50% 100%);border-radius:16px 16px 0 0}
+.env.open .env-flap{transform:rotateX(180deg);z-index:1}
+.env-seal{position:absolute;left:50%;top:52%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;z-index:5;display:grid;place-items:center;
+  font:900 54px var(--f-ui);color:#fff;background:radial-gradient(circle at 35% 30%,#2fb57a,#0f5132);box-shadow:0 0 0 6px rgba(15,81,50,.25),0 6px 10px rgba(0,0,0,.3);transition:all .5s}
+.env.open .env-seal{opacity:0;transform:scale(1.8)}
+.env-stamp{position:absolute;right:-30px;top:-26px;z-index:6;font:900 30px var(--f-ui);color:var(--bad);border:5px solid var(--bad);border-radius:14px;padding:4px 18px;
+  transform:rotate(12deg);background:rgba(255,255,255,.85);transition:opacity .4s}
+.env.open .env-stamp{opacity:0}
+.env-card{position:absolute;left:30px;right:30px;top:20px;height:280px;z-index:2;opacity:0;transition:transform .9s .45s cubic-bezier(.3,1.3,.5,1), opacity .3s .35s}
+.env.open .env-card{transform:translateY(-190px);z-index:7;opacity:1}
+.env-card-in{width:100%;height:100%;background:#fffdf6;border:4px solid var(--y500);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;font-size:56px;box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.env-card-in b{font:700 42px/1.6 var(--f-text);color:var(--p800);text-align:center;padding:0 20px}
+.sc-right{flex:1;min-width:0;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.clues{display:flex;flex-direction:column;gap:10px}
+.clue{display:flex;align-items:center;gap:16px;font:700 34px/1.45 var(--f-text);background:#fff;border:3px solid var(--p200);border-radius:20px;padding:5px 22px;box-shadow:var(--shadow)}
+.clue-i{font-size:40px}
+.clue.ask{justify-content:center;background:var(--y100);border-color:var(--y500);font-size:38px;color:var(--p900)}
+.sc-ans{display:none;align-items:center;gap:8px 22px;background:linear-gradient(150deg,var(--p600),var(--p800));color:#fff;border-radius:28px;padding:12px 28px;box-shadow:var(--shadow);flex-wrap:wrap}
+.sc-ans.show{display:flex;animation:popIn .6s both}
+.sc-ksa{width:110px;height:92px;flex:none}
+.sc-ksa path{fill:#f1d98a;stroke:#fff;stroke-width:8}
+.sc-name{font:900 42px var(--f-head)}
+.sc-after{flex-basis:100%;font:700 32px/1.55 var(--f-text)}
+.sc-after mark{background:var(--y300);color:var(--p900)}
+
+/* — أسئلة التفكير — */
+.th{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:20px}
+.th-q{display:flex;gap:20px;padding:20px 26px;cursor:pointer;transition:border-color .3s, background .3s}
+.th-q:hover{border-color:var(--p500)}
+.th-n{width:72px;height:72px;flex:none;border-radius:50%;background:var(--y300);display:grid;place-items:center;font:900 36px var(--f-ui);color:var(--p800)}
+.th-body{flex:1;display:flex;flex-direction:column;gap:8px}
+.th-t{font:700 38px/1.55 var(--f-text);color:var(--p900)}
+.th-a{display:none;font:700 32px/1.6 var(--f-text);color:var(--p800);background:var(--y100);border:3px solid var(--y300);border-radius:18px;padding:6px 18px}
+.th-q.shown{border-color:var(--ok);background:#f6fcf8}
+.th-q.shown .th-a{display:block;animation:popIn .5s both}
+.th-q.shown .th-tap{display:none}
+.th-tap{margin-top:auto;font:700 24px var(--f-ui);color:var(--p500)}
+.th-final{grid-column:1/-1;display:none;text-align:center;font:700 38px/1.7 var(--f-text);padding:16px 36px;background:var(--p700);color:#fff;border-color:var(--p800)}
+.th-final mark{background:var(--y300);color:var(--p900)}
+.th-final.show{display:block;animation:popIn .6s both}
+.th.has-final{grid-template-rows:1fr 1fr auto}
+
+/* — الأهداف — */
+.gl{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:28px}
+.gl-c{position:relative;display:flex;align-items:center;gap:26px;padding:24px 36px;cursor:pointer;transition:transform .2s, border-color .3s, background .3s}
+.gl-c:hover{transform:translateY(-5px)}
+.gl-n{position:absolute;top:-22px;right:30px;width:60px;height:60px;border-radius:50%;background:var(--p700);color:#fff;font:900 30px var(--f-ui);display:grid;place-items:center;box-shadow:0 5px 0 var(--p900)}
+.gl-i{font-size:96px;flex:none;animation:bob 4.5s ease-in-out infinite}
+.gl-t{font:700 42px/1.6 var(--f-text)}
+.gl-c.done{border-color:var(--ok);background:var(--okbg)}
+.gl-c.done::after{content:'✓';position:absolute;left:24px;top:16px;font:900 50px var(--f-ui);color:var(--ok)}
+
+/* — متابعة سؤال الخريطة — */
+.panel.wl .p-box{font-size:33px;padding:16px 26px}
+.panel.wl .p-box.follow{width:100%;text-align:center}
+.p-box.follow{display:none;background:var(--y100);border-color:var(--y500)}
+.p-box.follow.show{display:block;animation:popIn .5s both}
+
+
+/* — خريطة المحطات + الانتقال — */
+button.st{font-family:inherit;color:var(--ink);background:rgba(255,255,255,.96)}
+.st-go{font:800 26px var(--f-ui);color:var(--p600);background:var(--p100);border-radius:99px;padding:4px 18px}
+.st.next{border-color:var(--y500);animation:glow 1.6s ease-in-out infinite}
+.st.next .st-n{background:var(--y500);color:var(--p900);box-shadow:0 6px 0 #a8821c}
+.st.done .st-go{visibility:hidden}
+.st.done::after{content:'✓ تمّت' !important}
+.st.stamp::after{animation:stampIn .6s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes stampIn{from{transform:translateX(-50%) rotate(-30deg) scale(3);opacity:0}to{transform:translateX(-50%) rotate(-6deg) scale(1);opacity:1}}
+.st-fin{display:none;align-self:center;margin-top:18px}
+.st-fin.show{display:block;animation:popIn .6s both}
+.travel{position:absolute;inset:0;z-index:40;display:none;overflow:hidden;border-radius:32px;background:#bfe0ea}
+.travel.on{display:block}
+.tv-map{position:absolute;inset:0;width:100%;height:100%;transition:transform 1.9s cubic-bezier(.6,0,.3,1)}
+.tv-map.zoom{transform:scale(3.2)}
+.tv-dot{animation:ripple 1s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.tv-lens{position:absolute;left:50%;top:50%;width:300px;height:300px;transform:translate(-30%,-30%) scale(.6) rotate(-20deg);
+  transition:all 1.6s cubic-bezier(.5,0,.3,1);filter:drop-shadow(0 18px 20px rgba(0,0,0,.35))}
+.tv-lens.go{transform:translate(-40%,-40%) scale(1.5) rotate(0)}
+.tv-lens svg{width:100%;height:100%}
+.tv-cap{position:absolute;left:50%;bottom:60px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;
+  background:rgba(11,61,38,.92);color:#fff;border-radius:30px;padding:16px 50px;box-shadow:0 14px 30px rgba(0,0,0,.3);animation:popIn .5s both;white-space:nowrap}
+.tv-cap span{font:800 30px var(--f-ui);color:var(--y300)}
+.tv-cap b{font:900 46px var(--f-head)}
+.travel.flash::after{content:'';position:absolute;inset:0;background:#fff;animation:inFade .35s ease both}
+#backHub{position:absolute;right:150px;top:8px;z-index:31;display:none;border:0;border-radius:99px;font:800 28px var(--f-ui);color:var(--p900);
+  background:var(--y500);padding:14px 30px;box-shadow:0 7px 0 #a8821c, 0 10px 24px rgba(0,0,0,.2);transition:transform .15s}
+#backHub.show{display:block;animation:popIn .5s both}
+#backHub:hover{transform:translateY(-3px)}
+body.idle #backHub{opacity:1}
+/* كرة المحطة ١ */
+.globe-box{height:100%;aspect-ratio:1;flex:none;position:relative}
+.globe-box .globe-wrap{position:absolute;inset:0;width:100%;height:100%;margin:0;right:auto;top:auto;animation:none !important}
+
 /* — محطات الرحلة (الأهداف) — */
 .mission{text-align:center;font:700 42px/1.6 var(--f-text);color:var(--p900);padding:18px 40px;margin-bottom:26px;
   background:var(--y100);border-color:var(--y300)}
@@ -742,15 +846,19 @@ const SLIDES = [
     lines:['سارعي للمجدِ والعلياء','مجّدي لخالقِ السّماء','وارفعي الخفّاقَ أخضر','يحملُ النّورَ المسطّر',
            'ردّدي: اللهُ أكبر','يا موطني','موطني.. عشتَ فخرَ المسلمين','عاشَ المليك.. للعَلَمِ والوطن'] },
 
-  /* ③ سؤال تشخيصي قبلي */
-  { type:'tf', anim:'slide', strategy:'🩺 سؤالٌ تشخيصيٌّ قبليّ',
-    title:'ماذا أعرفُ عن موقعِ وطني؟',
-    items:[
-      { t:'تقعُ المملكةُ العربيةُ السعوديةُ في قارةِ آسيا.', a:true,  exp:'✔ صحيح، في الجنوبِ الغربيِّ لقارةِ آسيا.' },
-      { t:'تقعُ المملكةُ في شبهِ الجزيرةِ العربية.',        a:true,  exp:'✔ صحيح، وتشغلُ أكثرَ من ثُلثَي مساحتِها.' },
-      { t:'يحدُّ المملكةَ من الغربِ الخليجُ العربي.',        a:false, exp:'✘ يحدُّها من الغربِ *البحرُ الأحمر*، والخليجُ العربيُّ في الشرق.' },
-      { t:'اليمنُ من الدولِ المجاورةِ لوطني.',               a:true,  exp:'✔ صحيح، تقعُ اليمنُ جنوبَ المملكة.' },
-    ] },
+  /* ③ تمهيد: رسالة سرّيّة (رحلة حول العالم 🌍) — الظرف يُفتح ثم تظهر أدلّة اللغز واحدًا تلو الآخر */
+  { type:'secret', anim:'zoom', strategy:'🔒 سرُّ اليوم',
+    title:'رسالةٌ سرّيّةٌ وصلت إلى فصلِنا!',
+    cardText:'«أنا دولةٌ.. موقعي مميّز»',
+    clues:[
+      { icon:'🌴', text:'أنا دولةٌ *عربيّة*' },
+      { icon:'📍', text:'أقعُ في *موقعٍ مميّز*' },
+      { icon:'🌍', text:'أتميّزُ بموقعي الذي *يربطُ بين ثلاثِ قارّات*' },
+      { icon:'🕋', text:'وفي وطني *قِبلةُ المسلمين*' },
+    ],
+    ask:'... فمَن أكون؟ 🤔',
+    answer:'المملكةُ العربيّةُ السعوديّة 🇸🇦',
+    after:'أحسنتِ! ولكن.. هل تعرفنَ *لماذا* يُعدُّ موقعُ المملكةِ العربيّةِ السعوديّةِ مهمًّا؟ 🤫' },
 
   /* ④ الروبوت جود + كرة أرضية ثلاثية الأبعاد + الكاميرا (واقع معزز) — بدون نص مكتوب
        الصوت من مجلد audio:  robot-1 (السؤال)  robot-2 (التلميح)  robot-3 (الفوز)
@@ -762,21 +870,54 @@ const SLIDES = [
       win:  { file:'robot-3', text:'رائع! وجدتِها! هذه هي المملكةُ العربيّةُ السعوديّة، تقعُ في الجنوبِ الغربيِّ من قارّةِ آسيا. أنتُنَّ الآن مستكشفاتٌ حقيقيّات.. هيّا ننطلقُ في رحلتِنا!' },
     } },
 
-  /* ⑤ محطات الرحلة (الأهداف) */
+  /* ⑤ تمهيد: أسئلة التفكير والاستنتاج (تقويم قبلي) */
+  { type:'think', anim:'slide', strategy:'🌍 رحلةٌ حولَ العالم',
+    title:'نفكّرُ ونستنتج',
+    items:[
+      { q:'في أيِّ قارّةٍ تقعُ المملكةُ العربيّةُ السعوديّة؟', a:'في قارّةِ *آسيا* (في جنوبِها الغربيّ).' },
+      { q:'ما القارّاتُ الثلاثُ التي تربطُ بينها شبهُ الجزيرةِ العربيّة؟', a:'*آسيا* و*أوروبا* و*أفريقيا*.' },
+      { q:'لماذا يُعدُّ موقعُ المملكةِ مهمًّا للمسلمين؟', a:'لأنّ فيه *مكّةَ المكرّمة* قِبلةَ المسلمين، و*المدينةَ المنوّرة*.' },
+      { icon:'🔮', open:true, q:'ماذا تتوقّعنَ أن نتعلّمَ اليومَ عن موقعِ وطنِنا وحدودِه؟', a:'سنكتشفُ موقعَ وطنِنا، ونتعرّفُ على حدودِه، ونكتشفُ *سرَّ أهمّيّةِ موقعِه* بين دولِ العالم.' },
+    ],
+    closing:'اليومَ لن نكتفيَ بمعرفةِ *أينَ* تقعُ المملكة، بل سنكتشفُ *لماذا* يُعدُّ موقعُها *ثروةً وطنيّةً* ومكانةً مميّزةً بين دولِ العالم!' },
+
+  /* ③ سؤال تشخيصي قبلي */
+  { type:'tf', anim:'slide', strategy:'🩺 سؤالٌ تشخيصيٌّ قبليّ',
+    title:'ماذا أعرفُ عن موقعِ وطني؟',
+    items:[
+      { t:'تقعُ المملكةُ العربيةُ السعوديةُ في قارةِ آسيا.', a:true,  exp:'✔ صحيح، في الجنوبِ الغربيِّ لقارةِ آسيا.' },
+      { t:'تقعُ المملكةُ في شبهِ الجزيرةِ العربية.',        a:true,  exp:'✔ صحيح، وتشغلُ أكثرَ من ثُلثَي مساحتِها.' },
+      { t:'يحدُّ المملكةَ من الغربِ الخليجُ العربي.',        a:false, exp:'✘ يحدُّها من الغربِ *البحرُ الأحمر*، والخليجُ العربيُّ في الشرق.' },
+      { t:'اليمنُ من الدولِ المجاورةِ لوطني.',               a:true,  exp:'✔ صحيح، تقعُ اليمنُ جنوبَ المملكة.' },
+    ] },
+
+  /* ⑦ أهداف الدرس */
+  { type:'goals', anim:'slide', strategy:'🎯 أهدافُ الدرس',
+    title:'في نهايةِ الدرسِ ستكونينَ قادرةً على أن:',
+    items:[
+      { icon:'🌍', text:'تحدّدي موقعَ المملكةِ العربيّةِ السعوديّةِ على *خريطةِ العالم*.' },
+      { icon:'🧭', text:'تتعرّفي على *القارّاتِ الثلاث* التي تربطُ بينها شبهُ الجزيرةِ العربيّة.' },
+      { icon:'💡', text:'توضّحي *أهمّيّةَ موقعِ* المملكةِ العربيّةِ السعوديّة.' },
+      { icon:'🗺️', text:'تحدّدي *حدودَ* المملكةِ العربيّةِ السعوديّةِ من الجهاتِ الأربع.' },
+    ] },
+
+  /* ⑧ محطات الرحلة — اضغطي على المحطة للانتقال إليها، وبعد شرحها تعودين وتظهر «تمّت» */
   { type:'stations', anim:'slide', strategy:'🧭 رحلةُ المستكشفةِ السعودية',
     title:'محطّاتُ رحلتي',
     mission:'«أنتِ مستكشفةٌ جغرافيّة، ومهمّتُكِ التعرّفُ على *موقعِ* المملكةِ العربيّةِ السعوديّةِ *وحدودِها*»',
     items:[
-      { icon:'📍', text:'أحدّدُ موقعَ المملكةِ على الخريطة' },
-      { icon:'🤝', text:'أتعرّفُ على الدولِ المجاورة' },
-      { icon:'🌊', text:'أحدّدُ المسطّحاتِ المائيّة' },
-      { icon:'🏆', text:'أُجيبُ عن سؤالِ التحدّي النهائيّ', final:true },
+      // go: أوّل شريحة في المحطة — end: آخر شريحة فيها — at: مكان المكبّر على الخريطة [طول، عرض]
+      { icon:'📍', text:'أحدّدُ موقعَ المملكةِ على الخريطة', go:'world', end:'flip', at:[45, 24] },
+      { icon:'🤝', text:'أتعرّفُ على الدولِ المجاورة', go:'neighbors', at:[44.5, 30.2] },
+      { icon:'🌊', text:'أحدّدُ المسطّحاتِ المائيّة', go:'waters', end:'article', at:[38.6, 21] },
+      { icon:'🏆', text:'أُجيبُ عن سؤالِ التحدّي النهائيّ', go:'challenge', at:[46.7, 24.7], final:true },
     ] },
 
   /* ⑥ المحطة ١: الموقع على خريطة العالم */
   { type:'world', anim:'zoom', strategy:'📍 المحطّة ١',
     title:'نفكّرُ ونستنتج: أينَ يقعُ وطني؟',
-    question:'لموقعِ المملكةِ أهميّةٌ كبرى تميّزُها عن غيرِها.. فأينَ تقعُ؟ 🤔<br>اضغطي على *وطني* في الخريطة!',
+    question:'لموقعِ المملكةِ أهميّةٌ كبرى تميّزُها عن غيرِها.. فأينَ تقعُ؟ 🤔<br>دوّري الكرةَ الأرضيّةَ واضغطي على *وطني*!',
+    followup:'🤔 كيف أسهمَ موقعُ المملكةِ في *الربطِ* بين هذه القارّات؟',
     answer:'تقعُ المملكةُ العربيّةُ السعوديّةُ في <span class="hl">الجنوبِ الغربيِّ لقارةِ آسيا</span>، وتشغلُ أكثرَ من <span class="hl">ثُلثَي</span> مساحةِ شبهِ الجزيرةِ العربيّةِ التي <span class="hl">تربطُ</span> بين ثلاثِ قارّات: <b>آسيا وأوروبا وأفريقيا</b>.' },
 
   /* ⑦ أهمية الموقع */
@@ -1212,7 +1353,12 @@ function regionMap(opts = {}) {
   </svg>`);
   const wrap = h('div', { class: 'map' + (opts.labels === 'hidden' ? ' hide-lbl' : ''), style: `--ar:${W}/${H}` }, svg);
   wrap.svg = svg;
-  wrap.toSvg = (cx, cy) => { const pt = svg.createSVGPoint(); pt.x = cx; pt.y = cy; return pt.matrixTransform(svg.getScreenCTM().inverse()); };
+  // تحويل موضع اللمس إلى إحداثيات الخريطة (يعمل مع تكبير/تصغير العرض وعلى الآيباد)
+  wrap.toSvg = (cx, cy) => {
+    const r = svg.getBoundingClientRect(), s = Math.min(r.width / W, r.height / H);
+    const ox = r.left + (r.width - W * s) / 2, oy = r.top + (r.height - H * s) / 2;
+    return { x: (cx - ox) / s, y: (cy - oy) / s };
+  };
   wrap.country = n => svg.querySelector(`path[data-n="${n}"]`);
   wrap.label = n => svg.querySelector(`text[data-n="${n}"]`);
   wrap.wlabel = k => svg.querySelector(`text[data-w="${k}"]`);
@@ -1360,45 +1506,22 @@ const ROBOT_SVG = () => `
  </g>
 </svg>`;
 
-R.robot = (s, i) => {
-  const ar_ = h('div', { class: 'ar ar-full rv' });
-  const video = h('video', { autoplay: true, muted: true, playsinline: true });
-  let stream = null;
-
-  /* ── الروبوت ── */
-  const wrap = h('div', { class: 'rb-wrap', html: ROBOT_SVG() });
-  wrap.prepend(h('div', { class: 'rb-rings' }, h('i'), h('i'), h('i')));
-  wrap.prepend(h('div', { class: 'rb-beam' }));
-  let drag = null;
-  wrap.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, l: wrap.offsetLeft, t: wrap.offsetTop }; wrap.setPointerCapture(e.pointerId); });
-  wrap.addEventListener('pointermove', e => { if (!drag) return; wrap.style.left = (drag.l + (e.clientX - drag.x) / scale) + 'px'; wrap.style.top = (drag.t + (e.clientY - drag.y) / scale) + 'px'; });
-  wrap.addEventListener('pointerup', () => { drag = null; });
-  const mood = c => { wrap.classList.remove('happy', 'no'); void wrap.offsetWidth; if (c) wrap.classList.add(c); };
-
-  /* ── الكلام (صوت فقط بدون نص) ── */
-  let talkId = 0;
-  async function speak(key) {
-    const c = s.clips[key]; if (!c) return;
-    const my = ++talkId;
-    wrap.classList.add('talking'); sfx.beep();
-    await voice.play(c.file, c.text, null);
-    if (my === talkId) wrap.classList.remove('talking');
-  }
-  function hush() { talkId++; voice.stop(); wrap.classList.remove('talking'); }
-
-  /* ── الكرة الأرضية ثلاثية الأبعاد ── */
-  const SIZE = 1000;                                  // دقّة الرسم
+/* =====================================================================
+   كرة أرضية ثلاثية الأبعاد قابلة للسحب والتدوير
+   opts: { labels: إظهار القارّات بعد إيجاد المملكة, onFound(), onMiss(n) }
+   ===================================================================== */
+function Globe(opts = {}) {
+  const SIZE = 1000;
   const cv = h('canvas', { class: 'globe', width: SIZE, height: SIZE });
   const g = cv.getContext('2d');
-  const R0 = SIZE * .43, CX = SIZE / 2, CY = SIZE / 2;
-  const D = Math.PI / 180;
-  let lon0 = -95, lat0 = 18, vel = .12, found = false, misses = 0, raf = null, hintT = 0, anim = null, pulse = 0;
+  const R0 = SIZE * .43, CX = SIZE / 2, CY = SIZE / 2, D = Math.PI / 180;
+  let lon0 = opts.lon ?? -95, lat0 = 18, vel = .12, found = false, misses = 0, raf = null, hintT = 0, anim = null, pulse = 0, labelA = 0;
   const hand = h('div', { class: 'globe-hand' }, '👆');
+  const el = h('div', { class: 'globe-wrap' }, cv, hand);
 
   const proj = (lon, lat) => {
     const l = (lon - lon0) * D, p = lat * D, c = Math.cos(p);
-    const X = c * Math.sin(l), Y = Math.sin(p), Z = c * Math.cos(l);
-    const ca = Math.cos(lat0 * D), sa = Math.sin(lat0 * D);
+    const X = c * Math.sin(l), Y = Math.sin(p), Z = c * Math.cos(l), ca = Math.cos(lat0 * D), sa = Math.sin(lat0 * D);
     return [X, Y * ca - Z * sa, Y * sa + Z * ca];
   };
   const unproj = (x, y) => {
@@ -1409,62 +1532,67 @@ R.robot = (s, i) => {
     let lon = Math.atan2(X, Z) / D + lon0; lon = ((lon + 540) % 360) - 180;
     return [lon, Math.asin(Math.max(-1, Math.min(1, Y))) / D];
   };
-  // رسم حلقة مع إسقاط الأجزاء الخلفية على حافة الكرة
-  const ringPath = (r, close = true) => {
-    let any = false;
-    g.beginPath();
+  const scr = (lon, lat) => { const [X, Y, Z] = proj(lon, lat); return [CX + X * R0, CY - Y * R0, Z]; };
+  const ringPath = r => {
+    let any = false; g.beginPath();
     for (let k = 0; k < r.length; k += 2) {
       let [X, Y, Z] = proj(r[k], r[k + 1]);
-      if (Z > 0) any = true;
-      else { const n = Math.hypot(X, Y) || 1; X /= n; Y /= n; }
-      const px = CX + X * R0, py = CY - Y * R0;
-      k ? g.lineTo(px, py) : g.moveTo(px, py);
+      if (Z > 0) any = true; else { const n = Math.hypot(X, Y) || 1; X /= n; Y /= n; }
+      const px = CX + X * R0, py = CY - Y * R0; k ? g.lineTo(px, py) : g.moveTo(px, py);
     }
-    if (close) g.closePath();
-    return any;
+    g.closePath(); return any;
   };
-  const lineVisible = pts => {           // خطوط الطول والعرض (الجزء الأمامي فقط)
+  const lineVisible = pts => {
     g.beginPath(); let pen = false;
-    for (const [lo, la] of pts) { const [X, Y, Z] = proj(lo, la); if (Z > 0) { const px = CX + X * R0, py = CY - Y * R0; pen ? g.lineTo(px, py) : g.moveTo(px, py); pen = true; } else pen = false; }
+    for (const [lo, la] of pts) { const [x, y, z] = scr(lo, la); if (z > 0) { pen ? g.lineTo(x, y) : g.moveTo(x, y); pen = true; } else pen = false; }
     g.stroke();
   };
   const GRAT = [];
   for (let lo = -180; lo < 180; lo += 30) { const p = []; for (let la = -85; la <= 85; la += 5) p.push([lo, la]); GRAT.push(p); }
   for (let la = -60; la <= 60; la += 30) { const p = []; for (let lo = -180; lo <= 180; lo += 5) p.push([lo, la]); GRAT.push(p); }
+  const CONTS = [['آسيا', 88, 47], ['أوروبا', 14, 51], ['أفريقيا', 19, 6]];
 
   function draw() {
     g.clearRect(0, 0, SIZE, SIZE);
-    // توهج الغلاف الجوي
     const atm = g.createRadialGradient(CX, CY, R0 * .95, CX, CY, R0 * 1.14);
     atm.addColorStop(0, 'rgba(111,245,192,.55)'); atm.addColorStop(1, 'rgba(111,245,192,0)');
     g.fillStyle = atm; g.beginPath(); g.arc(CX, CY, R0 * 1.14, 0, 7); g.fill();
-    // المحيط
     const sea = g.createRadialGradient(CX - R0 * .35, CY - R0 * .4, R0 * .1, CX, CY, R0);
     sea.addColorStop(0, '#9fd8ec'); sea.addColorStop(.6, '#4fa6c9'); sea.addColorStop(1, '#1d5f86');
     g.save(); g.beginPath(); g.arc(CX, CY, R0, 0, 7); g.fillStyle = sea; g.fill(); g.clip();
-    // خطوط الطول والعرض
     g.strokeStyle = 'rgba(255,255,255,.18)'; g.lineWidth = 1.5; GRAT.forEach(lineVisible);
-    // اليابسة
     g.lineJoin = 'round';
-    for (const r of GLOBE.land) { if (ringPath(r)) { g.fillStyle = '#efe2c2'; g.fill(); g.strokeStyle = 'rgba(150,120,70,.55)'; g.lineWidth = 1.4; g.stroke(); } }
-    // المملكة: لونها مثل غيرها حتى تجدها الطالبة
+    for (const r of GLOBE.land) if (ringPath(r)) { g.fillStyle = '#efe2c2'; g.fill(); g.strokeStyle = 'rgba(150,120,70,.55)'; g.lineWidth = 1.4; g.stroke(); }
     for (const r of GLOBE.ksa) {
       if (!ringPath(r)) continue;
-      if (found) {
-        g.fillStyle = '#1b8a5a'; g.fill();
-        g.strokeStyle = `rgba(212,166,42,${.6 + .4 * Math.sin(pulse)})`; g.lineWidth = 6; g.stroke();
-      } else { g.fillStyle = '#efe2c2'; g.fill(); g.strokeStyle = 'rgba(150,120,70,.55)'; g.lineWidth = 1.4; g.stroke(); }
+      if (found) { g.fillStyle = '#1b8a5a'; g.fill(); g.strokeStyle = `rgba(212,166,42,${.6 + .4 * Math.sin(pulse)})`; g.lineWidth = 6; g.stroke(); }
+      else { g.fillStyle = '#efe2c2'; g.fill(); g.strokeStyle = 'rgba(150,120,70,.55)'; g.lineWidth = 1.4; g.stroke(); }
     }
-    // تلميح: دائرة نابضة حول موقع المملكة
     if (!found && hintT > 0) {
-      const [X, Y, Z] = proj(45, 24);
-      if (Z > 0) { const r = 40 + 60 * ((performance.now() / 900) % 1); g.strokeStyle = `rgba(212,166,42,${1 - (r - 40) / 60})`; g.lineWidth = 8;
-        g.beginPath(); g.arc(CX + X * R0, CY - Y * R0, r, 0, 7); g.stroke(); }
+      const [x, y, z] = scr(45, 24);
+      if (z > 0) { const r = 40 + 60 * ((performance.now() / 900) % 1); g.strokeStyle = `rgba(212,166,42,${1 - (r - 40) / 60})`; g.lineWidth = 8; g.beginPath(); g.arc(x, y, r, 0, 7); g.stroke(); }
     }
-    // تظليل يعطي إحساس الكرة المجسّمة
+    // أسهم القارّات الثلاث بعد إيجاد المملكة
+    if (found && opts.labels && labelA > 0) {
+      const [kx, ky, kz] = scr(45, 24);
+      g.globalAlpha = Math.min(1, labelA);
+      CONTS.forEach(([n, lo, la]) => {
+        const [x, y, z] = scr(lo, la); if (z < .05 || kz < 0) return;
+        const ex = kx + (x - kx) * .78, ey = ky + (y - ky) * .78;
+        g.strokeStyle = '#b5452c'; g.lineWidth = 7; g.setLineDash([16, 12]); g.lineDashOffset = -pulse * 12;
+        g.beginPath(); g.moveTo(kx, ky); g.lineTo(ex, ey); g.stroke(); g.setLineDash([]);
+        const a = Math.atan2(ey - ky, ex - kx); g.fillStyle = '#b5452c'; g.beginPath();
+        g.moveTo(ex + 18 * Math.cos(a), ey + 18 * Math.sin(a)); g.lineTo(ex + 18 * Math.cos(a + 2.4), ey + 18 * Math.sin(a + 2.4)); g.lineTo(ex + 18 * Math.cos(a - 2.4), ey + 18 * Math.sin(a - 2.4)); g.fill();
+        g.font = '900 58px Tajawal, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+        const w = g.measureText(n).width + 40;
+        g.fillStyle = '#fff'; g.strokeStyle = '#d4a62a'; g.lineWidth = 5;
+        g.beginPath(); g.roundRect(x - w / 2, y - 42, w, 84, 22); g.fill(); g.stroke();
+        g.fillStyle = '#0b3d26'; g.fillText(n, x, y + 2);
+      });
+      g.globalAlpha = 1;
+    }
     const shade = g.createRadialGradient(CX - R0 * .4, CY - R0 * .45, R0 * .05, CX, CY, R0 * 1.02);
-    shade.addColorStop(0, 'rgba(255,255,255,.35)'); shade.addColorStop(.35, 'rgba(255,255,255,0)');
-    shade.addColorStop(.8, 'rgba(0,20,40,.12)'); shade.addColorStop(1, 'rgba(0,20,40,.5)');
+    shade.addColorStop(0, 'rgba(255,255,255,.35)'); shade.addColorStop(.35, 'rgba(255,255,255,0)'); shade.addColorStop(.8, 'rgba(0,20,40,.12)'); shade.addColorStop(1, 'rgba(0,20,40,.5)');
     g.fillStyle = shade; g.fillRect(0, 0, SIZE, SIZE);
     g.restore();
     g.strokeStyle = 'rgba(255,255,255,.5)'; g.lineWidth = 3; g.beginPath(); g.arc(CX, CY, R0, 0, 7); g.stroke();
@@ -1477,9 +1605,8 @@ R.robot = (s, i) => {
       if (t >= 1) anim = null;
     } else if (!dragG) { lon0 += vel; vel *= found ? .9 : .985; if (!found && Math.abs(vel) < .04) vel = .04 * Math.sign(vel || 1); }
     if (hintT > 0) hintT--;
-    pulse += .08;
-    draw();
-    raf = requestAnimationFrame(loop);
+    if (found && labelA < 1) labelA += .02;
+    pulse += .08; draw(); raf = requestAnimationFrame(loop);
   }
   const inKSA = (lon, lat) => GLOBE.ksa.some(r => {
     let inside = false;
@@ -1490,44 +1617,64 @@ R.robot = (s, i) => {
     return inside;
   });
   const toCanvas = e => { const b = cv.getBoundingClientRect(); return [(e.clientX - b.left) / b.width * SIZE, (e.clientY - b.top) / b.height * SIZE]; };
-
-  // سحب وتدوير الكرة
   let dragG = null;
-  cv.addEventListener('pointerdown', e => {
-    dragG = { x: e.clientX, y: e.clientY, lx: e.clientX, moved: 0, t: performance.now() };
-    cv.setPointerCapture(e.pointerId); anim = null; vel = 0; hand.remove();
-  });
+  cv.addEventListener('pointerdown', e => { dragG = { x: e.clientX, y: e.clientY, moved: 0 }; cv.setPointerCapture(e.pointerId); anim = null; vel = 0; hand.remove(); });
   cv.addEventListener('pointermove', e => {
     if (!dragG) return;
-    const k = 180 / (R0 * Math.PI) * (SIZE / cv.getBoundingClientRect().width);
-    const dx = e.clientX - dragG.x, dy = e.clientY - dragG.y;
+    const k = 180 / (R0 * Math.PI) * (SIZE / cv.getBoundingClientRect().width), dx = e.clientX - dragG.x, dy = e.clientY - dragG.y;
     dragG.moved += Math.abs(dx) + Math.abs(dy);
-    lon0 -= dx * k; lat0 = Math.max(-75, Math.min(75, lat0 + dy * k));
-    vel = -dx * k * .6;
+    lon0 -= dx * k; lat0 = Math.max(-75, Math.min(75, lat0 + dy * k)); vel = -dx * k * .6;
     dragG.x = e.clientX; dragG.y = e.clientY;
   });
   cv.addEventListener('pointerup', e => {
     const d = dragG; dragG = null;
-    if (!d || d.moved > 10) return;                // سحب وليس لمسة
+    if (!d || d.moved > 10) return;
     vel = 0;
     const ll = unproj(...toCanvas(e));
     if (!ll || found) return;
-    if (inKSA(...ll)) win();
-    else {
-      misses++; sfx.wrong(); mood('no');
-      if (misses === 2) { hintT = 400; speak('hint'); }
-      else if (misses > 2) hintT = 400;
-    }
+    if (inKSA(...ll)) win(); else { misses++; sfx.wrong(); opts.onMiss?.(misses); }
   });
-
   function win() {
-    found = true; hintT = 0; sfx.success(); mood('happy');
-    anim = { t0: performance.now(), dur: 1400, l0: lon0, l1: lon0 + (((45 - lon0) % 360 + 540) % 360 - 180), a0: lat0, a1: 22 };
+    found = true; hintT = 0; sfx.success();
+    anim = { t0: performance.now(), dur: 1400, l0: lon0, l1: lon0 + (((45 - lon0) % 360 + 540) % 360 - 180), a0: lat0, a1: opts.labels ? 28 : 22 };
     const [x, y] = center(cv); confetti(x, y, 140);
-    setTimeout(() => speak('win'), 600);
+    opts.onFound?.();
   }
+  draw();
+  return {
+    el, cv,
+    start() { cancelAnimationFrame(raf); loop(); },
+    stop() { cancelAnimationFrame(raf); },
+    hint() { if (!found) hintT = 400; },
+    get found() { return found; },
+  };
+}
 
-  /* ── الكاميرا ── */
+/* ④ الروبوت + الكرة الأرضية + الكاميرا */
+R.robot = (s, i) => {
+  const ar_ = h('div', { class: 'ar ar-full rv' });
+  const video = h('video', { autoplay: true, muted: true, playsinline: true });
+  let stream = null;
+  const wrap = h('div', { class: 'rb-wrap', html: ROBOT_SVG() });
+  wrap.prepend(h('div', { class: 'rb-rings' }, h('i'), h('i'), h('i')));
+  wrap.prepend(h('div', { class: 'rb-beam' }));
+  let drag = null;
+  wrap.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, l: wrap.offsetLeft, t: wrap.offsetTop }; wrap.setPointerCapture(e.pointerId); });
+  wrap.addEventListener('pointermove', e => { if (!drag) return; wrap.style.left = (drag.l + (e.clientX - drag.x) / scale) + 'px'; wrap.style.top = (drag.t + (e.clientY - drag.y) / scale) + 'px'; });
+  wrap.addEventListener('pointerup', () => { drag = null; });
+  const mood = c => { wrap.classList.remove('happy', 'no'); void wrap.offsetWidth; if (c) wrap.classList.add(c); };
+  let talkId = 0;
+  async function speak(key) {
+    const c = s.clips[key]; if (!c) return;
+    const my = ++talkId; wrap.classList.add('talking'); sfx.beep();
+    await voice.play(c.file, c.text, null);
+    if (my === talkId) wrap.classList.remove('talking');
+  }
+  function hush() { talkId++; voice.stop(); wrap.classList.remove('talking'); }
+  const G = Globe({
+    onFound() { mood('happy'); setTimeout(() => speak('win'), 600); },
+    onMiss(n) { mood('no'); if (n === 2) { G.hint(); speak('hint'); } else if (n > 2) G.hint(); },
+  });
   async function startCam(silent) {
     if (stream) return;
     try {
@@ -1537,71 +1684,164 @@ R.robot = (s, i) => {
     } catch (e) { if (!silent) toast('تعذّر تشغيل الكاميرا 📷 — اسمحي للمتصفح باستخدام الكاميرا'); }
   }
   function stopCam() { if (stream) stream.getTracks().forEach(t => t.stop()); stream = null; video.srcObject = null; ar_.classList.remove('cam'); camBtn.classList.remove('on'); }
-
   const camBtn = h('button', { type: 'button', class: 'ar-ico', title: 'الكاميرا', onclick: () => stream ? stopCam() : startCam() }, '📷');
-  const tools = h('div', { class: 'ar-tools-ico' },
-    camBtn,
-    h('button', { type: 'button', class: 'ar-ico', title: 'إعادة السؤال', onclick: () => speak(found ? 'win' : 'ask') }, '🔊'),
-    h('button', { type: 'button', class: 'ar-ico', title: 'تلميح', onclick: () => { if (!found) { hintT = 400; speak('hint'); } } }, '💡'),
-    h('button', { type: 'button', class: 'ar-ico', title: 'إعادة', onclick: () => buildSlide(i) }, '↺'));
-
   ar_.append(video, h('div', { class: 'ar-floor' }), h('div', { class: 'ar-scan' }), h('div', { class: 'ar-sweep' }),
     ...['tl', 'tr', 'bl', 'br'].map(c => h('div', { class: 'ar-corner ' + c })),
-    h('div', { class: 'ar-tag' }, 'AR LIVE'), tools,
-    h('div', { class: 'globe-wrap' }, cv, hand), wrap);
-
+    h('div', { class: 'ar-tag' }, 'AR LIVE'),
+    h('div', { class: 'ar-tools-ico' }, camBtn,
+      h('button', { type: 'button', class: 'ar-ico', title: 'إعادة السؤال', onclick: () => speak(G.found ? 'win' : 'ask') }, '🔊'),
+      h('button', { type: 'button', class: 'ar-ico', title: 'تلميح', onclick: () => { if (!G.found) { G.hint(); speak('hint'); } } }, '💡'),
+      h('button', { type: 'button', class: 'ar-ico', title: 'إعادة', onclick: () => buildSlide(i) }, '↺')),
+    G.el, wrap);
   HOOKS[i] = {
-    enter() {
-      sfx.teleport(); startCam(true);
-      cancelAnimationFrame(raf); loop();
-      setTimeout(() => { if (slideEls[i].classList.contains('active') && !found) speak('ask'); }, 2000);
-    },
-    leave() { hush(); stopCam(); cancelAnimationFrame(raf); },
+    enter() { sfx.teleport(); startCam(true); G.start(); setTimeout(() => { if (slideEls[i].classList.contains('active') && !G.found) speak('ask'); }, 2000); },
+    leave() { hush(); stopCam(); G.stop(); },
   };
-  draw();
   return [ar_];
 };
 
-/* ⑤ محطات الرحلة */
-R.stations = s => [head(s),
-  rich(s.mission, 'div', 'mission card rv'),
-  h('div', { class: 'stations' }, s.items.map((it, k) => h('div', { class: 'st card rv' + (it.final ? ' final' : ''),
-    onclick: e => { const el = e.currentTarget; el.classList.toggle('done'); if (el.classList.contains('done')) celebrate(el, 40); else sfx.pop(); } },
-    h('span', { class: 'st-n' }, ar(k + 1)), h('div', { class: 'st-ico' }, it.icon), rich(it.text, 'div', 'st-txt'))))];
+/* =====================================================================
+   ⑤ محطّات الرحلة — خريطة تفاعلية: الضغط على المحطة ينقلك إليها،
+      وبعد شرحها تعودين إلى هنا وتظهر «تمّت» على المحطة
+   ===================================================================== */
+const JOURNEY = { hub: -1, ranges: [], active: -1, done: new Set(), refresh: null };
+const slideOf = (type, from = 0) => SLIDES.findIndex((x, k) => k >= from && x.type === type);
+const inRange = (k, r) => k >= r[0] && k <= r[1];
 
-/* ⑥ خريطة العالم */
-R.world = s => {
-  const W = WORLD.w, H = WORLD.h;
-  const svg = svgEl(`<svg viewBox="0 0 ${W} ${H}">
-    <rect width="${W}" height="${H}" fill="url(#seaGrad)"/><rect width="${W}" height="${H}" fill="url(#seaWaves)"/>
-    <path class="c" d="${WORLD.land}"/><path class="c ksa click" d="${WORLD.ksa}"/><g class="over"></g></svg>`);
-  const map = h('div', { class: 'map rv', style: `--ar:${W}/${H}` }, svg);
-  const conts = [['آسيا', 95, 52], ['أوروبا', 12, 52], ['أفريقيا', 18, 6], ['المحيط الهندي', 76, -12]].map(([n, lon, lat]) => {
-    const [x, y] = WP(lon, lat); return h('div', { class: 'cont', style: `left:${x / W * 100}%;top:${y / H * 100}%;translate:-50% -50%` + (n.startsWith('المحيط') ? ';border-color:#7fbfd3;color:#1572a1;font-size:34px' : '') }, n);
-  });
-  map.append(...conts);
+R.stations = (s, i) => {
+  JOURNEY.hub = i; JOURNEY.done = new Set(); JOURNEY.active = -1;
+  JOURNEY.ranges = s.items.map(it => { const a = slideOf(it.go, i + 1), b = slideOf(it.end || it.go, a); return [a, b]; });
+  const cards = s.items.map((it, k) => h('button', { type: 'button', class: 'st card rv' + (it.final ? ' final' : ''), onclick: () => travel(k) },
+    h('span', { class: 'st-n' }, ar(k + 1)), h('div', { class: 'st-ico' }, it.icon), rich(it.text, 'div', 'st-txt'), h('div', { class: 'st-go' }, '🔍 انطلقي')));
+  const fin = h('button', { type: 'button', class: 'btn big yellow st-fin', onclick: () => go(JOURNEY.ranges.at(-1)[1] + 1) }, '🏁 أكملنا الرحلة.. تابعي الدرس');
+  const refresh = (fresh) => {
+    const nextK = s.items.findIndex((_, k) => !JOURNEY.done.has(k));
+    cards.forEach((c, k) => { c.classList.toggle('done', JOURNEY.done.has(k)); c.classList.toggle('next', k === nextK); });
+    fin.classList.toggle('show', nextK < 0);
+    if (fresh != null && cards[fresh]) { cards[fresh].classList.add('stamp'); setTimeout(() => { celebrate(cards[fresh], 70); cards[fresh].classList.remove('stamp'); }, 500); }
+    if (nextK < 0 && fresh != null) setTimeout(() => { confetti(innerWidth / 2, innerHeight / 3, 160); sfx.success(); }, 900);
+  };
+  JOURNEY.refresh = refresh;
+
+  /* الانتقال: خريطة تقترب ومكبّر يتحرّك نحو المحطة */
+  const tv = h('div', { class: 'travel' });
+  let busy = false;
+  function travel(k) {
+    if (busy) return; busy = true;
+    const it = s.items[k], [x, y] = P(...it.at), W = REGION.w, H = REGION.h;
+    const map = svgEl(`<svg class="tv-map" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice"><rect width="${W}" height="${H}" fill="url(#seaGrad)"/>
+      ${Object.entries(REGION.paths).map(([n, d]) => `<path d="${d}" fill="${n === 'Saudi Arabia' ? '#cfe9da' : '#f3e9d3'}" stroke="#fff" stroke-width="2"/>`).join('')}
+      <circle class="tv-dot" cx="${x}" cy="${y}" r="14" fill="#b5452c" stroke="#fff" stroke-width="5"/></svg>`);
+    const lens = h('div', { class: 'tv-lens' }, svgEl(`<svg viewBox="0 0 200 200"><circle cx="80" cy="80" r="62" fill="rgba(191,224,234,.25)" stroke="#d4a62a" stroke-width="16"/>
+      <path d="M52 52 Q66 40 84 42" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" opacity=".8"/><line x1="126" y1="126" x2="186" y2="186" stroke="#8a5a2b" stroke-width="22" stroke-linecap="round"/></svg>`));
+    const cap = h('div', { class: 'tv-cap' }, h('span', {}, `المحطّة ${ar(k + 1)}`), h('b', {}, `${it.icon} ${it.text.replace(/\*/g, '')}`));
+    tv.replaceChildren(map, lens, cap); tv.className = 'travel on';
+    sfx.teleport();
+    const px = x / W * 100, py = y / H * 100;
+    map.style.transformOrigin = `${px}% ${py}%`;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      map.classList.add('zoom');
+      lens.style.left = px + '%'; lens.style.top = py + '%'; lens.classList.add('go');
+    }));
+    setTimeout(() => { tv.classList.add('flash'); sfx.success(); }, 1900);
+    setTimeout(() => { JOURNEY.active = k; tv.className = 'travel'; busy = false; go(JOURNEY.ranges[k][0]); }, 2300);
+  }
+  HOOKS[i] = { enter() { refresh(); }, leave() { tv.className = 'travel'; busy = false; } };
+  refresh();
+  return [head(s), rich(s.mission, 'div', 'mission card rv'), h('div', { class: 'stations' }, cards), fin, tv];
+};
+
+/* زر «العودة إلى المحطات» يظهر داخل المحطة */
+function journeyUI() {
+  let b = $('#backHub');
+  if (!b) {
+    b = h('button', { id: 'backHub', type: 'button', onclick: () => backToHub() }, '✓ أنهيتُ المحطة.. ↩ العودة إلى الخريطة');
+    $('#stage').append(b);
+  }
+  const r = JOURNEY.ranges[JOURNEY.active];
+  b.classList.toggle('show', JOURNEY.active >= 0 && !!r && inRange(cur, r));
+}
+function backToHub() {
+  const k = JOURNEY.active; if (k < 0) return;
+  JOURNEY.done.add(k); JOURNEY.active = -1;
+  go(JOURNEY.hub);
+  setTimeout(() => JOURNEY.refresh?.(k), 650);
+}
+
+/* ⑥ المحطة ١: الكرة الأرضية — المملكة بلون عادي حتى تضغط المعلّمة عليها */
+R.world = (s, i) => {
   const fb = h('div', { class: 'feedback' });
   const ans = rich(s.answer, 'div', 'p-box card reveal');
-  let tries = 0, done = false;
-  svg.addEventListener('click', e => {
-    if (done) return;
-    if (e.target.classList.contains('ksa')) {
-      done = true; e.target.classList.remove('click'); celebrate(e.target, 90); say(fb, true, '📍 وجدتِه! هذا وطني');
-      const [kx, ky] = WP(45, 24);
-      const ov = svg.querySelector('.over');
-      ov.innerHTML = `<circle cx="${kx}" cy="${ky}" r="20" fill="none" stroke="#b5452c" stroke-width="4"><animate attributeName="r" from="20" to="90" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" from="1" to="0" dur="1.6s" repeatCount="indefinite"/></circle>` +
-        [[95, 52], [12, 52], [18, 6]].map(([lo, la]) => { const [x, y] = WP(lo, la); return arrowSVG(kx, ky, x + (kx - x) * .28, y + (ky - y) * .28); }).join('');
-      conts.forEach((c, k) => setTimeout(() => { c.classList.add('show'); sfx.pop(); }, 500 + k * 450));
-      setTimeout(() => ans.classList.add('show'), 2400);
-    } else {
-      tries++; sfx.wrong(); say(fb, false, tries >= 2 ? '💡 تلميح: ابحثي جنوبَ غربِ آسيا، بين البحرِ الأحمرِ والخليجِ العربيّ' : LESSON.wrongMsg);
-      if (tries >= 2) { svg.querySelector('.ksa').classList.add('hi'); }
-    }
+  const follow = s.followup ? rich(s.followup, 'div', 'p-box card follow') : null;
+  const G = Globe({
+    labels: true,
+    onFound() {
+      say(fb, true, '📍 وجدتِه! هذا وطني');
+      setTimeout(() => ans.classList.add('show'), 2200);
+      if (follow) setTimeout(() => { follow.classList.add('show'); fb.replaceChildren(follow); sfx.pop(); }, 3600);
+    },
+    onMiss(n) { say(fb, false, n >= 2 ? '💡 تلميح: ابحثي جنوبَ غربِ آسيا، بين البحرِ الأحمرِ والخليجِ العربيّ' : LESSON.wrongMsg); if (n >= 2) G.hint(); },
   });
+  HOOKS[i] = { enter() { G.start(); }, leave() { G.stop(); } };
   return [head(s),
-    h('div', { class: 'mapwrap' }, map,
-      h('div', { class: 'panel' }, rich(s.question, 'div', 'p-box q card rv'), fb, ans))];
+    h('div', { class: 'mapwrap' }, h('div', { class: 'globe-box rv' }, G.el),
+      h('div', { class: 'panel wl' }, rich(s.question, 'div', 'p-box q card rv'), fb, ans))];
 };
+
+/* ③ تمهيد: الرسالة السرّيّة (ظرف مغلق + لغز) */
+R.secret = s => {
+  const env = h('div', { class: 'env' });
+  env.innerHTML = `<div class="env-back"></div>
+    <div class="env-card"><div class="env-card-in">✉️<b>${s.cardText}</b></div></div>
+    <div class="env-front"></div><div class="env-flap"></div>
+    <div class="env-seal">؟</div><div class="env-stamp">سرّي للغاية 🔒</div>`;
+  const clues = h('div', { class: 'clues' });
+  const ans = h('div', { class: 'sc-ans' });
+  let stage = 0, ci = 0;
+  const btn = h('button', { type: 'button', class: 'btn big yellow', onclick: () => next() }, '🔓 افتحي الظرف');
+  function next() {
+    if (stage === 0) {                       // فتح الظرف
+      env.classList.add('open'); sfx.flip(); setTimeout(sfx.success, 500);
+      stage = 1; btn.textContent = '🧩 اقرئي اللغز';
+    } else if (stage === 1) {                // الأدلة واحدًا تلو الآخر
+      env.classList.add('small');
+      const c = s.clues[ci++];
+      clues.append(h('div', { class: 'clue pop' }, h('span', { class: 'clue-i' }, c.icon), rich(c.text, 'span')));
+      sfx.ding();
+      if (ci >= s.clues.length) { clues.append(rich(s.ask, 'div', 'clue ask pop')); stage = 2; btn.textContent = '🔍 اكشفي السرّ'; }
+    } else if (stage === 2) {                // كشف الإجابة
+      ans.replaceChildren(
+        svgEl(`<svg class="sc-ksa" viewBox="${KB[0] - 20} ${KB[1] - 20} ${KB[2] - KB[0] + 40} ${KB[3] - KB[1] + 40}"><path d="${REGION.paths['Saudi Arabia']}"/></svg>`),
+        h('div', { class: 'sc-name' }, s.answer),
+        rich(s.after, 'div', 'sc-after'));
+      ans.classList.add('show'); celebrate(ans, 140); stage = 3; btn.remove();
+    }
+  }
+  return [head(s), h('div', { class: 'sc' }, h('div', { class: 'sc-left rv' }, env, btn), h('div', { class: 'sc-right' }, clues, ans))];
+};
+
+/* ⑤ تمهيد: أسئلة التفكير والاستنتاج */
+R.think = s => {
+  const fin = rich('✨ ' + s.closing, 'div', 'th-final card');
+  let opened = 0;
+  return [head(s),
+    h('div', { class: 'th' },
+      ...s.items.map((it, k) => {
+        const c = h('div', { class: 'th-q card rv' + (it.open ? ' open-q' : ''), onclick: () => {
+          if (c.classList.contains('shown')) return; c.classList.add('shown'); sfx.success();
+          if (++opened === s.items.length) setTimeout(() => { fin.classList.add('show'); celebrate(fin, 90); }, 700);
+        } }, h('span', { class: 'th-n' }, it.icon || ar(k + 1)),
+          h('div', { class: 'th-body' }, rich(it.q, 'div', 'th-t'), rich('💡 ' + it.a, 'div', 'th-a'), h('div', { class: 'th-tap' }, it.open ? '👂 استمعي للإجابات ثم اضغطي' : '👆 اضغطي بعد الإجابة')));
+        return c;
+      }),
+      fin)];
+};
+
+/* ⑦ أهداف الدرس */
+R.goals = s => [head(s),
+  h('div', { class: 'gl' }, s.items.map((it, k) => h('div', { class: 'gl-c card rv', onclick: e => {
+    const el = e.currentTarget; el.classList.toggle('done'); if (el.classList.contains('done')) celebrate(el, 40); else sfx.pop(); } },
+    h('span', { class: 'gl-n' }, ar(k + 1)), h('div', { class: 'gl-i' }, it.icon), rich(it.text, 'div', 'gl-t'))))];
 
 /* ⑦ بطاقات مقلوبة */
 R.flip = s => {
@@ -1950,9 +2190,20 @@ function show(i, dir = 1) {
   $('#progress i').style.width = pct + '%';
   $('#progress b').style.right = pct + '%';
   history.replaceState(null, '', '#' + (i + 1));
+  journeyUI();
 }
 const go = i => { if (i >= 0 && i < SLIDES.length && i !== cur) show(i, i > cur ? 1 : -1); };
-const next = () => go(cur + 1);
+const next = () => {
+  // داخل رحلة المحطات: بعد آخر شريحة في المحطة نعود إلى خريطة المحطات
+  const r = JOURNEY.ranges[JOURNEY.active];
+  if (JOURNEY.active >= 0 && r && cur === r[1]) return backToHub();
+  if (cur === JOURNEY.hub && JOURNEY.ranges.length) {
+    const k = JOURNEY.ranges.findIndex((_, j) => !JOURNEY.done.has(j));
+    if (k >= 0) return slideEls[cur].querySelectorAll('.st')[k]?.click();
+    return go(JOURNEY.ranges.at(-1)[1] + 1);
+  }
+  go(cur + 1);
+};
 const prev = () => go(cur - 1);
 
 
