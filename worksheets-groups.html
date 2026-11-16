@@ -12,7 +12,8 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
   border:2.2mm solid var(--c,#1b8a5a);border-radius:6mm;box-shadow:0 6px 20px rgba(0,0,0,.15);page-break-after:always;break-after:page}
 .hd{display:flex;justify-content:space-between;align-items:center;gap:6mm}
 .grp{display:flex;align-items:center;gap:4mm}
-.em{font-size:15mm;line-height:1;width:20mm;height:20mm;display:grid;place-items:center;background:var(--s,#eef7f1);border-radius:50%;border:1mm solid var(--c,#1b8a5a)}
+.em svg{width:13mm;height:13mm}
+.em{width:20mm;height:20mm;flex:none;display:grid;place-items:center;background:var(--s,#eef7f1);border-radius:50%;border:1mm solid var(--c,#1b8a5a)}
 .grp b{display:block;font:900 9mm/1.2 Tajawal,sans-serif;color:var(--c,#0f5132)}
 .grp small{font:700 3.6mm Tajawal,sans-serif;color:#666}
 .meta{display:flex;flex-direction:column;gap:2mm;font:700 3.8mm Tajawal,sans-serif;color:#444;text-align:left}
@@ -20,7 +21,9 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
 .mission span{display:block;font:800 3.8mm Tajawal,sans-serif;color:var(--c)}
 .mission b{color:var(--c);font-size:6.6mm}
 .mapbox{text-align:center}
-.school{display:flex;justify-content:space-between;gap:2mm;background:#f6f3ea;border-radius:2.5mm;padding:1.6mm 4mm;font:800 3.5mm Tajawal,sans-serif;color:#3a3a3a}
+.school{text-align:center;font:900 5mm Tajawal,sans-serif;color:#0f5132;border-bottom:.5mm solid #e6dcc3;padding-bottom:1.6mm}
+.staff{display:flex;justify-content:space-between;gap:4mm;border-top:.5mm solid #e6dcc3;padding-top:1.8mm;font:700 3.7mm Tajawal,sans-serif;color:#555}
+.staff b{color:#0f5132;font-weight:900}
 .map{width:128mm;height:auto;border:.6mm solid #999;border-radius:3mm;display:block;margin:0 auto}
 .map .mk{font:900 28px Tajawal,sans-serif;text-anchor:middle}
 .map .ksa{font:900 30px Tajawal,sans-serif;text-anchor:middle;fill:#222;paint-order:stroke;stroke:#fff;stroke-width:6px}
@@ -43,18 +46,18 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
 .key th{background:#0f5132;color:#fff;padding:2mm}
 .key td{border:.3mm solid #ccc;padding:1.8mm 2.4mm;vertical-align:middle}
 .key td:first-child{border-inline-start:1.5mm solid var(--c)}
-.kmaps{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.kmaps{display:grid;grid-template-columns:1fr 1fr;gap:2mm}
 .km{text-align:center;font:900 4mm Tajawal,sans-serif}
-.km .map{width:80%}
+.km .map{width:74%}
 .note{margin:0;font:700 3.8mm/1.7 'Noto Naskh Arabic',serif;background:#eef7f1;border-radius:3mm;padding:2mm 4mm}
 @media print{body{background:#fff}.bar{display:none}.page{margin:0;box-shadow:none}}
 </style></head><body>
-<div class="bar"><button onclick="print()">🖨️ طباعة الأوراق</button></div>
+<div class="bar"><button onclick="print()">طباعة الأوراق</button></div>
 <section class="page" style="--c:#3d8fd1;--s:#e3f0fb">
-  <header class="hd"><div class="grp"><span class="em">☁️</span><div><b>مجموعة الغيوم</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
+  <div class="school">ابتدائيّةُ التحفيظِ بالرويضة</div>
+  <header class="hd"><div class="grp"><span class="em"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.4 4.3 4.3 0 0 0 7 18z" fill="var(--s)" stroke="var(--c)" stroke-width="1.6" stroke-linejoin="round"/></svg></span><div><b>مجموعة الغيوم</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
     <div class="meta"><span>الفصل: ............</span><span>التاريخ: ....../....../......</span></div></header>
-  <div class="school"><span>🏫 ابتدائيّةُ التحفيظِ بالرويضة</span><span>👩‍🏫 معلّمةُ المادّة: أ. إيمان السهلي</span><span>🌟 مديرةُ المدرسة: أ. شيخة القحطاني</span></div>
-  <div class="mission"><span>🧭 مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الشمال</b>؟</div>
+  <div class="mission"><span>مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الشمال</b>؟</div>
   <div class="mapbox"><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="wn0" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahn0" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3d8fd1"/></marker></defs>
@@ -72,13 +75,14 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
     <li>اكتبْنَ أسماءَها حسبَ الأرقامِ على الخريطة:<div class="answers"><div class="ans"><span class="num" style="border-color:#3d8fd1;color:#3d8fd1">١</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#3d8fd1;color:#3d8fd1">٢</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#3d8fd1;color:#3d8fd1">٣</span><span class="line"></span></div></div></li>
     <li>كم دولةً تحدُّ المملكةَ من جهةِ الشمال؟  (  ......  )</li>
   </ol>
-  <div class="roles"><span>👑 القائدة: ..................</span><span>✍️ الكاتبة: ..................</span><span>🖍️ الملوّنة: ..................</span><span>🎤 المتحدّثة: ..................</span></div>
-  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>🎤 تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="roles"><span>القائدة: ..................</span><span>الكاتبة: ..................</span><span>الملوّنة: ..................</span><span>المتحدّثة: ..................</span></div>
+  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="staff"><span>معلّمةُ المادّة: <b>أ. إيمان السهلي</b></span><span>مديرةُ المدرسة: <b>أ. شيخة القحطاني</b></span></div>
 </section><section class="page" style="--c:#c99412;--s:#fbf2d6">
-  <header class="hd"><div class="grp"><span class="em">⭐</span><div><b>مجموعة النجوم</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
+  <div class="school">ابتدائيّةُ التحفيظِ بالرويضة</div>
+  <header class="hd"><div class="grp"><span class="em"><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="var(--s)" stroke="var(--c)" stroke-width="1.6" stroke-linejoin="round"/></svg></span><div><b>مجموعة النجوم</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
     <div class="meta"><span>الفصل: ............</span><span>التاريخ: ....../....../......</span></div></header>
-  <div class="school"><span>🏫 ابتدائيّةُ التحفيظِ بالرويضة</span><span>👩‍🏫 معلّمةُ المادّة: أ. إيمان السهلي</span><span>🌟 مديرةُ المدرسة: أ. شيخة القحطاني</span></div>
-  <div class="mission"><span>🧭 مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الجنوب</b>؟</div>
+  <div class="mission"><span>مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الجنوب</b>؟</div>
   <div class="mapbox"><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="ws0" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahs0" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#c99412"/></marker></defs>
@@ -96,13 +100,14 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
     <li>اكتبْنَ أسماءَها حسبَ الأرقامِ على الخريطة:<div class="answers"><div class="ans"><span class="num" style="border-color:#c99412;color:#c99412">١</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#c99412;color:#c99412">٢</span><span class="line"></span></div></div></li>
     <li>كم دولةً تحدُّ المملكةَ من جهةِ الجنوب؟  (  ......  )</li>
   </ol>
-  <div class="roles"><span>👑 القائدة: ..................</span><span>✍️ الكاتبة: ..................</span><span>🖍️ الملوّنة: ..................</span><span>🎤 المتحدّثة: ..................</span></div>
-  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>🎤 تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="roles"><span>القائدة: ..................</span><span>الكاتبة: ..................</span><span>الملوّنة: ..................</span><span>المتحدّثة: ..................</span></div>
+  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="staff"><span>معلّمةُ المادّة: <b>أ. إيمان السهلي</b></span><span>مديرةُ المدرسة: <b>أ. شيخة القحطاني</b></span></div>
 </section><section class="page" style="--c:#8e5bc7;--s:#f0e7fa">
-  <header class="hd"><div class="grp"><span class="em">🦋</span><div><b>مجموعة الفراشات</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
+  <div class="school">ابتدائيّةُ التحفيظِ بالرويضة</div>
+  <header class="hd"><div class="grp"><span class="em"><svg viewBox="0 0 24 24"><g fill="var(--s)" stroke="var(--c)" stroke-width="1.5" stroke-linejoin="round"><path d="M12 10C9.5 4 3 4 3 9s4.5 5.5 9 2.5z"/><path d="M12 10c2.5-6 9-6 9-1s-4.5 5.5-9 2.5z"/><path d="M12 12.5c-3 0-6.5 1.5-5.5 5s4.5.5 5.5-2.5z"/><path d="M12 12.5c3 0 6.5 1.5 5.5 5s-4.5.5-5.5-2.5z"/></g><path d="M12 7.5v11" stroke="var(--c)" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>مجموعة الفراشات</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
     <div class="meta"><span>الفصل: ............</span><span>التاريخ: ....../....../......</span></div></header>
-  <div class="school"><span>🏫 ابتدائيّةُ التحفيظِ بالرويضة</span><span>👩‍🏫 معلّمةُ المادّة: أ. إيمان السهلي</span><span>🌟 مديرةُ المدرسة: أ. شيخة القحطاني</span></div>
-  <div class="mission"><span>🧭 مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الشرق</b>؟</div>
+  <div class="mission"><span>مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الشرق</b>؟</div>
   <div class="mapbox"><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="we0" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahe0" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#8e5bc7"/></marker></defs>
@@ -120,13 +125,14 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
     <li>اكتبْنَ أسماءَها حسبَ الأرقامِ على الخريطة:<div class="answers"><div class="ans"><span class="num" style="border-color:#8e5bc7;color:#8e5bc7">١</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#8e5bc7;color:#8e5bc7">٢</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#8e5bc7;color:#8e5bc7">٣</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#8e5bc7;color:#8e5bc7">٤</span><span class="line"></span></div></div></li>
     <li>ما المسطّحُ المائيُّ الذي يحدُّ المملكةَ من جهةِ الشرق؟  ..............................</li>
   </ol>
-  <div class="roles"><span>👑 القائدة: ..................</span><span>✍️ الكاتبة: ..................</span><span>🖍️ الملوّنة: ..................</span><span>🎤 المتحدّثة: ..................</span></div>
-  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>🎤 تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="roles"><span>القائدة: ..................</span><span>الكاتبة: ..................</span><span>الملوّنة: ..................</span><span>المتحدّثة: ..................</span></div>
+  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="staff"><span>معلّمةُ المادّة: <b>أ. إيمان السهلي</b></span><span>مديرةُ المدرسة: <b>أ. شيخة القحطاني</b></span></div>
 </section><section class="page" style="--c:#d6457a;--s:#fbe6ee">
-  <header class="hd"><div class="grp"><span class="em">🌸</span><div><b>مجموعة الورود</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
+  <div class="school">ابتدائيّةُ التحفيظِ بالرويضة</div>
+  <header class="hd"><div class="grp"><span class="em"><svg viewBox="0 0 24 24"><g fill="var(--s)" stroke="var(--c)" stroke-width="1.4"><circle cx="12" cy="6.3" r="3.3"/><circle cx="17.5" cy="10.3" r="3.3"/><circle cx="15.4" cy="16.8" r="3.3"/><circle cx="8.6" cy="16.8" r="3.3"/><circle cx="6.5" cy="10.3" r="3.3"/></g><circle cx="12" cy="12" r="2.6" fill="var(--c)"/></svg></span><div><b>مجموعة الورود</b><small>ورقةُ عملٍ جماعيّة • درسُ الموقعِ والحدود</small></div></div>
     <div class="meta"><span>الفصل: ............</span><span>التاريخ: ....../....../......</span></div></header>
-  <div class="school"><span>🏫 ابتدائيّةُ التحفيظِ بالرويضة</span><span>👩‍🏫 معلّمةُ المادّة: أ. إيمان السهلي</span><span>🌟 مديرةُ المدرسة: أ. شيخة القحطاني</span></div>
-  <div class="mission"><span>🧭 مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الغرب</b>؟</div>
+  <div class="mission"><span>مهمّتُكُنّ</span>ما حدودُ المملكةِ العربيّةِ السعوديّةِ من جهةِ <b>الغرب</b>؟</div>
   <div class="mapbox"><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="ww0" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahw0" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d6457a"/></marker></defs>
@@ -144,13 +150,13 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
     <li>اكتبْنَ أسماءَها حسبَ الأرقامِ على الخريطة:<div class="answers"><div class="ans"><span class="num" style="border-color:#d6457a;color:#d6457a">١</span><span class="line"></span></div><div class="ans"><span class="num" style="border-color:#d6457a;color:#d6457a">٢</span><span class="line"></span></div></div></li>
     <li>اذكرْنَ مدينتين سعوديّتين تُطلّان على البحرِ الأحمر:  ..................  و  ..................</li>
   </ol>
-  <div class="roles"><span>👑 القائدة: ..................</span><span>✍️ الكاتبة: ..................</span><span>🖍️ الملوّنة: ..................</span><span>🎤 المتحدّثة: ..................</span></div>
-  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>🎤 تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="roles"><span>القائدة: ..................</span><span>الكاتبة: ..................</span><span>الملوّنة: ..................</span><span>المتحدّثة: ..................</span></div>
+  <div class="eval">تقييمُ تعاونِ مجموعتِنا: <span>☆ ☆ ☆ ☆ ☆</span><em>تعرضُ المتحدّثةُ حدودَ جهتِكُنّ أمامَ الفصل</em></div>
+  <div class="staff"><span>معلّمةُ المادّة: <b>أ. إيمان السهلي</b></span><span>مديرةُ المدرسة: <b>أ. شيخة القحطاني</b></span></div>
 </section>
-<section class="page key"><header class="hd"><div class="grp"><span class="em">🔑</span><div><b>مفتاحُ الإجابة</b><small>للمعلّمة — درسُ الموقعِ والحدود</small></div></div></header>
-  <div class="school"><span>🏫 ابتدائيّةُ التحفيظِ بالرويضة</span><span>👩‍🏫 معلّمةُ المادّة: أ. إيمان السهلي</span><span>🌟 مديرةُ المدرسة: أ. شيخة القحطاني</span></div>
-  <table><tr><th>المجموعة</th><th>إجابةُ الأرقامِ على الخريطة</th><th>السؤالُ الأخير</th></tr><tr style="--c:#3d8fd1"><td><b>☁️ مجموعة الغيوم</b><br><small>جهة الشمال</small></td><td>(١) الكويت، (٢) العراق، (٣) الأردن</td><td>٣ دول</td></tr><tr style="--c:#c99412"><td><b>⭐ مجموعة النجوم</b><br><small>جهة الجنوب</small></td><td>(١) اليمن، (٢) عُمان</td><td>دولتان</td></tr><tr style="--c:#8e5bc7"><td><b>🦋 مجموعة الفراشات</b><br><small>جهة الشرق</small></td><td>(١) الإمارات، (٢) قطر، (٣) البحرين، (٤) الخليج العربي</td><td>الخليج العربي</td></tr><tr style="--c:#d6457a"><td><b>🌸 مجموعة الورود</b><br><small>جهة الغرب</small></td><td>(١) البحر الأحمر، (٢) خليج العقبة</td><td>جدّة وينبع (أو غيرهما مثل: أملج، الوجه، جازان، رابغ)</td></tr></table>
-  <div class="kmaps"><div class="km"><b style="color:#3d8fd1">☁️ الشمال</b><svg viewBox="0 0 1000 871" class="map">
+<section class="page key"><div class="school">ابتدائيّةُ التحفيظِ بالرويضة</div><header class="hd"><div class="grp"><span class="em"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4.5" fill="var(--s)" stroke="var(--c)" stroke-width="1.8"/><path d="M12.5 12H21M18 12v3M21 12v2.5" stroke="var(--c)" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>مفتاحُ الإجابة</b><small>للمعلّمة — درسُ الموقعِ والحدود</small></div></div></header>
+  <table><tr><th>المجموعة</th><th>إجابةُ الأرقامِ على الخريطة</th><th>السؤالُ الأخير</th></tr><tr style="--c:#3d8fd1"><td><b>مجموعة الغيوم</b><br><small>جهة الشمال</small></td><td>(١) الكويت، (٢) العراق، (٣) الأردن</td><td>٣ دول</td></tr><tr style="--c:#c99412"><td><b>مجموعة النجوم</b><br><small>جهة الجنوب</small></td><td>(١) اليمن، (٢) عُمان</td><td>دولتان</td></tr><tr style="--c:#8e5bc7"><td><b>مجموعة الفراشات</b><br><small>جهة الشرق</small></td><td>(١) الإمارات، (٢) قطر، (٣) البحرين، (٤) الخليج العربي</td><td>الخليج العربي</td></tr><tr style="--c:#d6457a"><td><b>مجموعة الورود</b><br><small>جهة الغرب</small></td><td>(١) البحر الأحمر، (٢) خليج العقبة</td><td>جدّة وينبع (أو غيرهما مثل: أملج، الوجه، جازان، رابغ)</td></tr></table>
+  <div class="kmaps"><div class="km"><b style="color:#3d8fd1">الشمال</b><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="wn1" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahn1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3d8fd1"/></marker></defs>
   <rect width="1000" height="871" fill="#eef7fb"/><rect width="1000" height="871" fill="url(#wn1)"/>
@@ -160,7 +166,7 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
   <text x="422" y="407" class="ksa">وطني</text>
   <g><circle cx="531" cy="153" r="22" fill="#fff" stroke="#3d8fd1" stroke-width="5"/><text x="531" y="162" class="mk" fill="#3d8fd1">١</text><text x="531" y="201" class="kl">الكويت</text></g><g><circle cx="393" cy="51" r="22" fill="#fff" stroke="#3d8fd1" stroke-width="5"/><text x="393" y="60" class="mk" fill="#3d8fd1">٢</text><text x="393" y="99" class="kl">العراق</text></g><g><circle cx="153" cy="90" r="22" fill="#fff" stroke="#3d8fd1" stroke-width="5"/><text x="153" y="99" class="mk" fill="#3d8fd1">٣</text><text x="153" y="138" class="kl">الأردن</text></g>
   <g transform="translate(930 776)"><circle r="44" fill="#fff" stroke="#222" stroke-width="3"/><path d="M0 -36 L9 0 L0 36 L-9 0Z" fill="#fff" stroke="#222" stroke-width="2"/><path d="M0 -36 L9 0 L0 0Z" fill="#222"/><text y="-56" class="nl">ش</text></g>
-</svg></div><div class="km"><b style="color:#c99412">⭐ الجنوب</b><svg viewBox="0 0 1000 871" class="map">
+</svg></div><div class="km"><b style="color:#c99412">الجنوب</b><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="ws1" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahs1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#c99412"/></marker></defs>
   <rect width="1000" height="871" fill="#eef7fb"/><rect width="1000" height="871" fill="url(#ws1)"/>
@@ -170,7 +176,7 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
   <text x="422" y="407" class="ksa">وطني</text>
   <g><circle cx="509" cy="690" r="22" fill="#fff" stroke="#c99412" stroke-width="5"/><text x="509" y="699" class="mk" fill="#c99412">١</text><text x="509" y="738" class="kl">اليمن</text></g><g><circle cx="858" cy="502" r="22" fill="#fff" stroke="#c99412" stroke-width="5"/><text x="858" y="511" class="mk" fill="#c99412">٢</text><text x="858" y="550" class="kl">عُمان</text></g>
   <g transform="translate(930 776)"><circle r="44" fill="#fff" stroke="#222" stroke-width="3"/><path d="M0 -36 L9 0 L0 36 L-9 0Z" fill="#fff" stroke="#222" stroke-width="2"/><path d="M0 -36 L9 0 L0 0Z" fill="#222"/><text y="-56" class="nl">ش</text></g>
-</svg></div><div class="km"><b style="color:#8e5bc7">🦋 الشرق</b><svg viewBox="0 0 1000 871" class="map">
+</svg></div><div class="km"><b style="color:#8e5bc7">الشرق</b><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="we1" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahe1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#8e5bc7"/></marker></defs>
   <rect width="1000" height="871" fill="#eef7fb"/><rect width="1000" height="871" fill="url(#we1)"/>
@@ -180,7 +186,7 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
   <text x="422" y="407" class="ksa">وطني</text>
   <g><circle cx="775" cy="384" r="22" fill="#fff" stroke="#8e5bc7" stroke-width="5"/><text x="775" y="393" class="mk" fill="#8e5bc7">١</text><text x="775" y="432" class="kl">الإمارات</text></g><g><circle cx="664" cy="324" r="22" fill="#fff" stroke="#8e5bc7" stroke-width="5"/><text x="664" y="333" class="mk" fill="#8e5bc7">٢</text><text x="664" y="372" class="kl">قطر</text></g><g><circle cx="629" cy="265" r="22" fill="#fff" stroke="#8e5bc7" stroke-width="5"/><text x="629" y="274" class="mk" fill="#8e5bc7">٣</text><text x="629" y="313" class="kl">البحرين</text></g><g><circle cx="676" cy="216" r="22" fill="#fff" stroke="#8e5bc7" stroke-width="5"/><text x="676" y="225" class="mk" fill="#8e5bc7">٤</text><text x="676" y="264" class="kl">الخليج العربي</text></g>
   <g transform="translate(930 776)"><circle r="44" fill="#fff" stroke="#222" stroke-width="3"/><path d="M0 -36 L9 0 L0 36 L-9 0Z" fill="#fff" stroke="#222" stroke-width="2"/><path d="M0 -36 L9 0 L0 0Z" fill="#222"/><text y="-56" class="nl">ش</text></g>
-</svg></div><div class="km"><b style="color:#d6457a">🌸 الغرب</b><svg viewBox="0 0 1000 871" class="map">
+</svg></div><div class="km"><b style="color:#d6457a">الغرب</b><svg viewBox="0 0 1000 871" class="map">
   <defs><pattern id="ww1" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 3 20 10 T40 10" fill="none" stroke="#9cc7da" stroke-width="1.6"/></pattern>
   <marker id="ahw1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d6457a"/></marker></defs>
   <rect width="1000" height="871" fill="#eef7fb"/><rect width="1000" height="871" fill="url(#ww1)"/>
@@ -191,5 +197,5 @@ body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-s
   <g><circle cx="204" cy="467" r="22" fill="#fff" stroke="#d6457a" stroke-width="5"/><text x="204" y="476" class="mk" fill="#d6457a">١</text><text x="204" y="515" class="kl">البحر الأحمر</text></g><g><circle cx="63" cy="178" r="22" fill="#fff" stroke="#d6457a" stroke-width="5"/><text x="63" y="187" class="mk" fill="#d6457a">٢</text><text x="63" y="226" class="kl">خليج العقبة</text></g>
   <g transform="translate(930 776)"><circle r="44" fill="#fff" stroke="#222" stroke-width="3"/><path d="M0 -36 L9 0 L0 36 L-9 0Z" fill="#fff" stroke="#222" stroke-width="2"/><path d="M0 -36 L9 0 L0 0Z" fill="#222"/><text y="-56" class="nl">ش</text></g>
 </svg></div></div>
-  <p class="note">يحدُّ وطني: من الشمال الكويتُ والعراقُ والأردن • من الشرق الإماراتُ والبحرينُ وقطرُ والخليجُ العربيّ • من الجنوب عُمانُ واليمن • من الغرب البحرُ الأحمر.</p></section>
+  <p class="note">يحدُّ وطني: من الشمال الكويتُ والعراقُ والأردن • من الشرق الإماراتُ والبحرينُ وقطرُ والخليجُ العربيّ • من الجنوب عُمانُ واليمن • من الغرب البحرُ الأحمر.</p><div class="staff"><span>معلّمةُ المادّة: <b>أ. إيمان السهلي</b></span><span>مديرةُ المدرسة: <b>أ. شيخة القحطاني</b></span></div></section>
 </body></html>

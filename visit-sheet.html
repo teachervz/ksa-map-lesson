@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ورقة الزيارة — درس الموقع والحدود</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;700&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script src="robot/qrcode.js"></script>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e4d8;font-family:'Tajawal','Geeza Pro',Tahoma,sans-serif;color:#1d2b23;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:12px;padding:12px;background:#0f5132}
+.bar button{font:800 18px Tajawal,sans-serif;border:0;border-radius:99px;padding:10px 26px;background:#d4a62a;color:#0b3d26;cursor:pointer}
+.page{width:210mm;height:297mm;margin:16px auto;background:#fffdf7;position:relative;overflow:hidden;padding:9mm 10mm 8mm;display:flex;flex-direction:column;gap:3mm;
+  box-shadow:0 6px 24px rgba(0,0,0,.15)}
+.page::before{content:'';position:absolute;inset:4mm;border:.6mm solid #d4a62a;border-radius:5mm;pointer-events:none}
+.page::after{content:'';position:absolute;inset:5.6mm;border:.3mm dashed rgba(27,138,90,.35);border-radius:4mm;pointer-events:none}
+
+/* الرأس */
+.top{display:flex;align-items:center;gap:5mm;background:linear-gradient(135deg,#0f5132,#1b8a5a);color:#fff;border-radius:5mm;padding:4.5mm 6mm;position:relative;overflow:hidden}
+.top::after{content:'';position:absolute;left:-12mm;top:-12mm;width:48mm;height:48mm;border-radius:50%;border:5mm solid rgba(212,166,42,.25)}
+.badge{width:22mm;height:22mm;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 1.2mm #d4a62a}
+.badge svg{width:15mm;height:15mm}
+.ttl small{display:block;font:800 3.6mm Tajawal,sans-serif;color:#f1d98a;letter-spacing:.2mm}
+.ttl h1{margin:.5mm 0 0;font:900 10mm/1.15 Tajawal,sans-serif}
+.ttl p{margin:1mm 0 0;font:700 3.9mm Tajawal,sans-serif;opacity:.92}
+.info{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm}
+.info div{background:#fff;border:.35mm solid #e6dcc3;border-radius:3mm;padding:1.8mm 3mm;font:700 3.3mm/1.4 Tajawal,sans-serif;color:#555}
+.info b{display:block;font:900 3.9mm Tajawal,sans-serif;color:#0f5132}
+
+/* الأقسام */
+.cols{display:grid;grid-template-columns:1.05fr 1fr;gap:4mm;flex:1;min-height:0}
+.col{display:flex;flex-direction:column;gap:2.6mm;min-height:0}
+.box{background:#fff;border:.35mm solid #e6dcc3;border-radius:4mm;padding:2.4mm 3.6mm;position:relative}
+.box h2{margin:0 0 1.6mm;font:900 4.5mm Tajawal,sans-serif;color:#0f5132;display:flex;align-items:center;gap:2mm}
+.box h2 i{font-style:normal;width:8mm;height:8mm;border-radius:50%;background:#eef7f1;display:grid;place-items:center;font-size:4.4mm}
+.box ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1.5mm}
+.box li{font:700 3.3mm/1.5 'Noto Naskh Arabic',serif;display:flex;gap:2mm;align-items:flex-start}
+.box li .n{flex:none;width:5.2mm;height:5.2mm;border-radius:50%;background:#1b8a5a;color:#fff;display:grid;place-items:center;font:900 3mm Tajawal,sans-serif;margin-top:.6mm}
+.box li .e{flex:none}
+.box ul.dots li::before{content:'';flex:none;width:2.2mm;height:2.2mm;border-radius:50%;background:#d4a62a;margin-top:2mm}
+.box li b{color:#0f5132;font-family:Tajawal,sans-serif;font-weight:900}
+.box li span.d{color:#555}
+.goals{background:#f6fbf8;border-color:#bfe0cc}
+.tech{background:#fffaf0;border-color:#efd9a6}
+.tech h2{color:#8a6510}
+.tech h2 i{background:#fbf0d4}
+.chips{display:flex;flex-wrap:wrap;gap:1.6mm}
+.chip{font:800 3mm Tajawal,sans-serif;background:#eef7f1;color:#0f5132;border:.3mm solid #bfe0cc;border-radius:99px;padding:.9mm 3mm}
+.chip.g{background:#fbf0d4;color:#7a5a10;border-color:#efd9a6}
+
+/* سير الدرس */
+.flow{display:flex;align-items:stretch;gap:1.6mm}
+.flow div{flex:1;background:#fff;border:.35mm solid #e6dcc3;border-radius:3mm;padding:1.8mm 1.4mm;text-align:center;font:800 3mm/1.35 Tajawal,sans-serif;color:#0f5132;position:relative}
+.flow div span.fn{display:grid;place-items:center;width:6mm;height:6mm;margin:0 auto .8mm;border-radius:50%;background:#1b8a5a;color:#fff;font:900 3.2mm Tajawal,sans-serif}
+.flow div small{display:block;font-weight:700;color:#777;font-size:2.6mm}
+
+/* QR */
+.qrrow{display:flex;gap:4mm;align-items:center;background:linear-gradient(135deg,#0b2e20,#0f5132);border-radius:4mm;padding:3mm 4mm;color:#fff}
+.qr{width:31mm;height:31mm;flex:none;background:#fff;border-radius:2.5mm;padding:2mm;box-shadow:0 0 0 1mm #d4a62a}
+.qr svg{width:100%;height:100%;display:block}
+.qrtxt b{display:block;font:900 5.2mm Tajawal,sans-serif;color:#f1d98a}
+.qrtxt p{margin:1mm 0 0;font:700 3.4mm/1.6 Tajawal,sans-serif}
+.qrtxt small{display:block;margin-top:1mm;font:700 2.7mm Tajawal,sans-serif;opacity:.75;direction:ltr;text-align:right}
+.qrrobot{height:31mm;flex:none;margin-inline-start:auto}
+.sign{display:flex;justify-content:space-between;font:800 3.8mm Tajawal,sans-serif;color:#333;padding:1mm 3mm 0}
+@media print{body{background:#fff}.bar{display:none}.page{margin:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="bar"><button onclick="print()">طباعة ورقة الزيارة</button></div>
+
+<main class="page">
+  <header class="top">
+    <div class="badge"><svg viewBox="-60 -60 120 120"><circle r="54" fill="#fff" stroke="#1b8a5a" stroke-width="4"/><circle r="44" fill="none" stroke="#d4a62a" stroke-width="2.5" stroke-dasharray="3 5"/>
+      <path d="M0 -46 L9 0 L0 46 L-9 0Z" fill="#1b8a5a"/><path d="M-46 0 L0 9 L46 0 L0 -9Z" fill="#d4a62a"/><path d="M0 -46 L9 0 L0 0Z" fill="#0f5132"/><circle r="6" fill="#fff" stroke="#0f5132" stroke-width="2"/></svg></div>
+    <div class="ttl">
+      <small>ورقةُ زيارةٍ صفّيّة • الدراساتُ الاجتماعيّة • الوحدةُ الرابعة: جغرافيةُ وطني</small>
+      <h1>درسُ الموقعِ والحدود</h1>
+      <p>رحلةُ المستكشفةِ السعوديّة: نكتشفُ موقعَ وطنِنا وحدودَه، وسرَّ أهمّيّتِه بين دولِ العالم</p>
+    </div>
+  </header>
+
+  <section class="info">
+    <div>المدرسة<b>ابتدائيّةُ التحفيظِ بالرويضة</b></div>
+    <div>معلّمةُ المادّة<b>أ. إيمان السهلي</b></div>
+    <div>مديرةُ المدرسة<b>أ. شيخة القحطاني</b></div>
+    <div>الصفّ / التاريخ<b style="font-weight:700;color:#999">............ / ....../....../......</b></div>
+  </section>
+
+  <section class="cols">
+    <div class="col">
+      <div class="box goals">
+        <h2>أهدافُ الدرس</h2>
+        <ul>
+          <li><span class="n">١</span><span>أن تحدّدَ الطالبةُ موقعَ المملكةِ العربيّةِ السعوديّةِ على خريطةِ العالم.</span></li>
+          <li><span class="n">٢</span><span>أن تتعرّفَ القارّاتِ الثلاثَ التي تربطُ بينها شبهُ الجزيرةِ العربيّة.</span></li>
+          <li><span class="n">٣</span><span>أن توضّحَ أهمّيّةَ موقعِ المملكةِ العربيّةِ السعوديّة.</span></li>
+          <li><span class="n">٤</span><span>أن تحدّدَ حدودَ المملكةِ العربيّةِ السعوديّةِ من الجهاتِ الأربع.</span></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>الاستراتيجيّاتُ المستخدمة</h2>
+        <ul class="dots">
+          <li><span><b>رحلةُ المستكشفةِ السعوديّة:</b> <span class="d">الطالبةُ مستكشفةٌ تنتقلُ بين أربعِ محطّاتٍ على خريطةٍ تفاعليّة (التعلّمُ بالاكتشاف).</span></span></li>
+          <li><span><b>الرسالةُ السرّيّة (اللغز):</b> <span class="d">تمهيدٌ مشوّقٌ يثيرُ الدافعيّةَ والفضول.</span></span></li>
+          <li><span><b>فكّري واستنتجي:</b> <span class="d">أسئلةٌ تُنمّي التفكيرَ الناقدَ والاستنتاج.</span></span></li>
+          <li><span><b>التعلّمُ التعاونيّ:</b> <span class="d">أربعُ مجموعات (الغيوم، النجوم، الفراشات، الورود) بخريطةٍ صمّاءَ وأدوارٍ محدّدة.</span></span></li>
+          <li><span><b>مهاراتُ التفكيرِ العليا:</b> <span class="d">تحليل، افتراض، تقييم، إبداع.</span></span></li>
+          <li><span><b>التعلّمُ باللعب:</b> <span class="d">تحدّي الدقيقة، والبطاقاتُ المقلوبة، والاختيارُ العشوائيُّ للسؤالِ الفرديّ.</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="box tech">
+        <h2>تفعيلُ التقنية</h2>
+        <ul class="dots">
+          <li><span><b>روبوتٌ بالواقعِ المعزّز (AR):</b> <span class="d">يظهرُ في الفصلِ عبر كاميرا الجوّال، ومعه كرةٌ أرضيّةٌ ثلاثيّةُ الأبعادِ تدوّرها الطالبة لتكتشفَ خريطةَ المملكة.</span></span></li>
+          <li><span><b>كرةٌ أرضيّةٌ وخرائطُ تفاعليّة:</b> <span class="d">سحبٌ وتدويرٌ وتحديدُ المواقعِ بالضغطِ على الخريطة.</span></span></li>
+          <li><span><b>عرضٌ تفاعليّ:</b> <span class="d">يعملُ على السبّورةِ الذكيّةِ والآيباد، بتغذيةٍ راجعةٍ فوريّةٍ ومؤقّتات.</span></span></li>
+          <li><span><b>صوتٌ بالذكاءِ الاصطناعيّ:</b> <span class="d">ترحيبُ الروبوتِ وحوارُه.</span></span></li>
+          <li><span><b>تقييمٌ إلكترونيٌّ للدرس:</b> <span class="d">عبر صفحةِ الروبوت (الرمزُ أسفلَ الورقة).</span></span></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>التقويم</h2>
+        <div class="chips">
+          <span class="chip">تشخيصيّ قبليّ</span><span class="chip">تكوينيّ: نشاط ١ و٢</span>
+          <span class="chip">سؤالٌ فرديّ</span><span class="chip">ختاميّ: ٧ أسئلة</span><span class="chip">بطاقةُ خروج</span>
+        </div>
+      </div>
+      <div class="box">
+        <h2>القيمُ والمواطنة</h2>
+        <div class="chips">
+          <span class="chip g">النشيدُ الوطنيّ</span><span class="chip g">المادّة ٣٤ من النظامِ الأساسيِّ للحكم</span>
+          <span class="chip g">حمايةُ حدودِ الوطن</span><span class="chip g">مكانةُ قِبلةِ المسلمين</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow" aria-label="سير الدرس">
+    <div><span class="fn">١</span>التمهيد<small>رسالةٌ سرّيّة + الروبوت</small></div>
+    <div><span class="fn">٢</span>المحطّة ١<small>الموقع والقارّات</small></div>
+    <div><span class="fn">٣</span>المحطّة ٢<small>الدولُ المجاورة</small></div>
+    <div><span class="fn">٤</span>المحطّة ٣<small>المسطّحاتُ المائيّة</small></div>
+    <div><span class="fn">٥</span>المحطّة ٤<small>التحدّي النهائيّ</small></div>
+    <div><span class="fn">٦</span>الختام<small>تقويمٌ وبطاقةُ خروج</small></div>
+  </section>
+
+  <section class="qrrow">
+    <div class="qr" id="qr"></div>
+    <div class="qrtxt">
+      <b>جرّبي روبوتَ الدرس.. وقيّمي الدرس</b>
+      <p>امسحي الرمزَ بكاميرا الجوّال ← «ابدئي التجربة» ← اسمحي بالكاميرا، ثمّ اضغطي زرَّ النجمةِ لتقييمِ الدرس.</p>
+      <small id="qrurl"></small>
+    </div>
+    <img class="qrrobot" src="robot/robot.png" alt="روبوت خريطة المملكة">
+  </section>
+
+  <div class="sign"><span>الاسم: ..............................................</span><span>التوقيع: ..............................</span></div>
+</main>
+
+<script>
+const URL_ROBOT = 'https://teachervz.github.io/ksa-map-lesson/robot/';
+try { const q = qrcode(0, 'M'); q.addData(URL_ROBOT); q.make(); document.getElementById('qr').innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true }); } catch (e) {}
+document.getElementById('qrurl').textContent = URL_ROBOT;
+</script>
+</body>
+</html>

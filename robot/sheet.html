@@ -210,7 +210,7 @@ async function drawTitle(text) {
   }));
   pts.forEach(([x, y]) => { ctx.fillStyle = "rgba(220,240,228,.6)"; ctx.beginPath(); ctx.arc(x, y, 1.6, 0, 7); ctx.fill(); });
 })();
-$("url").value = guessURL() || "";
+$("url").value = guessURL() || "https://teachervz.github.io/ksa-map-lesson/robot/";
 $("url").addEventListener("input", drawQR);
 ["school", "subject", "lesson", "lessonSub", "teacher"].forEach((id) => $(id).addEventListener("input", syncText));
 $("printBtn").addEventListener("click", () => window.print());
