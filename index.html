@@ -729,6 +729,17 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body.phone #controls button{white-space:nowrap;font-size:41px;padding:10px 30px}
 body.phone #controls #cClap{font-size:51px;padding:4px 28px}
 body.phone #controls #cFull{font-size:51px;padding:4px 24px}
+body.fill #paper{left:22px;right:22px;top:18px;bottom:18px;border-width:5px}
+body.fill #slides{left:28px;right:28px;top:24px;bottom:24px}
+body.fill .slide{padding:26px 44px 92px}
+body.fill .deco-compass{width:84px;top:4px;left:6px}
+body.fill .deco-palm{display:none}
+body.fill #progress{top:4px}
+body.fill #counter{left:36px;bottom:2px}
+body.fill #controls{bottom:10px}
+body.fill .hc{padding:14px 26px;gap:6px}
+body.fill .hc-q{font-size:37px;line-height:1.5}
+body.fill .hc-a{font-size:31px;line-height:1.45;padding:6px 16px}
 body.side #controls{position:fixed;top:50%;bottom:auto;transform:translate(-50%,-50%);flex-direction:column;gap:8px;padding:8px 6px;border-radius:30px}
 body.side.idle #controls{opacity:1;transform:translate(-50%,-50%);pointer-events:auto}
 body.side #controls button{font-size:0;padding:0;width:var(--cw,52px);height:var(--cw,52px);border-radius:50%;display:flex;align-items:center;justify-content:center}
@@ -2262,6 +2273,7 @@ const wake = () => {
    تحجيم المسرح + الإطار الرملي المموّج
    ===================================================================== */
 const stage = $('#stage');
+const PHONE_H = 900;   // ارتفاع الشريحة على الجوال بالعرض (كلما قلّ كبُر الخط)
 function fit() {
   const cs = getComputedStyle(document.documentElement), px = v => parseFloat(cs.getPropertyValue(v)) || 0;
   const t = px('--sat'), r = px('--sar'), b = px('--sab'), l = px('--sal');
@@ -2269,14 +2281,17 @@ function fit() {
   const VW = document.documentElement.clientWidth || innerWidth, VH = document.documentElement.clientHeight || innerHeight;
   const W = VW - l - r, H = VH - t - b;
   const phone = matchMedia('(pointer:coarse)').matches && Math.min(VW, VH) < 600;
-  /* الجوال بالعرض: الشريحة تمتدّ بعرض الشاشة كاملة (بدون أطراف على الجانبين) */
-  const SW = phone && W > H ? Math.max(1920, Math.round(1080 * W / H)) : 1920;
-  if (stage.offsetWidth !== SW) {
-    stage.style.width = SW + 'px';
-    $('#wave').setAttribute('viewBox', `0 0 ${SW} 1080`);
-    $('#wavePath').setAttribute('d', wavyRect(26, 24, SW - 26, 1056, 18, 220));
+  /* الجوال بالعرض: الشريحة تملأ الشاشة، وارتفاعها أقل ← الخط أكبر */
+  const fill = phone && W > H;
+  const SH = fill ? PHONE_H : 1080;
+  const SW = fill ? Math.max(1920, Math.round(SH * W / H)) : 1920;
+  document.body.classList.toggle('fill', fill);
+  if (stage.offsetWidth !== SW || stage.offsetHeight !== SH) {
+    stage.style.width = SW + 'px'; stage.style.height = SH + 'px';
+    $('#wave').setAttribute('viewBox', `0 0 ${SW} ${SH}`);
+    $('#wavePath').setAttribute('d', fill ? wavyRect(8, 6, SW - 8, SH - 6, 8, 220) : wavyRect(26, 24, SW - 26, SH - 24, 18, 220));
   }
-  scale = Math.min(W / SW, H / 1080);
+  scale = Math.min(W / SW, H / SH);
   stage.style.left = (l + W / 2) + 'px'; stage.style.top = (t + H / 2) + 'px';
   stage.style.transform = `translate(-50%,-50%) scale(${scale})`;
   const free = (W - SW * scale) / 2;
@@ -2308,7 +2323,7 @@ function wavyRect(x0, y0, x1, y1, amp, wl) {
   edge(x0, y0, x1, y0, 0, 1); edge(x1, y0, x1, y1, -1, 0); edge(x1, y1, x0, y1, 0, -1); edge(x0, y1, x0, y0, 1, 0);
   return 'M' + pts.map(p => p.join(' ')).join('L') + 'Z';
 }
-$('#wavePath').setAttribute('d', wavyRect(26, 24, stage.offsetWidth - 26, 1056, 18, 220));
+if (!document.body.classList.contains('fill')) $('#wavePath').setAttribute('d', wavyRect(26, 24, 1894, 1056, 18, 220));
 
 
 /* =====================================================================
