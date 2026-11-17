@@ -2261,14 +2261,8 @@ $('#cFull').onclick = () => {
   } else (d.exitFullscreen || d.webkitExitFullscreen)?.call(d);
 };
 
-let tx = null, ty = null;
+/* التنقّل بين الشرائح بالأزرار (أو لوحة المفاتيح) فقط — بدون سحب بالإصبع */
 const zoomed = () => window.visualViewport && visualViewport.scale > 1.01;
-addEventListener('touchstart', e => { if (e.touches.length === 1 && !zoomed() && !e.target.closest('.rb-wrap, .globe-wrap, .globe, .map, canvas')) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; } else tx = null; }, { passive: true });
-addEventListener('touchend', e => {
-  if (tx == null) return;
-  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; tx = null;
-  if (Math.abs(dx) > 110 && Math.abs(dy) < 70) (dx < 0 ? next() : prev());
-}, { passive: true });
 addEventListener('wheel', e => { if (!e.ctrlKey) e.preventDefault(); }, { passive: false });
 addEventListener('touchmove', e => { if (e.touches.length === 1 && !zoomed()) e.preventDefault(); }, { passive: false });   // يسمح بالتكبير بإصبعين والتنقّل وهي مكبّرة
 
