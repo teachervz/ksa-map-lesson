@@ -729,6 +729,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body.phone #controls button{white-space:nowrap;font-size:36px;padding:10px 30px}
 body.phone #controls #cClap{font-size:44px;padding:4px 28px}
 body.phone #controls #cFull{font-size:44px;padding:4px 24px}
+body.side #paper{left:24px;right:24px;top:20px;bottom:20px}
+body.side #slides{left:31px;right:31px;top:27px;bottom:27px}
+body.side .slide{padding:30px 48px 34px}
+body.side .deco{display:none}
+body.side #progress{top:6px}
+body.side #counter{left:40px;bottom:2px;font-size:24px;padding:2px 18px}
 body.side #controls{position:fixed;top:50%;bottom:auto;transform:translate(-50%,-50%);flex-direction:column;gap:8px;padding:8px 6px;border-radius:30px}
 body.side.idle #controls{opacity:1;transform:translate(-50%,-50%);pointer-events:auto}
 body.side #controls button{font-size:0;padding:0;width:var(--cw,52px);height:var(--cw,52px);border-radius:50%;display:flex;align-items:center;justify-content:center}
@@ -2262,22 +2268,32 @@ const wake = () => {
    تحجيم المسرح + الإطار الرملي المموّج
    ===================================================================== */
 const stage = $('#stage');
+const PHONE_H = 780;   // ارتفاع المسرح على الجوال (كلما قلّ كبُر الخط)
 function fit() {
   const cs = getComputedStyle(document.documentElement), px = v => parseFloat(cs.getPropertyValue(v)) || 0;
   const t = px('--sat'), r = px('--sar'), b = px('--sab'), l = px('--sal');
   const vv = window.visualViewport, VW = vv ? vv.width : innerWidth, VH = vv ? vv.height : innerHeight;
   const W = VW - l - r, H = VH - t - b;
-  scale = Math.min(W / 1920, H / 1080);
-  stage.style.left = (l + W / 2) + 'px'; stage.style.top = (t + H / 2) + 'px';
-  stage.style.transform = `translate(-50%,-50%) scale(${scale})`;
   const phone = matchMedia('(pointer:coarse)').matches && Math.min(VW, VH) < 600;
-  const free = (W - 1920 * scale) / 2;
-  const side = phone && free >= 46, ctr = $('#controls');
+  const side = phone && W > H, ctr = $('#controls');
+  /* الجوال (للعرض على البروجكتر): المسرح يمتدّ بعرض الشاشة وارتفاعه أقل ← الخط أكبر */
+  const reserve = side ? Math.max(52, Math.min(70, W * .07)) : 0;   // شريط الأزرار الجانبي
+  const SH = side ? PHONE_H : 1080;
+  const SW = side ? Math.max(1920, Math.round(SH * (W - reserve) / H)) : 1920;
+  if (stage.offsetWidth !== SW || stage.offsetHeight !== SH) {
+    stage.style.width = SW + 'px'; stage.style.height = SH + 'px';
+    $('#wave').setAttribute('viewBox', `0 0 ${SW} ${SH}`);
+    $('#wavePath').setAttribute('d', side ? wavyRect(10, 8, SW - 10, SH - 8, 10, 220) : wavyRect(26, 24, SW - 26, SH - 24, 18, 220));
+  }
+  scale = Math.min((W - reserve) / SW, H / SH);
+  stage.style.left = (l + reserve + (W - reserve) / 2) + 'px'; stage.style.top = (t + H / 2) + 'px';
+  stage.style.transform = `translate(-50%,-50%) scale(${scale})`;
   document.body.classList.toggle('phone', phone);
   document.body.classList.toggle('side', side);
   if (side) {
     if (ctr.parentNode !== document.body) document.body.appendChild(ctr);
-    ctr.style.left = (l + free / 2) + 'px'; ctr.style.setProperty('--cw', Math.min(52, Math.floor(free - 18)) + 'px');
+    const free = reserve + (W - reserve - SW * scale) / 2;
+    ctr.style.left = (l + free / 2) + 'px'; ctr.style.setProperty('--cw', Math.min(52, Math.floor(free - 12)) + 'px');
     $('#cNum').dataset.n = $('#cNum').textContent;
   } else {
     if (ctr.parentNode !== stage) stage.appendChild(ctr);
