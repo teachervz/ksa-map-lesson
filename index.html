@@ -615,6 +615,7 @@ body.idle #backHub{opacity:1}
   background:radial-gradient(circle at 35% 30%, #fff, var(--y200));border:8px solid var(--y500);box-shadow:var(--shadow)}
 .pk-num.spin{animation:pulse .12s ease infinite alternate}
 @keyframes pulse{to{transform:scale(1.05)}}
+.pk-name{font-size:60px;line-height:1.3;text-align:center}
 .pk-num.got{border-color:var(--p600);animation:popIn .5s}
 .pk-set{display:flex;align-items:center;gap:12px;font:700 26px var(--f-ui);color:var(--p500)}
 .sq{flex:1;min-width:0;display:flex;flex-direction:column;gap:20px}
@@ -828,16 +829,6 @@ const LESSON = {
 
 const SLIDES = [
 
-  /* ① الغلاف */
-  { type:'cover', anim:'zoom',
-    pill:'الوحدةُ الرابعةُ • جغرافيةُ وطني',
-    greeting:'صباحُ الوطنِ يا مستكشفاتِ المستقبل 🌴',
-    kicker:'الدرسُ الحادي عشر',
-    title:'الموقعُ والحدود',
-    subtitle:'المملكةُ العربيةُ السعوديةُ.. قلبُ العالم 💚',
-    meta:'الدراسات الاجتماعية    |    {date}',
-    floaties:['🧭','🗺️','🐪','🔭'] },
-
   /* ② النشيد الوطني */
   { type:'anthem', anim:'fade', strategy:'🇸🇦 النشيدُ الوطني',
     title:'نقفُ لنشيدِ وطنِنا',
@@ -845,6 +836,16 @@ const SLIDES = [
     audio:'anthem',
     lines:['سارعي للمجدِ والعلياء','مجّدي لخالقِ السّماء','وارفعي الخفّاقَ أخضر','يحملُ النّورَ المسطّر',
            'ردّدي: اللهُ أكبر','يا موطني','موطني.. عشتَ فخرَ المسلمين','عاشَ المليك.. للعَلَمِ والوطن'] },
+
+  /* ② التقويم القبلي */
+  { type:'tf', anim:'slide', strategy:'🩺 تقويمٌ قبليّ',
+    title:'ضعي علامةَ (✓) أمامَ العبارةِ الصحيحة، و(✗) أمامَ الخاطئة',
+    items:[
+      { t:'الأمنُ هو الطمأنينةُ والاستقرارُ الذي نشعرُ به في وطنِنا المملكةِ العربيّةِ السعوديّة.', a:true,  exp:'✔ صحيح، الأمنُ نعمةٌ نعيشُها في وطنِنا.' },
+      { t:'المواطنُ الصالحُ هو خطُّ الدفاعِ الأوّلِ لوطنِه.',                                      a:true,  exp:'✔ صحيح، كلُّ مواطنٍ مسؤولٌ عن حمايةِ وطنِه.' },
+      { t:'الأمنُ مسؤوليّةُ رجالِ الأمنِ فقط.',                                                   a:false, exp:'✘ الأمنُ *مسؤوليّةُ الجميع*؛ رجالِ الأمنِ والمواطنينَ معًا.' },
+      { t:'الإبلاغُ عن الأمورِ المشبوهةِ يساعدُ على المحافظةِ على الأمن.',                        a:true,  exp:'✔ صحيح، الإبلاغُ يحمي الوطنَ وأهلَه.' },
+    ] },
 
   /* ③ تمهيد: رسالة سرّيّة (رحلة حول العالم 🌍) — الظرف يُفتح ثم تظهر أدلّة اللغز واحدًا تلو الآخر */
   { type:'secret', anim:'zoom', strategy:'🔒 سرُّ اليوم',
@@ -859,6 +860,26 @@ const SLIDES = [
     ask:'... فمَن أكون؟ 🤔',
     answer:'المملكةُ العربيّةُ السعوديّة 🇸🇦',
     after:'أحسنتِ! ولكن.. هل تعرفنَ *لماذا* يُعدُّ موقعُ المملكةِ العربيّةِ السعوديّةِ مهمًّا؟ 🤫' },
+
+  /* ① الغلاف */
+  { type:'cover', anim:'zoom',
+    pill:'الوحدةُ الرابعةُ • جغرافيةُ وطني',
+    greeting:'صباحُ الوطنِ يا مستكشفاتِ المستقبل 🌴',
+    kicker:'الدرسُ الحادي عشر',
+    title:'الموقعُ والحدود',
+    subtitle:'المملكةُ العربيةُ السعوديةُ.. قلبُ العالم 💚',
+    meta:'الدراسات الاجتماعية    |    {date}',
+    floaties:['🧭','🗺️','🐪','🔭'] },
+
+  /* ⑦ أهداف الدرس */
+  { type:'goals', anim:'slide', strategy:'🎯 أهدافُ الدرس',
+    title:'في نهايةِ الدرسِ ستكونينَ قادرةً على أن:',
+    items:[
+      { icon:'🌍', text:'تحدّدي موقعَ المملكةِ العربيّةِ السعوديّةِ على *خريطةِ العالم*.' },
+      { icon:'🧭', text:'تتعرّفي على *القارّاتِ الثلاث* التي تربطُ بينها شبهُ الجزيرةِ العربيّة.' },
+      { icon:'💡', text:'توضّحي *أهمّيّةَ موقعِ* المملكةِ العربيّةِ السعوديّة.' },
+      { icon:'🗺️', text:'تحدّدي *حدودَ* المملكةِ العربيّةِ السعوديّةِ من الجهاتِ الأربع.' },
+    ] },
 
   /* ④ الروبوت جود + كرة أرضية ثلاثية الأبعاد + الكاميرا (واقع معزز) — بدون نص مكتوب
        الصوت من مجلد audio:  robot-1 (السؤال)  robot-2 (التلميح)  robot-3 (الفوز)
@@ -880,26 +901,6 @@ const SLIDES = [
       { icon:'🔮', open:true, q:'ماذا تتوقّعنَ أن نتعلّمَ اليومَ عن موقعِ وطنِنا وحدودِه؟', a:'سنكتشفُ موقعَ وطنِنا، ونتعرّفُ على حدودِه، ونكتشفُ *سرَّ أهمّيّةِ موقعِه* بين دولِ العالم.' },
     ],
     closing:'اليومَ لن نكتفيَ بمعرفةِ *أينَ* تقعُ المملكة، بل سنكتشفُ *لماذا* يُعدُّ موقعُها *ثروةً وطنيّةً* ومكانةً مميّزةً بين دولِ العالم!' },
-
-  /* ③ سؤال تشخيصي قبلي */
-  { type:'tf', anim:'slide', strategy:'🩺 سؤالٌ تشخيصيٌّ قبليّ',
-    title:'ماذا أعرفُ عن موقعِ وطني؟',
-    items:[
-      { t:'تقعُ المملكةُ العربيةُ السعوديةُ في قارةِ آسيا.', a:true,  exp:'✔ صحيح، في الجنوبِ الغربيِّ لقارةِ آسيا.' },
-      { t:'تقعُ المملكةُ في شبهِ الجزيرةِ العربية.',        a:true,  exp:'✔ صحيح، وتشغلُ أكثرَ من ثُلثَي مساحتِها.' },
-      { t:'يحدُّ المملكةَ من الغربِ الخليجُ العربي.',        a:false, exp:'✘ يحدُّها من الغربِ *البحرُ الأحمر*، والخليجُ العربيُّ في الشرق.' },
-      { t:'اليمنُ من الدولِ المجاورةِ لوطني.',               a:true,  exp:'✔ صحيح، تقعُ اليمنُ جنوبَ المملكة.' },
-    ] },
-
-  /* ⑦ أهداف الدرس */
-  { type:'goals', anim:'slide', strategy:'🎯 أهدافُ الدرس',
-    title:'في نهايةِ الدرسِ ستكونينَ قادرةً على أن:',
-    items:[
-      { icon:'🌍', text:'تحدّدي موقعَ المملكةِ العربيّةِ السعوديّةِ على *خريطةِ العالم*.' },
-      { icon:'🧭', text:'تتعرّفي على *القارّاتِ الثلاث* التي تربطُ بينها شبهُ الجزيرةِ العربيّة.' },
-      { icon:'💡', text:'توضّحي *أهمّيّةَ موقعِ* المملكةِ العربيّةِ السعوديّة.' },
-      { icon:'🗺️', text:'تحدّدي *حدودَ* المملكةِ العربيّةِ السعوديّةِ من الجهاتِ الأربع.' },
-    ] },
 
   /* ⑧ محطات الرحلة — اضغطي على المحطة للانتقال إليها، وبعد شرحها تعودين وتظهر «تمّت» */
   { type:'stations', anim:'slide', strategy:'🧭 رحلةُ المستكشفةِ السعودية',
@@ -989,7 +990,7 @@ const SLIDES = [
   /* ⑫ سؤال فردي */
   { type:'single', anim:'zoom', strategy:'🙋‍♀️ سؤالٌ فرديّ',
     title:'مَن أنا؟',
-    students:30,                    // عدد طالبات الفصل (للاختيار العشوائي)
+    names:['أنفال','العنود','بيلسان','جود','حور','رغد','ضي','رسيل','ريم','ريناد','سلطانة','غنى','قمر','لطيفة','ليان','ميس','نورة','هيّا','يارا'],  // قرعة الأسماء
     seconds:30,
     question:'أنا دولةٌ عربيّةٌ أقعُ *جنوبَ* وطني، ويُطلُّ ساحلي على بحرِ العرب، وعاصمتي *مسقط*.. فمَن أنا؟',
     options:['اليمن','سلطنةُ عُمان','قطر','الكويت'], correct:1 },
@@ -1050,10 +1051,9 @@ const SLIDES = [
     title:'كيف كانت رحلتي اليوم؟',
     question:'قيّمي رحلتَكِ الاستكشافيّةَ اليوم 🧭',
     options:[ { e:'🤩', l:'أتقنتُ المهمّة' }, { e:'🙂', l:'فهمتُ معظمَها' }, { e:'🤔', l:'أحتاجُ مساعدة' } ],
-    homeworkTitle:'📚 مهمّةُ المستكشفةِ في البيت',
+    homeworkTitle:'📚 الواجبُ المنزليّ',
     homework:[
-      'أرسمُ خريطةَ وطني، وألوّنُ الدولَ المجاورةَ في كلِّ اتّجاهٍ بلونٍ مختلف.',
-      'أبحثُ عن ثلاثِ مدنٍ تطلُّ على *البحرِ الأحمر*، وثلاثٍ تطلُّ على *الخليجِ العربيّ*.',
+      'حلُّ الواجبِ في *المنصّة*.',
     ] },
 
   /* ⑱ الختام */
@@ -1062,6 +1062,7 @@ const SLIDES = [
     message:'أتممتُنَّ رحلةَ الاستكشافِ بنجاح، واستحققتُنَّ *وسامَ المستكشفةِ السعوديّة*.. فوطنُنا يستحقُّ أن نعرفَه ونحميَه 💚',
     quote:'وطني.. موقعٌ يتوسّطُ العالم، ومكانةٌ في القلب 🇸🇦',
     clapBtn:'👏 صفّقنَ لأنفسِكنّ' },
+
 ];
 /* ═══════════════════ نهاية الإعدادات ═══════════════════ */
 
@@ -1988,17 +1989,21 @@ R.locate = s => {
 
 /* ⑫ سؤال فردي + اختيار طالبة عشوائيًا */
 R.single = s => {
-  let N = s.students || 30;
-  const num = h('div', { class: 'pk-num' }, '?');
-  const cnt = h('b', {}, ar(N));
+  const names = s.names || [];
+  let pool = [];                           // قرعة بدون تكرار حتى تنتهي الأسماء
+  const num = h('div', { class: 'pk-num pk-name' }, '?');
+  const cnt = h('b', {}, ar(names.length));
   let spinning = false;
   const spin = () => {
-    if (spinning) return; spinning = true; num.classList.remove('got'); num.classList.add('spin');
+    if (spinning || !names.length) return; spinning = true; num.classList.remove('got'); num.classList.add('spin');
+    if (!pool.length) pool = names.slice();
+    const pick = pool.splice(Math.floor(Math.random() * pool.length), 1)[0];
+    cnt.textContent = ar(pool.length);
     let t = 0; const total = 22;
     const step = () => {
-      num.textContent = ar(1 + Math.floor(Math.random() * N)); sfx.tick();
+      num.textContent = names[Math.floor(Math.random() * names.length)]; sfx.tick();
       if (++t < total) setTimeout(step, 40 + t * t * .9);
-      else { spinning = false; num.classList.remove('spin'); num.classList.add('got'); sfx.success(); timer.reset(); timer.start(); }
+      else { num.textContent = pick; spinning = false; num.classList.remove('spin'); num.classList.add('got'); sfx.success(); timer.reset(); timer.start(); }
     };
     step();
   };
@@ -2013,11 +2018,8 @@ R.single = s => {
   return [head(s),
     h('div', { class: 'single' },
       h('div', { class: 'picker card rv' }, h('div', { class: 'pk-t' }, '🎯 مَن ستُجيب؟'), num,
-        h('button', { type: 'button', class: 'btn yellow', onclick: spin }, '🎲 اختاري طالبة'),
-        h('div', { class: 'pk-set' },
-          h('button', { type: 'button', class: 'icon-btn', onclick: () => { N = Math.max(2, N - 1); cnt.textContent = ar(N); } }, '−'),
-          h('span', {}, 'عدد الطالبات: ', cnt),
-          h('button', { type: 'button', class: 'icon-btn', onclick: () => { N++; cnt.textContent = ar(N); } }, '+')),
+        h('button', { type: 'button', class: 'btn yellow', onclick: spin }, '🎲 قرعة الأسماء'),
+        h('div', { class: 'pk-set' }, h('span', {}, 'المتبقّيات في القرعة: ', cnt)),
         timer.el),
       h('div', { class: 'sq' }, rich(s.question, 'div', 'sq-q card rv'), h('div', { class: 'opts' }, opts), fb))];
 };

@@ -117,6 +117,9 @@ body { margin: 0; background: #d9d7e6; color: #1b1740; font-family: var(--body);
   .qrcard { box-shadow: 0 0 0 1.5mm rgba(212,166,42,.5); }
 }
 @media screen and (max-width: 840px) { .page { zoom: .45; } }
+.bare .panel{display:none}
+.bare body,body.bare{background:none}
+.bare .page{margin:0;box-shadow:none}
 </style>
 </head>
 <body>
@@ -168,6 +171,7 @@ body { margin: 0; background: #d9d7e6; color: #1b1740; font-family: var(--body);
 </main>
 
 <script>
+if (location.hash === "#bare") document.body.classList.add("bare");   // نسخة بدون لوحة الإعدادات (للطباعة ٤ في ورقة)
 const $ = (id) => document.getElementById(id);
 function guessURL() { return /^https?:/.test(location.protocol) ? location.href.replace(/sheet\.html.*$/, "") : ""; }
 function drawQR() {
