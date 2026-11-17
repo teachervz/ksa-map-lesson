@@ -2268,11 +2268,18 @@ function fit() {
   if (window.visualViewport && visualViewport.scale > 1.01) return;   // المعلمة مكبّرة بالأصابع: لا نعيد التحجيم
   const VW = document.documentElement.clientWidth || innerWidth, VH = document.documentElement.clientHeight || innerHeight;
   const W = VW - l - r, H = VH - t - b;
-  scale = Math.min(W / 1920, H / 1080);
+  const phone = matchMedia('(pointer:coarse)').matches && Math.min(VW, VH) < 600;
+  /* الجوال بالعرض: الشريحة تمتدّ بعرض الشاشة كاملة (بدون أطراف على الجانبين) */
+  const SW = phone && W > H ? Math.max(1920, Math.round(1080 * W / H)) : 1920;
+  if (stage.offsetWidth !== SW) {
+    stage.style.width = SW + 'px';
+    $('#wave').setAttribute('viewBox', `0 0 ${SW} 1080`);
+    $('#wavePath').setAttribute('d', wavyRect(26, 24, SW - 26, 1056, 18, 220));
+  }
+  scale = Math.min(W / SW, H / 1080);
   stage.style.left = (l + W / 2) + 'px'; stage.style.top = (t + H / 2) + 'px';
   stage.style.transform = `translate(-50%,-50%) scale(${scale})`;
-  const phone = matchMedia('(pointer:coarse)').matches && Math.min(VW, VH) < 600;
-  const free = (W - 1920 * scale) / 2;
+  const free = (W - SW * scale) / 2;
   const side = phone && free >= 46, ctr = $('#controls');
   document.body.classList.toggle('phone', phone);
   document.body.classList.toggle('side', side);
@@ -2301,7 +2308,7 @@ function wavyRect(x0, y0, x1, y1, amp, wl) {
   edge(x0, y0, x1, y0, 0, 1); edge(x1, y0, x1, y1, -1, 0); edge(x1, y1, x0, y1, 0, -1); edge(x0, y1, x0, y0, 1, 0);
   return 'M' + pts.map(p => p.join(' ')).join('L') + 'Z';
 }
-$('#wavePath').setAttribute('d', wavyRect(26, 24, 1894, 1056, 18, 220));
+$('#wavePath').setAttribute('d', wavyRect(26, 24, stage.offsetWidth - 26, 1056, 18, 220));
 
 
 /* =====================================================================
